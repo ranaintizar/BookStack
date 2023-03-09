@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useCallback } from "react";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import GetStartedScreen from "./components/screens/GettingStartedScreen";
+import SignUpFlowScreen from "./components/screens/SignUpFlowScreen";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Sono: require("./assets/fonts/Sono-Regular.ttf"),
+    SonoMedium: require("./assets/fonts/Sono-Medium.ttf"),
+    SonoBold: require("./assets/fonts/Sono-SemiBold.ttf"),
+    Inter: require("./assets/fonts/Inter-Regular.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer onLayout={onLayoutRootView}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="GetStarted" component={GetStartedScreen} />
+        <Stack.Screen name="SignUpFlow" component={SignUpFlowScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
