@@ -4,8 +4,7 @@ import SignIn from "../SignIn";
 import BackgroundImage from "../BackgroundImage";
 import Verify from "../Verify";
 
-const SignUpFlowScreen = ({ route, navigation }) => {
-  const { val } = route.params;
+const SignUpFlowScreen = ({ val, setIsSignedIn }) => {
   const [signUpFlow, setSignUpFlow] = useState(val || 0);
 
   const renderForm = () => {
@@ -13,7 +12,9 @@ const SignUpFlowScreen = ({ route, navigation }) => {
       case 0:
         return <SignUp setSignUpFlow={setSignUpFlow} />;
       case 1:
-        return <SignIn setSignUpFlow={setSignUpFlow} />;
+        return (
+          <SignIn setSignUpFlow={setSignUpFlow} setIsSignedIn={setIsSignedIn} />
+        );
       case 2:
         return <Verify setSignUpFlow={setSignUpFlow} />;
     }
