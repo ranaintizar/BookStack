@@ -12,10 +12,9 @@ import BackgroundImage from "./BackgroundImage";
 import Input from "./input";
 import Button from "./Button";
 
-const SignUp = ({ setShowSignIn }) => {
+const SignIn = ({ setShowSignIn }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
-    email: false,
     password: false,
   });
   const [hideText, setHideText] = useState(true);
@@ -24,7 +23,6 @@ const SignUp = ({ setShowSignIn }) => {
     username: Yup.string()
       .required("Username is required")
       .min(4, "Username must be at least 4 characters"),
-    email: Yup.string().email("Invalid email").required("Email is required"),
     password: Yup.string()
       .required("Password is required")
       .min(7, "Password must be at least 7 characters")
@@ -59,74 +57,82 @@ const SignUp = ({ setShowSignIn }) => {
         child={
           <View style={styles.container}>
             <View style={styles.header}>
-              <Text style={styles.title}>Get Started</Text>
+              <Text style={styles.title}>Sign In to Your Account</Text>
               <View style={styles.descContainer}>
-                <Text style={styles.desc}>Already have an account?</Text>
+                <Text style={styles.desc}>Don't have an account?</Text>
                 <View>
                   <Text
                     style={styles.signIn}
-                    onPress={() => setShowSignIn(true)}
+                    onPress={() => setShowSignIn(false)}
                   >
-                    Sign In
+                    Sign Up
                   </Text>
                   <View style={styles.underline}></View>
                 </View>
               </View>
             </View>
-            <View>
-              <Formik
-                initialValues={{ username: "", email: "", password: "" }}
-                validationSchema={formSchema}
-                onSubmit={(values, actions) => {
-                  actions.resetForm();
-                  console.log(values);
-                  setShowSignIn(true);
-                }}
-              >
-                {(props) => (
-                  <View style={styles.form}>
-                    <Input
-                      isFocused={isFocused.username}
-                      name="username"
-                      props={props}
-                      handleFocus={handleFocus}
-                    />
-                    <Input
-                      isFocused={isFocused.email}
-                      props={props}
-                      name="email"
-                      label="Email"
-                      placeholder="Your Email..."
-                      iconSrc={require("../assets/mail.png")}
-                      handleFocus={handleFocus}
-                    />
-                    <Input
-                      isFocused={isFocused.password}
-                      props={props}
-                      name="password"
-                      label="Password"
-                      placeholder="Your Password"
-                      iconSrc={require("../assets/lock.png")}
-                      handleFocus={handleFocus}
-                      showHideIcon={true}
-                      hideText={hideText}
-                      setHideText={setHideText}
-                    />
+            <Formik
+              initialValues={{ username: "", email: "", password: "" }}
+              validationSchema={formSchema}
+              onSubmit={(values, actions) => {
+                actions.resetForm();
+                console.log(values);
+                setShowSignIn(false);
+              }}
+            >
+              {(props) => (
+                <View style={styles.form}>
+                  <Input
+                    isFocused={isFocused.username}
+                    name="username"
+                    props={props}
+                    handleFocus={handleFocus}
+                  />
+                  <Input
+                    isFocused={isFocused.password}
+                    props={props}
+                    name="password"
+                    label="Password"
+                    placeholder="Your Password"
+                    iconSrc={require("../assets/lock.png")}
+                    handleFocus={handleFocus}
+                    showHideIcon={true}
+                    hideText={hideText}
+                    setHideText={setHideText}
+                    forgot={true}
+                  />
 
-                    <Button
-                      background="#1e90ff"
-                      width={200}
-                      fontSize={20}
-                      btnText="Create Account"
-                      fontWeight={700}
-                      borderRadius={50}
-                      onPress={props.handleSubmit}
-                      customClass={{ paddingVertical: 8 }}
-                    />
-                  </View>
-                )}
-              </Formik>
-            </View>
+                  <Button
+                    background="#1e90ff"
+                    width={270}
+                    fontSize={20}
+                    btnText="Sign In"
+                    fontWeight={700}
+                    borderRadius={50}
+                    onPress={props.handleSubmit}
+                    customClass={{ paddingVertical: 8, marginTop: 25 }}
+                  />
+                </View>
+              )}
+            </Formik>
+            <Text style={styles.desc}>OR</Text>
+            <Button
+              borderColor="#1e90ff"
+              borderWidth={2}
+              borderRadius={50}
+              width={270}
+              fontSize={20}
+              fontWeight="bold"
+              color="#1e90ff"
+              customClass={{
+                paddingVertical: 7,
+                justifyContent: "center",
+              }}
+              btnText="Continue with Google"
+              iconLeftSrc={require("../assets/google.png")}
+              imgHeight={20}
+              onPress={() => setShowSignIn(false)}
+            />
           </View>
         }
       />
@@ -142,7 +148,7 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     paddingHorizontal: 20,
     borderRadius: 15,
-    gap: 30,
+    gap: 10,
   },
   header: {
     alignItems: "center",
@@ -175,9 +181,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#1e90ff",
   },
   form: {
+    marginTop: 30,
     gap: 10,
     alignItems: "center",
   },
 });
 
-export default SignUp;
+export default SignIn;

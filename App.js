@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import GetStartedScreen from "./components/screens/GettingStartedScreen";
 import SignUpFlowScreen from "./components/screens/SignUpFlowScreen";
+import Input from "./components/input";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -30,6 +31,7 @@ export default function App() {
     <View style={styles.container} onLayout={onLayoutRootView}>
       {/* <SignUp /> */}
       <SignUpFlowScreen />
+      {/* <Input /> */}
       {/* <GetStartedScreen /> */}
       <StatusBar style="auto" />
     </View>
@@ -39,5 +41,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#333",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

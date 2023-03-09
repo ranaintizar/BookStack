@@ -6,7 +6,8 @@ const Button = ({
   background,
   color,
   borderRadius,
-  imgSrc,
+  iconLeftSrc,
+  iconRightSrc,
   imgWidth,
   imgHeight,
   fontSize,
@@ -33,6 +34,12 @@ const Button = ({
         },
       ]}
     >
+      {iconLeftSrc && (
+        <Image
+          source={iconLeftSrc}
+          style={{ width: imgWidth, height: imgHeight }}
+        />
+      )}
       <Text
         style={[
           styles.text,
@@ -41,8 +48,11 @@ const Button = ({
       >
         {btnText}
       </Text>
-      {imgSrc && (
-        <Image source={imgSrc} style={{ width: imgWidth, height: imgHeight }} />
+      {iconRightSrc && (
+        <Image
+          source={iconRightSrc}
+          style={{ width: imgWidth, height: imgHeight }}
+        />
       )}
     </TouchableOpacity>
   );

@@ -12,6 +12,7 @@ const BackgroundImage = ({ src, child, blurRadius, customClass }) => {
         source={src}
         style={{
           flex: 1,
+          minWidth: "100%",
           justifyContent: "center",
           alignItems: "center",
 

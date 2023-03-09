@@ -29,7 +29,6 @@ const GetStarted = () => {
         <View style={styles.signIn}>
           <Text style={styles.signInText}>Already have an account?</Text>
           <Button
-            variant="bordered"
             borderColor="#1e90ff"
             borderWidth={3}
             borderRadius={50}
