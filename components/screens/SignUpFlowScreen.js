@@ -4,8 +4,9 @@ import SignIn from "../SignIn";
 import BackgroundImage from "../BackgroundImage";
 import Verify from "../Verify";
 
-const SignUpFlowScreen = () => {
-  const [signUpFlow, setSignUpFlow] = useState(0);
+const SignUpFlowScreen = ({ route, navigation }) => {
+  const { val } = route.params;
+  const [signUpFlow, setSignUpFlow] = useState(val || 0);
 
   const renderForm = () => {
     switch (signUpFlow) {

@@ -32,6 +32,45 @@ const globalStyles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
+  gettingStartedCont: {
+    alignItems: "center",
+    gap: 150,
+  },
+  gettingStartedText: {
+    width: "100%",
+    paddingHorizontal: 10,
+    alignItems: "center",
+  },
+  gettingStartedTitle: {
+    color: "#fff",
+    fontSize: 22,
+    width: "95%",
+    fontFamily: "Sono",
+    fontWeight: "bold",
+    lineHeight: 20,
+    textAlign: "center",
+    marginBottom: 5,
+  },
+  gettingStartedDesc: {
+    color: "#fff",
+    fontSize: 17,
+    fontFamily: "Sono",
+    letterSpacing: -1,
+    lineHeight: 20,
+    textAlign: "center",
+  },
+  gettingStartedBtnCont: {
+    gap: 30,
+  },
+  gettingStartedSignIn: {
+    width: "100%",
+    alignItems: "center",
+    gap: 5,
+  },
+  gettingStartedSignInText: {
+    color: "#fff",
+    fontSize: 17,
+  },
 });
 
 export default globalStyles;

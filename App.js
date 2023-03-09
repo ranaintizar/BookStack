@@ -1,13 +1,10 @@
 import React, { useCallback } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GetStartedScreen from "./components/screens/GettingStartedScreen";
 import SignUpFlowScreen from "./components/screens/SignUpFlowScreen";
-import Input from "./components/input";
-
-SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,22 +24,14 @@ export default function App() {
     return null;
   }
 
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      {/* <SignUp /> */}
-      <SignUpFlowScreen />
-      {/* <Input /> */}
-      {/* <GetStartedScreen /> */}
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer onLayout={onLayoutRootView}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="GetStarted" component={GetStartedScreen} />
+        <Stack.Screen name="SignUpFlow" component={SignUpFlowScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
