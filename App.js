@@ -3,13 +3,16 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import GetStarted from "./components/GetStarted";
+import GetStartedScreen from "./components/screens/GettingStartedScreen";
+import SignUpFlowScreen from "./components/screens/SignUpFlowScreen";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
     Sono: require("./assets/fonts/Sono-Regular.ttf"),
+    SonoMedium: require("./assets/fonts/Sono-Medium.ttf"),
+    SonoBold: require("./assets/fonts/Sono-SemiBold.ttf"),
     Inter: require("./assets/fonts/Inter-Regular.ttf"),
   });
 
@@ -25,7 +28,9 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <GetStarted />
+      {/* <SignUp /> */}
+      <SignUpFlowScreen />
+      {/* <GetStartedScreen /> */}
       <StatusBar style="auto" />
     </View>
   );
@@ -34,7 +39,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //  justifyContent: "center",
-    // alignItems: "center"
   },
 });

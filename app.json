@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ranaintizar.bookstack"
     },
     "web": {
       "favicon": "./assets/logo.png"

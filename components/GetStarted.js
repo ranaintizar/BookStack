@@ -1,55 +1,51 @@
-import { StyleSheet, ImageBackground, View, Text, Image } from "react-native";
+import React from "react";
+import { StyleSheet, View, Text, Image } from "react-native";
 import Button from "./Button";
 
 const GetStarted = () => {
   return (
-    <ImageBackground
-      source={require("../assets/getting-started.png")}
-      style={styles.background}
-    >
-      <View style={styles.container}>
-        <Image
-          source={require("../assets/logo-transparent.png")}
-          style={styles.logo}
+    <View style={styles.container}>
+      <Image
+        source={require("../assets/logo-transparent.png")}
+        style={styles.logo}
+      />
+      <View style={styles.text}>
+        <Text style={styles.title}>Welcome to BookStack!</Text>
+        <Text style={styles.desc}>
+          Get started by discovering new books and organizing your reading list
+          with ease.
+        </Text>
+      </View>
+      <View style={styles.btnContainer}>
+        <Button
+          btnText="Get Started"
+          imgSrc={require("../assets/icon.png")}
+          fontSize={22}
+          borderRadius={50}
+          width={270}
+          background="#1e90ff"
+          customClass={{ paddingVertical: 8, paddingHorizontal: 20 }}
         />
-        <View style={styles.text}>
-          <Text style={styles.title}>Welcome to BookStack!</Text>
-          <Text style={styles.desc}>
-            Get started by discovering new books and organizing your reading
-            list with ease.
-          </Text>
-        </View>
-        <View style={styles.btnContainer}>
+        <View style={styles.signIn}>
+          <Text style={styles.signInText}>Already have an account?</Text>
           <Button
-            btnText="Get Started"
-            imgSrc={require("../assets/icon.png")}
-            fontSize={22}
+            variant="bordered"
+            borderColor="#1e90ff"
+            borderWidth={3}
             borderRadius={50}
             width={270}
-            background="#1e90ff"
-            customClass={{ paddingVertical: 8, paddingHorizontal: 20 }}
+            fontSize={22}
+            fontWeight="bold"
+            color="#1e90ff"
+            customClass={{
+              paddingHorizontal: 20,
+              justifyContent: "center",
+            }}
+            btnText="Sign In"
           />
-          <View style={styles.signIn}>
-            <Text style={styles.signInText}>Already have an account?</Text>
-            <Button
-              variant="bordered"
-              borderColor="#1e90ff"
-              borderWidth={3}
-              borderRadius={50}
-              width={270}
-              fontSize={22}
-              fontWeight="bold"
-              color="#1e90ff"
-              customClass={{
-                paddingHorizontal: 20,
-                justifyContent: "center",
-              }}
-              btnText="Sign In"
-            />
-          </View>
         </View>
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
@@ -59,6 +55,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: "100%",
     marginTop: 20,
     padding: 10,
     justifyContent: "space-evenly",
@@ -86,7 +83,6 @@ const styles = StyleSheet.create({
   desc: {
     color: "#fff",
     fontSize: 17,
-    width: "95%",
     fontFamily: "Sono",
     letterSpacing: -1,
     lineHeight: 20,

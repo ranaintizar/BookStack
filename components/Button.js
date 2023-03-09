@@ -1,6 +1,7 @@
 import { StyleSheet, TouchableOpacity, Text, Image } from "react-native";
 
 const Button = ({
+  onPress,
   btnText,
   background,
   color,
@@ -18,6 +19,7 @@ const Button = ({
 }) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         styles.button,
         {
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
 });
 
 Button.defaultProps = {
+  onPress: () => console.log("Button Pressed"),
   btnText: "Button",
   variant: "filled",
   color: "#fff",
