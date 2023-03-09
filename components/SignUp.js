@@ -11,8 +11,9 @@ import * as Yup from "yup";
 import BackgroundImage from "./BackgroundImage";
 import Input from "./input";
 import Button from "./Button";
+import globalStyles from "./globalStyles";
 
-const SignUp = ({ setShowSignIn }) => {
+const SignUp = ({ setSignUpFlow }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
     email: false,
@@ -57,21 +58,19 @@ const SignUp = ({ setShowSignIn }) => {
         }}
         blurRadius={5}
         child={
-          <View style={styles.container}>
-            <View style={styles.header}>
-              <Text style={styles.title}>Get Started</Text>
-              <View style={styles.descContainer}>
-                <Text style={styles.desc}>Already have an account?</Text>
-                <View>
-                  <Text
-                    style={styles.signIn}
-                    onPress={() => setShowSignIn(true)}
-                  >
-                    Sign In
-                  </Text>
-                  <View style={styles.underline}></View>
-                </View>
-              </View>
+          <View style={[globalStyles.container, styles.container]}>
+            <View style={globalStyles.signUpFlowHeader}>
+              <Text style={globalStyles.signUpFlowTitle}>Get Started</Text>
+              <Text style={globalStyles.signUpFlowDesc}>
+                Already have an account?{" "}
+                <Text
+                  style={globalStyles.signUpFlowText}
+                  onPress={() => setSignUpFlow(1)}
+                >
+                  Sign In
+                </Text>
+                .
+              </Text>
             </View>
             <View>
               <Formik
@@ -80,11 +79,11 @@ const SignUp = ({ setShowSignIn }) => {
                 onSubmit={(values, actions) => {
                   actions.resetForm();
                   console.log(values);
-                  setShowSignIn(true);
+                  setSignUpFlow(2);
                 }}
               >
                 {(props) => (
-                  <View style={styles.form}>
+                  <View style={globalStyles.form}>
                     <Input
                       isFocused={isFocused.username}
                       name="username"
@@ -136,47 +135,7 @@ const SignUp = ({ setShowSignIn }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "95%",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 25,
-    paddingHorizontal: 20,
-    borderRadius: 15,
     gap: 30,
-  },
-  header: {
-    alignItems: "center",
-    gap: 8,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 500,
-    color: "#fff",
-  },
-  descContainer: {
-    flexDirection: "row",
-    gap: 5,
-  },
-  desc: {
-    fontSize: 16,
-    color: "#fff",
-  },
-  signIn: {
-    position: "relative",
-    color: "#1e90ff",
-    fontSize: 16,
-    fontWeight: 600,
-  },
-  underline: {
-    position: "absolute",
-    bottom: 2,
-    minWidth: 50,
-    minHeight: 1.5,
-    backgroundColor: "#1e90ff",
-  },
-  form: {
-    gap: 10,
-    alignItems: "center",
   },
 });
 

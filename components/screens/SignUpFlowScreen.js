@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import SignUp from "../SignUp";
 import SignIn from "../SignIn";
 import BackgroundImage from "../BackgroundImage";
+import Verify from "../Verify";
 
 const SignUpFlowScreen = () => {
-  const [showSignIn, setShowSignIn] = useState(false);
+  const [signUpFlow, setSignUpFlow] = useState(0);
 
   const renderForm = () => {
-    return showSignIn ? (
-      <SignIn setShowSignIn={setShowSignIn} />
-    ) : (
-      <SignUp setShowSignIn={setShowSignIn} />
-    );
+    switch (signUpFlow) {
+      case 0:
+        return <SignUp setSignUpFlow={setSignUpFlow} />;
+      case 1:
+        return <SignIn setSignUpFlow={setSignUpFlow} />;
+      case 2:
+        return <Verify setSignUpFlow={setSignUpFlow} />;
+    }
   };
 
   return (

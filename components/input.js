@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   eyeIcon: {
     position: "absolute",
     right: 10,
-    top: 37,
+    top: 40,
   },
 });
 
