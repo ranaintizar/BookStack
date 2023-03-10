@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,7 @@ import {
   Image,
   TouchableWithoutFeedback,
   ScrollView,
+  Modal,
 } from "react-native";
 import {
   FontAwesome5,
@@ -15,8 +16,11 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 import Button from "./Button";
+import Book from "./BookReader";
 
 const ModalView = ({ content, theme, setShowModal }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <View style={styles.modal}>
       <View style={styles.infoContainer}>
@@ -73,6 +77,7 @@ const ModalView = ({ content, theme, setShowModal }) => {
             width="50%"
             fontWeight="bold"
             btnText="Start Reading"
+            onPress={() => setIsVisible(true)}
           />
           <Button
             color="#1e90ff"
@@ -85,6 +90,13 @@ const ModalView = ({ content, theme, setShowModal }) => {
           />
         </View>
       </ScrollView>
+      <Modal
+        visible={isVisible}
+        animationType="slide"
+        statusBarTranslucent={true}
+      >
+        <Book setIsVisible={setIsVisible} />
+      </Modal>
     </View>
   );
 };
@@ -94,6 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
+    marginTop: 20,
   },
   infoContainer: {
     position: "relative",

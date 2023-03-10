@@ -71,6 +71,10 @@ const globalStyles = StyleSheet.create({
     color: "#fff",
     fontSize: 17,
   },
+  comingSoon: {
+    fontSize: 40,
+    fontWeight: "bold",
+  },
 });
 
 export default globalStyles;

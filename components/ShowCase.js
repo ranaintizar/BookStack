@@ -43,7 +43,11 @@ const ShowCase = ({ title, data, theme }) => {
           showsHorizontalScrollIndicator={false}
         />
         {showModal && (
-          <Modal visible={showModal} animationType="slide">
+          <Modal
+            visible={showModal}
+            animationType="slide"
+            statusBarTranslucent={true}
+          >
             <ModalView
               content={content}
               theme={theme}

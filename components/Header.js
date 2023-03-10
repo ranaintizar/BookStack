@@ -56,11 +56,10 @@ const Header = ({ theme, setTheme }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 15,
+    paddingTop: 20,
+    paddingBottom: 15,
     paddingHorizontal: 8,
-    marginTop: 25,
     borderBottomWidth: 1,
-
     flexDirection: "row",
     alignItems: "center",
     gap: 5,

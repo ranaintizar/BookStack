@@ -80,16 +80,11 @@ export default function App() {
           }}
         >
           {({ navigation }) => (
-            <HomeScreen
-              navigation={navigation}
-              theme={theme}
-              setTheme={setTheme}
-            />
+            <HomeScreen navigation={navigation} theme={theme} />
           )}
         </Tab.Screen>
         <Tab.Screen
           name="Library"
-          component={LibraryScreen}
           options={{
             tabBarIcon: ({ focused }) => {
               const iconContainerStyle = [
@@ -107,10 +102,13 @@ export default function App() {
               );
             },
           }}
-        />
+        >
+          {({ navigation }) => (
+            <LibraryScreen navigation={navigation} theme={theme} />
+          )}
+        </Tab.Screen>
         <Tab.Screen
           name="Discover"
-          component={DiscoverScreen}
           options={{
             tabBarIcon: ({ focused }) => {
               const iconContainerStyle = [
@@ -128,10 +126,13 @@ export default function App() {
               );
             },
           }}
-        />
+        >
+          {({ navigation }) => (
+            <DiscoverScreen navigation={navigation} theme={theme} />
+          )}
+        </Tab.Screen>
         <Tab.Screen
           name="Profile"
-          component={ProfileScreen}
           options={{
             tabBarIcon: ({ focused }) => {
               const iconContainerStyle = [
@@ -149,7 +150,11 @@ export default function App() {
               );
             },
           }}
-        />
+        >
+          {({ navigation }) => (
+            <ProfileScreen navigation={navigation} theme={theme} />
+          )}
+        </Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -255,3 +260,4 @@ const styles = StyleSheet.create({
 //     </Stack.Screen>
 //   </Stack.Navigator>
 // )}
+import RNFetchBlob from 'react-native-blob-util';
