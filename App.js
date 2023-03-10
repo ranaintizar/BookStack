@@ -1,21 +1,22 @@
 import React, { useCallback, useState } from "react";
+import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
 import GetStartedScreen from "./components/screens/GettingStartedScreen";
 import SignUpFlowScreen from "./components/screens/SignUpFlowScreen";
 import HomeScreen from "./components/screens/HomeScreen";
 import LibraryScreen from "./components/screens/LibraryScreen";
 import DiscoverScreen from "./components/screens/DiscoverScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
+import Header from "./components/Header";
 
 export default function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [theme, setTheme] = useState("light");
   const [fontsLoaded] = useFonts({
     Sono: require("./assets/fonts/Sono-Regular.ttf"),
     SonoMedium: require("./assets/fonts/Sono-Medium.ttf"),
@@ -38,19 +39,28 @@ export default function App() {
 
   return (
     <NavigationContainer onLayout={onLayoutRootView}>
+      <Header theme={theme} setTheme={setTheme} />
       <Tab.Navigator
         shifting={true}
         activeColor="#1e90ff"
-        barStyle={{
-          backgroundColor: "#fff",
-          borderTopWidth: 1,
-          borderColor: "#9994",
-          height: 70,
-        }}
+        barStyle={
+          theme === "light"
+            ? {
+                backgroundColor: "#fff",
+                borderTopWidth: 1,
+                borderColor: "#9994",
+                height: 70,
+              }
+            : {
+                backgroundColor: "#16161a",
+                borderTopWidth: 1,
+                borderColor: "#72757e",
+                height: 70,
+              }
+        }
       >
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
           options={{
             tabBarIcon: ({ focused }) => {
               const iconContainerStyle = [
@@ -59,12 +69,24 @@ export default function App() {
               ];
               return (
                 <View style={iconContainerStyle}>
-                  <Ionicons name="ios-home" color="#1e90ff" size={25} />
+                  <Ionicons
+                    name="ios-home"
+                    color={focused ? "#1e90ff" : "#72757e"}
+                    size={25}
+                  />
                 </View>
               );
             },
           }}
-        />
+        >
+          {({ navigation }) => (
+            <HomeScreen
+              navigation={navigation}
+              theme={theme}
+              setTheme={setTheme}
+            />
+          )}
+        </Tab.Screen>
         <Tab.Screen
           name="Library"
           component={LibraryScreen}
@@ -76,7 +98,11 @@ export default function App() {
               ];
               return (
                 <View style={iconContainerStyle}>
-                  <Ionicons name="ios-library" color="#1e90ff" size={25} />
+                  <Ionicons
+                    name="ios-library"
+                    color={focused ? "#1e90ff" : "#72757e"}
+                    size={25}
+                  />
                 </View>
               );
             },
@@ -93,7 +119,11 @@ export default function App() {
               ];
               return (
                 <View style={iconContainerStyle}>
-                  <AntDesign name="find" color="#1e90ff" size={25} />
+                  <AntDesign
+                    name="find"
+                    color={focused ? "#1e90ff" : "#72757e"}
+                    size={25}
+                  />
                 </View>
               );
             },
@@ -110,7 +140,11 @@ export default function App() {
               ];
               return (
                 <View style={iconContainerStyle}>
-                  <Ionicons name="person" color="#1e90ff" size={25} />
+                  <Ionicons
+                    name="person"
+                    color={focused ? "#1e90ff" : "#72757e"}
+                    size={25}
+                  />
                 </View>
               );
             },

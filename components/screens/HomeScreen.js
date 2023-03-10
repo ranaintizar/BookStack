@@ -1,22 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import ShowCase from "../ShowCase";
+import Home from "../Home";
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <ShowCase />
-    </View>
-  );
+const HomeScreen = ({ theme }) => {
+  return <Home theme={theme} />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    // alignItems: "center",
-    backgroundColor: "#fff",
-  },
-});
 
 export default HomeScreen;

@@ -1,10 +1,17 @@
 import React from "react";
 import { StyleSheet, View, Text, FlatList, Image } from "react-native";
 
-const ShowCase = ({ title, data }) => {
+const ShowCase = ({ title, data, theme }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text
+        style={[
+          styles.title,
+          theme === "light" ? { color: "#888" } : { color: "#72757e" },
+        ]}
+      >
+        {title}
+      </Text>
       <View style={styles.content}>
         <FlatList
           data={data}
@@ -12,9 +19,9 @@ const ShowCase = ({ title, data }) => {
           renderItem={({ item }) => (
             <View style={styles.bookContainer}>
               <Image source={item.src} style={styles.image} />
-              <Text style={styles.bookTitle}>{item.title}</Text>
             </View>
           )}
+          showsHorizontalScrollIndicator={false}
         />
       </View>
     </View>
@@ -23,9 +30,8 @@ const ShowCase = ({ title, data }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    flex: 1,
     gap: 15,
+    height: 220,
   },
   title: {
     fontSize: 25,
@@ -34,24 +40,17 @@ const styles = StyleSheet.create({
   },
   content: {
     flexDirection: "row",
-    overflow: "scroll",
     flex: 1,
-    overflow: "scroll",
   },
   bookContainer: {
-    gap: 10,
-    width: 140,
+    width: 145,
     alignItems: "center",
   },
   image: {
-    width: 120,
-    height: 150,
+    width: 130,
+    height: 160,
     borderRadius: 15,
     resizeMode: "cover",
-  },
-  bookTitle: {
-    fontSize: 16,
-    width: "90%",
   },
 });
 
