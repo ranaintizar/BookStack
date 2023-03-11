@@ -18,13 +18,17 @@ const Home = ({ theme }) => {
         scrollEnabled={true}
         contentContainerStyle={styles.contentContainer}
       >
-        <ShowCase title="Top Readings" theme={theme} />
-        <ShowCase title="Children's Books" theme={theme} />
-        <ShowCase title="New Releases" theme={theme} />
-        <ShowCase title="Bestsellers" theme={theme} />
-        <ShowCase title="Recently Added" theme={theme} />
-        <ShowCase title="Popular Fiction" theme={theme} />
-        <ShowCase title="Award-Winning Titles" theme={theme} />
+        <ShowCase title="Top Readings" theme={theme} horizontal={true} />
+        <ShowCase title="Children's Books" theme={theme} horizontal={true} />
+        <ShowCase title="New Releases" theme={theme} horizontal={true} />
+        <ShowCase title="Bestsellers" theme={theme} horizontal={true} />
+        <ShowCase title="Recently Added" theme={theme} horizontal={true} />
+        <ShowCase title="Popular Fiction" theme={theme} horizontal={true} />
+        <ShowCase
+          title="Award-Winning Titles"
+          theme={theme}
+          horizontal={true}
+        />
       </ScrollView>
     </View>
   );

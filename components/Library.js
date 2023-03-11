@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import LibraryHeader from "./LibraryHeader";
-import ShowCase2 from "./ShowCase2";
+import ShowCase from "./ShowCase";
 import data from "./data";
 import { archivesData, savedData, likedData } from "./data";
 
@@ -30,7 +30,15 @@ const Library = ({ theme }) => {
       ]}
     >
       <LibraryHeader setData={getData} theme={theme} />
-      <ShowCase2 data={content} theme={theme} />
+      <ShowCase
+        data={content}
+        theme={theme}
+        numOfCols={2}
+        customClass={{ gap: 20, alignItems: "center" }}
+        width={200}
+        imgWidth={170}
+        imgHeight={200}
+      />
     </View>
   );
 };
