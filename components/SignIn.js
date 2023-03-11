@@ -13,7 +13,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignIn = ({ setSignUpFlow }) => {
+const SignIn = ({ setSignUpFlow, setIsSignedIn }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
     password: false,
@@ -78,7 +78,7 @@ const SignIn = ({ setSignUpFlow }) => {
               onSubmit={(values, actions) => {
                 actions.resetForm();
                 console.log(values);
-                setSignUpFlow(2);
+                setIsSignedIn(true);
               }}
             >
               {(props) => (
