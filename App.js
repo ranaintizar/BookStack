@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -156,6 +157,7 @@ export default function App() {
           )}
         </Tab.Screen>
       </Tab.Navigator>
+      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
@@ -260,4 +262,3 @@ const styles = StyleSheet.create({
 //     </Stack.Screen>
 //   </Stack.Navigator>
 // )}
-import RNFetchBlob from 'react-native-blob-util';

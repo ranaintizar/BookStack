@@ -22,28 +22,65 @@ const ModalView = ({ content, theme, setShowModal }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <View style={styles.modal}>
+    <View
+      style={[
+        styles.modal,
+        theme === "light"
+          ? { backgroundColor: "#fff" }
+          : { backgroundColor: "#16161a" },
+      ]}
+    >
       <View style={styles.infoContainer}>
         <TouchableWithoutFeedback onPress={() => setShowModal(false)}>
           <AntDesign
             name="arrowleft"
             size={24}
-            color="black"
+            color={theme === "light" ? "black" : "#f1f2f3"}
             style={styles.backIcon}
           />
         </TouchableWithoutFeedback>
         <Image source={content.src} style={styles.img} />
         <View style={styles.info}>
-          <Text style={styles.title}>{content.title}</Text>
-          <Text style={styles.infoTitle}>
-            Author : <Text style={styles.infoName}>{content.author}</Text>
+          <Text
+            style={[
+              styles.title,
+              theme === "light" ? { color: "#000" } : { color: "#f1f2f3" },
+            ]}
+          >
+            {content.title}
           </Text>
           <Text style={styles.infoTitle}>
-            Publisher : <Text style={styles.infoName}>{content.publisher}</Text>
+            Author :{" "}
+            <Text
+              style={[
+                styles.infoName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              {content.author}
+            </Text>
+          </Text>
+          <Text style={styles.infoTitle}>
+            Publisher :{" "}
+            <Text
+              style={[
+                styles.infoName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              {content.publisher}
+            </Text>
           </Text>
           <Text style={styles.infoTitle}>
             Published on :{" "}
-            <Text style={styles.infoName}>{content.publishedDate}</Text>
+            <Text
+              style={[
+                styles.infoName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              {content.publishedDate}
+            </Text>
           </Text>
           <View style={styles.infoRow}>
             <View style={styles.infoIconContainer}>
@@ -65,10 +102,23 @@ const ModalView = ({ content, theme, setShowModal }) => {
           </View>
         </View>
       </View>
-      <View style={styles.divider}></View>
       <ScrollView contentContainerStyle={styles.aboutContainer}>
-        <Text style={styles.descTitle}>Description</Text>
-        <Text style={styles.desc}>{content.desc}</Text>
+        <Text
+          style={[
+            styles.descTitle,
+            theme === "light" ? { color: "#000" } : { color: "#f1f2f3" },
+          ]}
+        >
+          Description
+        </Text>
+        <Text
+          style={[
+            styles.desc,
+            theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+          ]}
+        >
+          {content.desc}
+        </Text>
         <View style={styles.btnContainer}>
           <Button
             color="#fff"
@@ -95,7 +145,7 @@ const ModalView = ({ content, theme, setShowModal }) => {
         animationType="slide"
         statusBarTranslucent={true}
       >
-        <Book setIsVisible={setIsVisible} />
+        <Book setIsVisible={setIsVisible} theme={theme} />
       </Modal>
     </View>
   );
@@ -104,9 +154,8 @@ const ModalView = ({ content, theme, setShowModal }) => {
 const styles = StyleSheet.create({
   modal: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
-    marginTop: 20,
+    paddingTop: 20,
   },
   infoContainer: {
     position: "relative",
@@ -134,12 +183,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   infoTitle: {
-    color: "#72757e",
     fontSize: 16,
   },
   infoName: {
     fontWeight: "bold",
-    color: "#16161a",
   },
   infoRow: {
     flexDirection: "row",
@@ -149,14 +196,6 @@ const styles = StyleSheet.create({
   },
   infoIconContainer: {
     alignItems: "center",
-  },
-  text: {
-    color: "#72757e",
-  },
-  divider: {
-    width: "90%",
-    height: 1,
-    backgroundColor: "#72757e",
   },
   aboutContainer: {
     width: "100%",
@@ -168,7 +207,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   desc: {
-    color: "#16161a",
     fontFamily: "Sono",
     letterSpacing: -1,
     fontSize: 16,
