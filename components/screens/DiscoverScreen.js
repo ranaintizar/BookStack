@@ -1,19 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import ComingSoon from "../ComingSoon";
 
-const DiscoverScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Text>Discover Screen</Text>
-    </View>
-  );
+const DiscoverScreen = ({ theme }) => {
+  return <ComingSoon theme={theme} />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#333",
-  },
-});
 
 export default DiscoverScreen;
