@@ -59,6 +59,7 @@ export default function App() {
                 height: 70,
               }
         }
+        initialRouteName="Library"
       >
         <Tab.Screen
           name="Home"
