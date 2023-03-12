@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -11,12 +11,48 @@ import { AntDesign } from "@expo/vector-icons";
 import ShowCase2 from "./ShowCase2";
 import ShowCase from "./ShowCase";
 import Button from "./Button";
-import data, { category } from "./data";
+import {
+  category,
+  popularFiction,
+  topReadings,
+  recentlyAdded,
+  children,
+  fiction,
+  short,
+  classic,
+  general,
+  historical,
+  poetry,
+} from "./data";
 
 const Discover = ({ theme }) => {
   const [showModal, setShowModal] = useState(false);
-  const [content, setContent] = useState(data);
-  const [value, setValue] = useState(null);
+  const [content, setContent] = useState();
+  const [value, setValue] = useState();
+
+  useEffect(() => {
+    if (value === "Popular") {
+      setContent(popularFiction);
+    } else if (value === "Top Rated") {
+      setContent(topReadings);
+    } else if (value === "New Releases") {
+      setContent(recentlyAdded);
+    } else if (value === "Children's") {
+      setContent(children);
+    } else if (value === "Fiction") {
+      setContent(fiction);
+    } else if (value === "Short") {
+      setContent(short);
+    } else if (value === "Classics") {
+      setContent(classic);
+    } else if (value === "General") {
+      setContent(general);
+    } else if (value === "Historical") {
+      setContent(historical);
+    } else if (value === "Poetry") {
+      setContent(poetry);
+    }
+  }, [value]);
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -54,7 +90,7 @@ const Discover = ({ theme }) => {
               btnText="Popular Listens"
               customClass={{ paddingHorizontal: 20, paddingVertical: 4 }}
               onPress={() => {
-                setValue("Popular Listens");
+                setValue("Popular");
                 setShowModal(true);
               }}
             />
@@ -69,19 +105,6 @@ const Discover = ({ theme }) => {
               customClass={{ paddingHorizontal: 20, paddingVertical: 4 }}
               onPress={() => {
                 setValue("New Releases");
-                setShowModal(true);
-              }}
-            />
-            <Button
-              borderWidth={2}
-              borderColor={theme === "light" ? "#17171a" : "#f1f2f3"}
-              borderRadius={50}
-              color={theme === "light" ? "#16161a" : "#f1f2f3"}
-              fontSize={22}
-              btnText="Trending"
-              customClass={{ paddingHorizontal: 20, paddingVertical: 4 }}
-              onPress={() => {
-                setValue("Trending");
                 setShowModal(true);
               }}
             />
@@ -109,7 +132,7 @@ const Discover = ({ theme }) => {
           theme={theme}
           label="Horror"
           handleOnPress={(val) => {
-            setValue(val.label);
+            setValue(val.title);
             setShowModal(true);
           }}
           customClass={{
