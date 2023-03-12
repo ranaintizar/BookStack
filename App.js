@@ -59,7 +59,7 @@ export default function App() {
                 height: 70,
               }
         }
-        initialRouteName="Discover"
+        initialRouteName="Profile"
       >
         <Tab.Screen
           name="Home"
