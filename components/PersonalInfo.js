@@ -84,21 +84,42 @@ const PersonalInfo = ({ theme, showModal }) => {
         <Text style={styles.note}>Long Press to change the desired field.</Text>
         <TouchableWithoutFeedback onLongPress={() => handleChange("fname")}>
           <View style={styles.field}>
-            <Text style={styles.fieldName}>First Name</Text>
+            <Text
+              style={[
+                styles.fieldName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              First Name
+            </Text>
             <Text style={styles.fieldVal}>John</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
         <TouchableWithoutFeedback onLongPress={() => handleChange("lname")}>
           <View style={styles.field}>
-            <Text style={styles.fieldName}>Last Name</Text>
+            <Text
+              style={[
+                styles.fieldName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              Last Name
+            </Text>
             <Text style={styles.fieldVal}>Doe</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
         <TouchableWithoutFeedback onLongPress={() => handleChange("email")}>
           <View style={styles.field}>
-            <Text style={styles.fieldName}>Email</Text>
+            <Text
+              style={[
+                styles.fieldName,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+            >
+              Email
+            </Text>
             <Text style={styles.fieldVal}>johndoe@example.com</Text>
           </View>
         </TouchableWithoutFeedback>
@@ -192,7 +213,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   content: { flex: 1, gap: 5, width: "100%", alignItems: "center" },
-  note: { color: "#72757e", fontSize: 16, marginVertical: 10 },
+  note: { color: "#72757e", fontSize: 16, marginTop: 10, marginBottom: 20 },
   divider: { width: "100%", height: 2, backgroundColor: "#3333" },
   field: {
     flexDirection: "row",
