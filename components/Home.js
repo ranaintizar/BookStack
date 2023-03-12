@@ -1,36 +1,76 @@
 import React from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import ShowCase from "./ShowCase";
+import data from "./data";
 
 const Home = ({ theme }) => {
   return (
-    <View
-      style={[
-        styles.container,
-        theme === "light"
-          ? { backgroundColor: "#fff" }
-          : { backgroundColor: "#16161a" },
-      ]}
-    >
-      <ScrollView
-        style={styles.showCaseContainer}
-        showsVerticalScrollIndicator={false}
-        scrollEnabled={true}
-        contentContainerStyle={styles.contentContainer}
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View
+        style={[
+          styles.container,
+          theme === "light"
+            ? { backgroundColor: "#fff" }
+            : { backgroundColor: "#16161a" },
+        ]}
       >
-        <ShowCase title="Top Readings" theme={theme} horizontal={true} />
-        <ShowCase title="Children's Books" theme={theme} horizontal={true} />
-        <ShowCase title="New Releases" theme={theme} horizontal={true} />
-        <ShowCase title="Bestsellers" theme={theme} horizontal={true} />
-        <ShowCase title="Recently Added" theme={theme} horizontal={true} />
-        <ShowCase title="Popular Fiction" theme={theme} horizontal={true} />
-        <ShowCase
-          title="Award-Winning Titles"
-          theme={theme}
-          horizontal={true}
-        />
-      </ScrollView>
-    </View>
+        <ScrollView
+          style={styles.showCaseContainer}
+          showsVerticalScrollIndicator={false}
+          scrollEnabled={true}
+          contentContainerStyle={styles.contentContainer}
+        >
+          <ShowCase
+            data={data}
+            title="Top Readings"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="Children's Books"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="New Releases"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="Bestsellers"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="Recently Added"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="Popular Fiction"
+            theme={theme}
+            horizontal={true}
+          />
+          <ShowCase
+            data={data}
+            title="Award-Winning Titles"
+            theme={theme}
+            horizontal={true}
+          />
+        </ScrollView>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

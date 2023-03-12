@@ -21,12 +21,19 @@ const ShowCase2 = ({
   handleOnPress,
 }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        theme === "light"
+          ? { backgroundColor: "#fff" }
+          : { backgroundColor: "#16161a" },
+      ]}
+    >
       {title && (
         <Text
           style={[
             styles.title,
-            theme === "light" ? { color: "#16161a" } : { color: "#72757e" },
+            theme === "light" ? { color: "#16161a" } : { color: "#fff" },
           ]}
         >
           {title}
@@ -59,7 +66,7 @@ const ShowCase2 = ({
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", paddingVertical: 10 },
+  container: { flex: 1, alignItems: "center", paddingVertical: 10, gap: 10 },
   label: {
     position: "absolute",
     zIndex: 10,
@@ -76,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: 600,
   },
   list: {
-    paddingVertical: 25,
+    paddingVertical: 30,
   },
 });
 

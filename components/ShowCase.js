@@ -9,7 +9,6 @@ import {
   Modal,
 } from "react-native";
 import ModalView from "./Modal";
-import data from "./data";
 
 const ShowCase = ({
   title,
@@ -20,20 +19,23 @@ const ShowCase = ({
   imgWidth,
   imgHeight,
   width,
+  data,
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState(null);
 
   return (
     <View style={styles.container}>
-      <Text
-        style={[
-          styles.title,
-          theme === "light" ? { color: "#888" } : { color: "#72757e" },
-        ]}
-      >
-        {title}
-      </Text>
+      {title && (
+        <Text
+          style={[
+            styles.title,
+            theme === "light" ? { color: "#16161a" } : { color: "#fff" },
+          ]}
+        >
+          {title}
+        </Text>
+      )}
       <View style={styles.content}>
         <FlatList
           contentContainerStyle={[{ gap: 15 }, customClass]}
@@ -102,7 +104,6 @@ const styles = StyleSheet.create({
 });
 
 ShowCase.defaultProps = {
-  title: "Showcase",
   imgWidth: 130,
   imgHeight: 160,
 };

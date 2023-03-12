@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
-  backIcon: { position: "absolute", left: 10 },
+  backIcon: { position: "absolute", top: 10, left: 10 },
   img: {
     width: 160,
     height: 200,
