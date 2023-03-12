@@ -1,8 +1,8 @@
 import React from "react";
-import ComingSoon from "../ComingSoon";
+import Discover from "../Discover";
 
 const DiscoverScreen = ({ theme }) => {
-  return <ComingSoon theme={theme} />;
+  return <Discover theme={theme} />;
 };
 
 export default DiscoverScreen;

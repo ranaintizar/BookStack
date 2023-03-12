@@ -56,7 +56,7 @@ const Header = ({ theme, setTheme }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 25,
     paddingBottom: 15,
     paddingHorizontal: 8,
     borderBottomWidth: 1,

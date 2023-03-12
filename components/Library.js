@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import {
+  Keyboard,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import LibraryHeader from "./LibraryHeader";
-import ShowCase2 from "./ShowCase2";
-import data from "./data";
-import { archivesData, savedData, likedData } from "./data";
+import ShowCase from "./ShowCase";
+import data, { archivesData, savedData, likedData } from "./data";
 
 const Library = ({ theme }) => {
   const [content, setContent] = useState(data);
@@ -21,17 +25,27 @@ const Library = ({ theme }) => {
   };
 
   return (
-    <View
-      style={[
-        styles.container,
-        theme === "light"
-          ? { backgroundColor: "#fff" }
-          : { backgroundColor: "#16161a" },
-      ]}
-    >
-      <LibraryHeader setData={getData} theme={theme} />
-      <ShowCase2 data={content} theme={theme} />
-    </View>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss}>
+      <View
+        style={[
+          styles.container,
+          theme === "light"
+            ? { backgroundColor: "#fff" }
+            : { backgroundColor: "#16161a" },
+        ]}
+      >
+        <LibraryHeader setData={getData} theme={theme} />
+        <ShowCase
+          data={content}
+          theme={theme}
+          numOfCols={2}
+          customClass={{ gap: 20, alignItems: "center", paddingVertical: 20 }}
+          width={200}
+          imgWidth={170}
+          imgHeight={200}
+        />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

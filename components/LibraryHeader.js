@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 import TabButton from "./TabButton";
 
 const LibraryHeader = ({ theme, setData }) => {
   const [isActive, setIsActive] = useState({
-    current_reads: false,
+    current_reads: true,
     archives: false,
     saved: false,
     liked: false,

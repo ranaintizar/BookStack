@@ -9,35 +9,55 @@ import {
   Modal,
 } from "react-native";
 import ModalView from "./Modal";
-import data from "./data";
 
-const ShowCase = ({ title, theme }) => {
+const ShowCase = ({
+  title,
+  theme,
+  horizontal,
+  numOfCols,
+  customClass,
+  imgWidth,
+  imgHeight,
+  width,
+  data,
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState(null);
 
   return (
     <View style={styles.container}>
-      <Text
-        style={[
-          styles.title,
-          theme === "light" ? { color: "#888" } : { color: "#72757e" },
-        ]}
-      >
-        {title}
-      </Text>
+      {title && (
+        <Text
+          style={[
+            styles.title,
+            theme === "light" ? { color: "#16161a" } : { color: "#fff" },
+          ]}
+        >
+          {title}
+        </Text>
+      )}
       <View style={styles.content}>
         <FlatList
+          contentContainerStyle={[{ gap: 15 }, customClass]}
           data={data}
-          horizontal={true}
+          horizontal={horizontal}
+          numColumns={numOfCols}
           renderItem={({ item }) => (
-            <View style={styles.bookContainer}>
+            <View style={[styles.bookContainer, { width: width }]}>
               <TouchableWithoutFeedback
                 onPress={() => {
                   setShowModal(true);
                   setContent(item);
                 }}
               >
-                <Image source={item.src} style={styles.image} />
+                <Image
+                  source={item.src}
+                  style={{
+                    width: imgWidth,
+                    height: imgHeight,
+                    borderRadius: 15,
+                  }}
+                />
               </TouchableWithoutFeedback>
             </View>
           )}
@@ -63,8 +83,10 @@ const ShowCase = ({ title, theme }) => {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 10,
     gap: 15,
     height: 220,
+    flex: 1,
   },
   title: {
     fontSize: 25,
@@ -79,15 +101,11 @@ const styles = StyleSheet.create({
     width: 145,
     alignItems: "center",
   },
-  image: {
-    width: 130,
-    height: 160,
-    borderRadius: 15,
-  },
 });
 
 ShowCase.defaultProps = {
-  title: "Showcase",
+  imgWidth: 130,
+  imgHeight: 160,
 };
 
 export default ShowCase;

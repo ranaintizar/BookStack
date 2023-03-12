@@ -2,28 +2,61 @@ import React from "react";
 import {
   StyleSheet,
   View,
+  Text,
   FlatList,
   Image,
   TouchableWithoutFeedback,
 } from "react-native";
 
-const ShowCase2 = ({ data, theme }) => {
+const ShowCase2 = ({
+  title,
+  data,
+  width,
+  height,
+  imgWidth,
+  imgHeight,
+  gap,
+  theme,
+  customClass,
+  handleOnPress,
+}) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        theme === "light"
+          ? { backgroundColor: "#fff" }
+          : { backgroundColor: "#16161a" },
+      ]}
+    >
+      {title && (
+        <Text
+          style={[
+            styles.title,
+            theme === "light" ? { color: "#16161a" } : { color: "#fff" },
+          ]}
+        >
+          {title}
+        </Text>
+      )}
       <FlatList
-        contentContainerStyle={styles.list}
+        contentContainerStyle={[styles.list, { gap: gap, ...customClass }]}
         data={data}
         numColumns={2}
-        keyExtractor={(item) => item.title}
         renderItem={({ item }) => (
-          <View style={styles.bookContainer}>
+          <View style={{ alignItems: "center", width: width, height: height }}>
+            <Text style={styles.label} onPress={() => handleOnPress(item)}>
+              {item.label}
+            </Text>
             <TouchableWithoutFeedback
               onPress={() => {
-                setShowModal(true);
-                setContent(item);
+                handleOnPress(item);
               }}
             >
-              <Image source={item.src} style={styles.image} />
+              <Image
+                source={item.src}
+                style={{ borderRadius: 15, width: imgWidth, height: imgHeight }}
+              />
             </TouchableWithoutFeedback>
           </View>
         )}
@@ -33,14 +66,32 @@ const ShowCase2 = ({ data, theme }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center" },
-  list: {
-    gap: 20,
-    paddingVertical: 25,
-    borderColor: "#1e90ff",
+  container: { flex: 1, alignItems: "center", paddingVertical: 10, gap: 10 },
+  label: {
+    position: "absolute",
+    zIndex: 10,
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
+    top: 23,
   },
-  bookContainer: { width: 200, alignItems: "center" },
-  image: { width: 170, height: 200, borderRadius: 15 },
+  title: {
+    fontSize: 25,
+    textAlign: "left",
+    width: "100%",
+    marginLeft: 25,
+    fontWeight: 600,
+  },
+  list: {
+    paddingVertical: 30,
+  },
 });
+
+ShowCase2.defaultProps = {
+  width: 200,
+  imgWidth: 170,
+  imgHeight: 200,
+  gap: 20,
+};
 
 export default ShowCase2;
