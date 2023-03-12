@@ -11,9 +11,9 @@ const GetStarted2 = ({ setContent }) => {
           Welcome to BookStack!
         </Text>
         <Text style={globalStyles.gettingStartedDesc}>
-          Simplify your reading life with BookStack! Keep track of what you're
-          currently reading, what you want to read, and what you've already
-          read, all in one place.
+          Once you've found the book you want, simply click the download button
+          and it will be added to your library for offline reading. Happy
+          reading!
         </Text>
       </View>
       <Button

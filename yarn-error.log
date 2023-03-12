@@ -1,5 +1,5 @@
 Arguments: 
-  /home/ranaintizar/.nvm/versions/node/v19.1.0/bin/node /usr/share/yarn/bin/yarn.js add react-native-easy-softback
+  /home/ranaintizar/.nvm/versions/node/v19.1.0/bin/node /usr/share/yarn/bin/yarn.js add react-native-fs
 
 PATH: 
   /home/ranaintizar/.nvm/versions/node/v19.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/ranaintizar/Android/Sdk/emulator:/home/ranaintizar/Android/Sdk/platform-tools:/home/ranaintizar/Android/Sdk/emulator:/home/ranaintizar/Android/Sdk/platform-tools
@@ -14,17 +14,8 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-native-easy-softback: Not found
-      at params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66145:18)
-      at self.callback (/usr/share/yarn/lib/cli.js:140890:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141862:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141784:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1359:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+  Error: connect EHOSTUNREACH 104.16.21.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1283:16)
 
 npm manifest: 
   {
@@ -54,7 +45,7 @@ npm manifest:
       "react-native-paper": "^5.3.1",
       "react-native-safe-area-context": "4.5.0",
       "react-native-screens": "~3.20.0",
-      "react-native-webview": "^11.26.1",
+      "react-native-webview": "11.26.0",
       "yup": "^1.0.2"
     },
     "devDependencies": {
@@ -5775,10 +5766,10 @@ Lockfile:
       react-freeze "^1.0.0"
       warn-once "^0.1.0"
   
-  react-native-webview@^11.26.1:
-    version "11.26.1"
-    resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.26.1.tgz#658c09ed5162dc170b361e48c2dd26c9712879da"
-    integrity sha512-hC7BkxOpf+z0UKhxFSFTPAM4shQzYmZHoELa6/8a/MspcjEP7ukYKpuSUTLDywQditT8yI9idfcKvfZDKQExGw==
+  react-native-webview@11.26.0:
+    version "11.26.0"
+    resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.26.0.tgz#e524992876fe4a79e69905f0fab8949b470e9f16"
+    integrity sha512-4T4CKRm8xlaQDz9h/bCMPGAvtkesrhkRWqCX9FDJEzBToaVUIsV0ZOqtC4w/JSnCtFKKYiaC1ReJtCGv+4mFeQ==
     dependencies:
       escape-string-regexp "2.0.0"
       invariant "2.2.4"

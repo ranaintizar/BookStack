@@ -41,6 +41,7 @@ export default function App() {
   return (
     <NavigationContainer onLayout={onLayoutRootView}>
       <Header theme={theme} setTheme={setTheme} />
+
       <Tab.Navigator
         shifting={true}
         activeColor="#1e90ff"
@@ -59,7 +60,7 @@ export default function App() {
                 height: 70,
               }
         }
-        initialRouteName="Profile"
+        initialRouteName="Home"
       >
         <Tab.Screen
           name="Home"
@@ -158,6 +159,21 @@ export default function App() {
           )}
         </Tab.Screen>
       </Tab.Navigator>
+      {/* ) : (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="GetStarted" component={GetStartedScreen} />
+          <Stack.Screen name="SignUpFlow">
+            {({ navigation }) => (
+              <SignUpFlowScreen
+                setIsSignedIn={setIsSignedIn}
+                val={1}
+                navigation={navigation}
+              />
+            )}
+          </Stack.Screen>
+        </Stack.Navigator>
+      )} */}
+
       <StatusBar style="auto" />
     </NavigationContainer>
   );
@@ -174,7 +190,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// {isSignedIn ? (
 //   <Tab.Navigator
 //     shifting={true}
 //     activeColor="#1e90ff"

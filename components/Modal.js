@@ -7,11 +7,11 @@ import {
   TouchableWithoutFeedback,
   ScrollView,
   Modal,
+  Linking,
 } from "react-native";
 import {
   FontAwesome5,
   Ionicons,
-  Foundation,
   MaterialIcons,
   AntDesign,
 } from "@expo/vector-icons";
@@ -39,7 +39,7 @@ const ModalView = ({ content, theme, setShowModal }) => {
             style={styles.backIcon}
           />
         </TouchableWithoutFeedback>
-        <Image source={content.src} style={styles.img} />
+        <Image source={content.imgSrc} style={styles.img} />
         <View style={styles.info}>
           <Text
             style={[
@@ -57,34 +57,36 @@ const ModalView = ({ content, theme, setShowModal }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
               ]}
             >
-              {content.author}
+              {content.authors[0].first_name +
+                " " +
+                content.authors[0].last_name}
             </Text>
           </Text>
           <Text style={styles.infoTitle}>
-            Publisher :{" "}
+            Language :{" "}
             <Text
               style={[
                 styles.infoName,
                 theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
               ]}
             >
-              {content.publisher}
+              {content.language}
             </Text>
           </Text>
           <Text style={styles.infoTitle}>
-            Published on :{" "}
+            Copyright Year :{" "}
             <Text
               style={[
                 styles.infoName,
                 theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
               ]}
             >
-              {content.publishedDate}
+              {content.copyright_year}
             </Text>
           </Text>
           <View style={styles.infoRow}>
             <View style={styles.infoIconContainer}>
-              <FontAwesome5 name="book-reader" size={20} color="#1e90ff" />
+              <FontAwesome5 name="download" size={19} color="#1e90ff" />
               <Text style={styles.text}>12k</Text>
             </View>
             <View style={styles.infoIconContainer}>
@@ -92,8 +94,8 @@ const ModalView = ({ content, theme, setShowModal }) => {
               <Text style={styles.text}>1k</Text>
             </View>
             <View style={styles.infoIconContainer}>
-              <Foundation name="page-multiple" size={20} color="#1e90ff" />
-              <Text style={styles.text}>280</Text>
+              <AntDesign name="clockcircle" size={19} color="#1e90ff" />
+              <Text style={styles.text}>{content.totalTime}</Text>
             </View>
             <View style={styles.infoIconContainer}>
               <MaterialIcons name="star-rate" size={22} color="#1e90ff" />
@@ -117,7 +119,7 @@ const ModalView = ({ content, theme, setShowModal }) => {
             theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
           ]}
         >
-          {content.desc}
+          {content.description}
         </Text>
         <View style={styles.btnContainer}>
           <Button
@@ -126,8 +128,8 @@ const ModalView = ({ content, theme, setShowModal }) => {
             fontSize={22}
             width="50%"
             fontWeight="bold"
-            btnText="Start Reading"
-            onPress={() => setIsVisible(true)}
+            btnText="Download"
+            onPress={() => Linking.openURL(content.downloadLink)}
           />
           <Button
             color="#1e90ff"

@@ -11,8 +11,9 @@ const GetStarted3 = ({ navigation }) => {
           Welcome to BookStack!
         </Text>
         <Text style={globalStyles.gettingStartedDesc}>
-          Get started by discovering new books and organizing your reading list
-          with ease.
+          To get started, simply create an account with us and start exploring
+          our extensive library of books. You can also search for specific
+          titles or authors using our search bar.
         </Text>
       </View>
       <View style={globalStyles.gettingStartedBtnCont}>

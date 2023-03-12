@@ -15,7 +15,7 @@ import PersonalInfo from "./PersonalInfo";
 
 const Profile = ({ theme }) => {
   const [slideAnimation, setSlideAnimation] = useState(new Animated.Value(0));
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleShow = () => {
     Animated.spring(slideAnimation, {
