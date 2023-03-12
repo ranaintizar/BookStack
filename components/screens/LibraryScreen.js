@@ -1,8 +1,8 @@
 import React from "react";
-import ComingSoon from "../ComingSoon";
+import Library from "../Library";
 
 const LibraryScreen = ({ theme }) => {
-  return <ComingSoon theme={theme} />;
+  return <Library theme={theme} />;
 };
 
 export default LibraryScreen;
