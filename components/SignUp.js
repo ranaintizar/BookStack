@@ -5,9 +5,12 @@ import {
   Text,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { firebase } from "../firebase.config";
 import BackgroundImage from "./BackgroundImage";
 import Input from "./input";
 import Button from "./Button";
@@ -47,6 +50,64 @@ const SignUp = ({ setSignUpFlow }) => {
     });
   };
 
+  const handleSignUp = async (username, email, password) => {
+    await firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch((err) => {
+        const msg = err.message;
+        const code = err.code;
+        console.log("message: " + msg);
+        console.log("code: " + code);
+        if (code === "auth/email-already-in-use") {
+          Alert.alert(
+            "Oops!",
+            "The email you entered is already registered. Please sign in or use a different email address.",
+            [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]
+          );
+        }
+      })
+      .then(() => {
+        firebase
+          .auth()
+          .currentUser.sendEmailVerification({
+            handleCodeInApp: true,
+            url: "https://bookstack-7bc4a.firebaseapp.com",
+          })
+          .catch((err) =>
+            console.log("message: ", err.message, "code: ", err.code)
+          )
+          .then(() => {
+            Alert.alert(
+              "Sent!",
+              "Verification email has been sent to your email address.",
+              [
+                {
+                  text: "OK",
+                  onPress: () => console.log("OK Pressed"),
+                },
+              ]
+            );
+          });
+      })
+      .then(async () => {
+        const user = { username: username, email: email };
+        try {
+          await AsyncStorage.setItem("user", JSON.stringify(user));
+        } catch (e) {
+          console.log("Error saving user authentication data:", e);
+        }
+      })
+      .catch((err) =>
+        console.error("message: ", err.message, "code: ", err.code)
+      );
+  };
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <BackgroundImage
@@ -76,10 +137,10 @@ const SignUp = ({ setSignUpFlow }) => {
               <Formik
                 initialValues={{ username: "", email: "", password: "" }}
                 validationSchema={formSchema}
-                onSubmit={(values, actions) => {
+                onSubmit={async (values, actions) => {
                   actions.resetForm();
-                  console.log(values);
-                  setSignUpFlow(2);
+                  const { username, email, password } = values;
+                  handleSignUp(username, email, password);
                 }}
               >
                 {(props) => (

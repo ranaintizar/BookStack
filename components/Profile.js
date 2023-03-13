@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -8,7 +8,9 @@ import {
   Keyboard,
   Animated,
   Modal,
+  Alert,
 } from "react-native";
+import { firebase } from "../firebase.config";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Button from "./Button";
 import PersonalInfo from "./PersonalInfo";
@@ -39,8 +41,30 @@ const Profile = ({ theme }) => {
     outputRange: [300, 0],
   });
 
+  const handleDelete = () => {
+    const currentUser = firebase.auth().currentUser;
+    currentUser
+      .delete()
+      .then(() => {
+        Alert.alert("Success!", "Your account has been deleted", [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    <TouchableWithoutFeedback
+      onPress={() => {
+        handleHide();
+        Keyboard.dismiss();
+      }}
+    >
       <View
         style={[
           { flex: 1 },
@@ -74,7 +98,12 @@ const Profile = ({ theme }) => {
           </View>
         </View>
         <View style={styles.options}>
-          <TouchableWithoutFeedback onPress={() => setIsVisible(true)}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              handleHide();
+              setIsVisible(true);
+            }}
+          >
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <Ionicons
@@ -100,7 +129,12 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => setScaleValue(1)}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              handleHide();
+              setScaleValue(1);
+            }}
+          >
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <Ionicons
@@ -152,6 +186,17 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={handleDelete}>
+            <View style={styles.option}>
+              <View style={styles.optionName}>
+                <MaterialIcons name="delete" size={24} color="red" />
+                <Text style={[styles.optionTitle, { color: "red" }]}>
+                  Delete Account
+                </Text>
+              </View>
+              <MaterialIcons name="navigate-next" size={26} color="red" />
+            </View>
+          </TouchableWithoutFeedback>
         </View>
         <Animated.View
           style={[
@@ -182,6 +227,7 @@ const Profile = ({ theme }) => {
             fontSize={20}
             width={250}
             customClass={{ marginVertical: 5 }}
+            onPress={() => firebase.auth().signOut()}
           />
           <View style={styles.divider}></View>
           <Button
@@ -272,6 +318,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     backgroundColor: "#0009",
+    zIndex: 10,
   },
   confirmTitle: {
     fontSize: 20,

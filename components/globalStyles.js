@@ -26,7 +26,7 @@ const globalStyles = StyleSheet.create({
     color: "#1e90ff",
     fontSize: 16,
     fontWeight: 600,
-    texDecorationLine: "underline",
+    textDecorationLine: "underline",
   },
   form: {
     gap: 10,
