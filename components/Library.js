@@ -1,26 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Keyboard,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
+  Text,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import LibraryHeader from "./LibraryHeader";
 import ShowCase from "./ShowCase";
-import data, { archivesData, savedData, likedData } from "./data";
 
 const Library = ({ theme }) => {
-  const [content, setContent] = useState(data);
+  const [data, setData] = useState({});
+  const [content, setContent] = useState();
+  const [msg, setMsg] = useState(null);
+
+  useEffect(() => {
+    AsyncStorage.getItem("data").then((storedData) => {
+      new Date().toLocaleString();
+      if (storedData) {
+        setData(JSON.parse(storedData));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
 
   const getData = (name) => {
-    if (name === "current_reads") {
-      setContent(data);
-    } else if (name === "archives") {
-      setContent(archivesData);
-    } else if (name === "saved") {
-      setContent(savedData);
+    if (name === "saved") {
+      setMsg(null);
+      if (data.savedData) {
+        if (data.savedData.length < 1) {
+          setMsg("You Have No Saved Data");
+        } else {
+          setMsg(null);
+          setContent(data.savedData);
+        }
+      } else {
+        setMsg("You Have No Saved Data");
+      }
     } else if (name === "liked") {
-      setContent(likedData);
+      setMsg(null);
+      if (data.likedData) {
+        if (data.savedData.length < 1) {
+          setMsg("You Have No Liked Data");
+        } else {
+          setMsg(null);
+          setContent(data.likedData);
+        }
+      } else {
+        setMsg("You Have No Liked Data");
+      }
     }
   };
 
@@ -35,15 +67,33 @@ const Library = ({ theme }) => {
         ]}
       >
         <LibraryHeader setData={getData} theme={theme} />
-        <ShowCase
-          data={content}
-          theme={theme}
-          numOfCols={2}
-          customClass={{ gap: 20, alignItems: "center", paddingVertical: 20 }}
-          width={200}
-          imgWidth={170}
-          imgHeight={200}
-        />
+        <Text style={styles.note}>
+          If you're not seeing the items you saved, try restarting the app. Your
+          saved items should be stored here and will be available once you
+          restart
+        </Text>
+        {(msg && (
+          <Text
+            style={{
+              color: "#72757e",
+              fontSize: 20,
+              marginTop: 300,
+              textAlign: "center",
+            }}
+          >
+            {msg}
+          </Text>
+        )) || (
+          <ShowCase
+            data={content}
+            theme={theme}
+            numOfCols={2}
+            customClass={{ gap: 20, alignItems: "center", paddingVertical: 20 }}
+            width={200}
+            imgWidth={170}
+            imgHeight={200}
+          />
+        )}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -51,6 +101,12 @@ const Library = ({ theme }) => {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  note: {
+    color: "#72757e",
+    fontSize: 16,
+    textAlign: "center",
+    padding: 10,
+  },
 });
 
 export default Library;

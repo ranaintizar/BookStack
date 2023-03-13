@@ -16,6 +16,7 @@ import PersonalInfo from "./PersonalInfo";
 const Profile = ({ theme }) => {
   const [slideAnimation, setSlideAnimation] = useState(new Animated.Value(0));
   const [isVisible, setIsVisible] = useState(false);
+  const [scaleValue, setScaleValue] = useState(0);
 
   const handleShow = () => {
     Animated.spring(slideAnimation, {
@@ -99,7 +100,7 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => console.log("Button")}>
+          <TouchableWithoutFeedback onPress={() => setScaleValue(1)}>
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <Ionicons
@@ -197,6 +198,32 @@ const Profile = ({ theme }) => {
         <Modal visible={isVisible} statusBarTranslucent={true}>
           <PersonalInfo theme={theme} showModal={setIsVisible} />
         </Modal>
+        <View
+          style={[
+            styles.modal,
+            theme === "light"
+              ? { backgroundColor: "#fff", shadowColor: "#000" }
+              : { backgroundColor: "#f1f2f3", shadowColor: "#fff" },
+            { transform: [{ scale: scaleValue }], transformOrigin: "center" },
+          ]}
+        >
+          <Text
+            style={[
+              styles.note,
+              theme === "light" ? { color: "#16161a" } : { color: "#72757e" },
+            ]}
+          >
+            We're in the process of building the settings section. Stay tuned
+            for updates on its progress!
+          </Text>
+          <Button
+            btnText="Ok"
+            background="#1e90ff"
+            fontSize={20}
+            width={150}
+            onPress={() => setScaleValue(0)}
+          />
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -253,6 +280,22 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 2,
     backgroundColor: "#72757e",
+  },
+  modal: {
+    position: "absolute",
+    left: 20,
+    width: "90%",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    elevation: 10,
+    borderRadius: 10,
+    top: "40%",
+    justifyContent: "center",
+    gap: 10,
+    alignItems: "center",
+  },
+  note: {
+    fontSize: 18,
   },
 });
 

@@ -7,50 +7,52 @@ import {
   Keyboard,
   Modal,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AntDesign } from "@expo/vector-icons";
 import ShowCase2 from "./ShowCase2";
 import ShowCase from "./ShowCase";
 import Button from "./Button";
-import {
-  category,
-  popularFiction,
-  topReadings,
-  recentlyAdded,
-  children,
-  fiction,
-  short,
-  classic,
-  general,
-  historical,
-  poetry,
-} from "./data";
 
 const Discover = ({ theme }) => {
+  const [data, setData] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState();
   const [value, setValue] = useState();
 
   useEffect(() => {
+    AsyncStorage.getItem("data").then((storedData) => {
+      new Date().toLocaleString();
+      if (storedData) {
+        setData(JSON.parse(storedData));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
+  useEffect(() => {
     if (value === "Popular") {
-      setContent(popularFiction);
+      setContent(data.popularFiction);
     } else if (value === "Top Rated") {
-      setContent(topReadings);
+      setContent(data.topReadings);
     } else if (value === "New Releases") {
-      setContent(recentlyAdded);
+      setContent(data.recentlyAdded);
     } else if (value === "Children's") {
-      setContent(children);
+      setContent(data.children);
     } else if (value === "Fiction") {
-      setContent(fiction);
+      setContent(data.fiction);
     } else if (value === "Short") {
-      setContent(short);
+      setContent(data.short);
     } else if (value === "Classics") {
-      setContent(classic);
+      setContent(data.classic);
     } else if (value === "General") {
-      setContent(general);
+      setContent(data.general);
     } else if (value === "Historical") {
-      setContent(historical);
+      setContent(data.historical);
     } else if (value === "Poetry") {
-      setContent(poetry);
+      setContent(data.poetry);
     }
   }, [value]);
 
@@ -125,7 +127,7 @@ const Discover = ({ theme }) => {
         </View>
         <ShowCase2
           title="Browse"
-          data={category}
+          data={data.category}
           imgWidth={190}
           imgHeight={70}
           gap={20}
