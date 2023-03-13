@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -8,7 +8,9 @@ import {
   ScrollView,
   Modal,
   Linking,
+  TouchableOpacity,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   FontAwesome5,
   Ionicons,
@@ -19,7 +21,41 @@ import Button from "./Button";
 import Book from "./BookReader";
 
 const ModalView = ({ content, theme, setShowModal }) => {
+  const [data, setData] = useState({});
   const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    AsyncStorage.getItem("data").then((storedData) => {
+      new Date().toLocaleString();
+      if (storedData) {
+        setData(JSON.parse(storedData));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
+  const handleLike = () => {
+    let likedData = (data.likedData && [...data.likedData, content]) || [
+      content,
+    ];
+    setData({
+      ...data,
+      likedData: likedData,
+    });
+  };
+
+  const handleSave = () => {
+    let savedData = (data.savedData && [...data.savedData, content]) || [
+      content,
+    ];
+    setData({
+      ...data,
+      savedData: savedData,
+    });
+  };
 
   return (
     <View
@@ -89,10 +125,12 @@ const ModalView = ({ content, theme, setShowModal }) => {
               <FontAwesome5 name="download" size={19} color="#1e90ff" />
               <Text style={styles.text}>12k</Text>
             </View>
-            <View style={styles.infoIconContainer}>
-              <Ionicons name="heart-sharp" size={22} color="#1e90ff" />
-              <Text style={styles.text}>1k</Text>
-            </View>
+            <TouchableOpacity onPress={handleLike}>
+              <View style={styles.infoIconContainer}>
+                <Ionicons name="heart-sharp" size={22} color="#1e90ff" />
+                <Text style={styles.text}>1k</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.infoIconContainer}>
               <AntDesign name="clockcircle" size={19} color="#1e90ff" />
               <Text style={styles.text}>{content.totalTime}</Text>
@@ -139,6 +177,7 @@ const ModalView = ({ content, theme, setShowModal }) => {
             fontSize={22}
             fontWeight="bold"
             btnText="Save"
+            onPress={handleSave}
           />
         </View>
       </ScrollView>

@@ -27,7 +27,6 @@ const PersonalInfo = ({ theme, showModal }) => {
   };
 
   const handleSubmit = () => {
-    console.log(value);
     setScaleValue(0);
     setVal("");
   };

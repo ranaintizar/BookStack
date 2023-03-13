@@ -45,8 +45,14 @@ const ShowCase2 = ({
         numColumns={2}
         renderItem={({ item }) => (
           <View style={{ alignItems: "center", width: width, height: height }}>
-            <Text style={styles.label} onPress={() => handleOnPress(item)}>
-              {item.label}
+            <Text
+              style={[
+                styles.label,
+                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
+              ]}
+              onPress={() => handleOnPress(item)}
+            >
+              {item.title}
             </Text>
             <TouchableWithoutFeedback
               onPress={() => {
@@ -72,7 +78,6 @@ const styles = StyleSheet.create({
     zIndex: 10,
     fontSize: 20,
     fontWeight: "bold",
-    color: "#fff",
     top: 23,
   },
   title: {

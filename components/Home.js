@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -6,6 +6,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import ShowCase from "./ShowCase";
 import {
   topReadings,
@@ -14,9 +15,58 @@ import {
   bestSellers,
   recentlyAdded,
   popularFiction,
+  category,
+  fiction,
+  short,
+  classic,
+  general,
+  historical,
+  poetry,
+  savedData,
+  likedData,
 } from "./data";
 
 const Home = ({ theme }) => {
+  const [data, setData] = useState({
+    topReadings,
+    children,
+    newReleases,
+    bestSellers,
+    recentlyAdded,
+    popularFiction,
+    category,
+    fiction,
+    short,
+    classic,
+    general,
+    historical,
+    poetry,
+    savedData,
+    likedData,
+  });
+
+  // const clearStorage = async () => {
+  //   try {
+  //     await AsyncStorage.clear();
+  //     console.log("Storage successfully cleared!");
+  //   } catch (error) {
+  //     console.log("Error clearing storage:", error);
+  //   }
+  // };
+
+  useEffect(() => {
+    AsyncStorage.getItem("data").then((storedData) => {
+      new Date().toLocaleString();
+      if (storedData) {
+        setData(JSON.parse(storedData));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View
@@ -34,37 +84,37 @@ const Home = ({ theme }) => {
           contentContainerStyle={styles.contentContainer}
         >
           <ShowCase
-            data={topReadings}
+            data={data.topReadings}
             title="Top Readings"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={children}
+            data={data.children}
             title="Children's Books"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={newReleases}
+            data={data.newReleases}
             title="New Releases"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={bestSellers}
+            data={data.bestSellers}
             title="Bestsellers"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={recentlyAdded}
+            data={data.recentlyAdded}
             title="Recently Added"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={popularFiction}
+            data={data.popularFiction}
             title="Popular Fiction"
             theme={theme}
             horizontal={true}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import TabButton from "./TabButton";
 
@@ -21,6 +21,10 @@ const LibraryHeader = ({ theme, setData }) => {
     });
   };
 
+  useEffect(() => {
+    handleOnPress("saved");
+  }, []);
+
   return (
     <View
       style={[
@@ -31,27 +35,17 @@ const LibraryHeader = ({ theme, setData }) => {
       ]}
     >
       <TabButton
-        isActive={isActive.current_reads}
-        title="Current Reads"
-        theme={theme}
-        onPress={() => handleOnPress("current_reads")}
-      />
-      <TabButton
-        isActive={isActive.archives}
-        title="Archives"
-        theme={theme}
-        onPress={() => handleOnPress("archives")}
-      />
-      <TabButton
         isActive={isActive.saved}
         title="Saved"
         theme={theme}
+        width="45%"
         onPress={() => handleOnPress("saved")}
       />
       <TabButton
         isActive={isActive.liked}
         title="Liked"
         theme={theme}
+        width="45%"
         onPress={() => handleOnPress("liked")}
       />
     </View>
@@ -64,6 +58,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     borderBottomWidth: 2,
     flexDirection: "row",
+    justifyContent: "center",
     gap: 10,
   },
 });

@@ -24,7 +24,10 @@ const TabButton = ({
       <Text
         style={[
           styles.title,
-          { color: theme === "light" ? "#16161a" : "#72757e" },
+          {
+            color:
+              theme === "light" ? "#16161a" : isActive ? "#fff" : "#72757e",
+          },
         ]}
       >
         {title}
