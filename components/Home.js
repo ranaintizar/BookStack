@@ -7,7 +7,14 @@ import {
   Keyboard,
 } from "react-native";
 import ShowCase from "./ShowCase";
-import data from "./data";
+import {
+  topReadings,
+  children,
+  newReleases,
+  bestSellers,
+  recentlyAdded,
+  popularFiction,
+} from "./data";
 
 const Home = ({ theme }) => {
   return (
@@ -27,44 +34,38 @@ const Home = ({ theme }) => {
           contentContainerStyle={styles.contentContainer}
         >
           <ShowCase
-            data={data}
+            data={topReadings}
             title="Top Readings"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={data}
+            data={children}
             title="Children's Books"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={data}
+            data={newReleases}
             title="New Releases"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={data}
+            data={bestSellers}
             title="Bestsellers"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={data}
+            data={recentlyAdded}
             title="Recently Added"
             theme={theme}
             horizontal={true}
           />
           <ShowCase
-            data={data}
+            data={popularFiction}
             title="Popular Fiction"
-            theme={theme}
-            horizontal={true}
-          />
-          <ShowCase
-            data={data}
-            title="Award-Winning Titles"
             theme={theme}
             horizontal={true}
           />

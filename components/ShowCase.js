@@ -51,7 +51,7 @@ const ShowCase = ({
                 }}
               >
                 <Image
-                  source={item.src}
+                  source={item.imgSrc}
                   style={{
                     width: imgWidth,
                     height: imgHeight,

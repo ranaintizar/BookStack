@@ -11,8 +11,8 @@ const GetStarted1 = ({ setContent }) => {
           Welcome to BookStack!
         </Text>
         <Text style={globalStyles.gettingStartedDesc}>
-          Discover the joy of reading with BookStack! Our app makes it easy to
-          find books that match your interests and track your reading goals.
+          Welcome to our Book Downloading App! Here, you can browse and download
+          a wide variety of books from different genres.
         </Text>
       </View>
       <Button

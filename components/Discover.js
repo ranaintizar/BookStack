@@ -91,19 +91,6 @@ const Discover = ({ theme }) => {
               borderRadius={50}
               color={theme === "light" ? "#16161a" : "#f1f2f3"}
               fontSize={22}
-              btnText="Originals"
-              customClass={{ paddingHorizontal: 20, paddingVertical: 4 }}
-              onPress={() => {
-                setValue("Originals");
-                setShowModal(true);
-              }}
-            />
-            <Button
-              borderWidth={2}
-              borderColor={theme === "light" ? "#17171a" : "#f1f2f3"}
-              borderRadius={50}
-              color={theme === "light" ? "#16161a" : "#f1f2f3"}
-              fontSize={22}
               btnText="Top Rated"
               customClass={{ paddingHorizontal: 20, paddingVertical: 4 }}
               onPress={() => {

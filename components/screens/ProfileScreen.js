@@ -1,8 +1,8 @@
 import React from "react";
-import ComingSoon from "../ComingSoon";
+import Profile from "../Profile";
 
 const ProfileScreen = ({ theme }) => {
-  return <ComingSoon theme={theme} />;
+  return <Profile theme={theme} />;
 };
 
 export default ProfileScreen;

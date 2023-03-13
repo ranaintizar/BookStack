@@ -54,7 +54,7 @@ const ShowCase2 = ({
               }}
             >
               <Image
-                source={item.src}
+                source={item.imgSrc}
                 style={{ borderRadius: 15, width: imgWidth, height: imgHeight }}
               />
             </TouchableWithoutFeedback>
