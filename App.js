@@ -32,11 +32,9 @@ export default function App() {
     const subscriber = firebase
       .auth()
       .onAuthStateChanged((user) => setUser(user));
-
     AsyncStorage.getItem("signedInUser").then((item) => {
       if (item) {
         setShowStartup(true);
-        console.log(item);
       }
     });
     return subscriber;
@@ -186,21 +184,6 @@ export default function App() {
           </Tab.Navigator>
         </>
       )}
-
-      {/* ) : (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="GetStarted" component={GetStartedScreen} />
-          <Stack.Screen name="SignUpFlow">
-            {({ navigation }) => (
-              <SignUpFlowScreen
-                val={1}
-                navigation={navigation}
-              />
-            )}
-          </Stack.Screen>
-        </Stack.Navigator>
-      )} */}
-
       <StatusBar style="auto" />
     </NavigationContainer>
   );
@@ -216,92 +199,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-//   <Tab.Navigator
-//     shifting={true}
-//     activeColor="#1e90ff"
-//     barStyle={{ backgroundColor: "#fff" }}
-//   >
-//     <Tab.Screen
-//       name="Home"
-//       component={HomeScreen}
-//       options={{
-//         tabBarIcon: ({ focused }) => {
-//           const iconContainerStyle = [
-//             { backgroundColor: focused ? "#bbe5ed" : "transparent" },
-//             styles.container,
-//           ];
-//           return (
-//             <View style={iconContainerStyle}>
-//               <Ionicons name="ios-home" color="#1e90ff" size={25} />
-//             </View>
-//           );
-//         },
-//       }}
-//     />
-//     <Tab.Screen
-//       name="Library"
-//       component={LibraryScreen}
-//       options={{
-//         tabBarIcon: ({ focused }) => {
-//           const iconContainerStyle = [
-//             { backgroundColor: focused ? "#bbe5ed" : "transparent" },
-//             styles.container,
-//           ];
-//           return (
-//             <View style={iconContainerStyle}>
-//               <Ionicons name="ios-library" color="#1e90ff" size={25} />
-//             </View>
-//           );
-//         },
-//       }}
-//     />
-//     <Tab.Screen
-//       name="Discover"
-//       component={DiscoverScreen}
-//       options={{
-//         tabBarIcon: ({ focused }) => {
-//           const iconContainerStyle = [
-//             { backgroundColor: focused ? "#bbe5ed" : "transparent" },
-//             styles.container,
-//           ];
-//           return (
-//             <View style={iconContainerStyle}>
-//               <AntDesign name="find" color="#1e90ff" size={25} />
-//             </View>
-//           );
-//         },
-//       }}
-//     />
-//     <Tab.Screen
-//       name="Profile"
-//       component={ProfileScreen}
-//       options={{
-//         tabBarIcon: ({ focused }) => {
-//           const iconContainerStyle = [
-//             { backgroundColor: focused ? "#bbe5ed" : "transparent" },
-//             styles.container,
-//           ];
-//           return (
-//             <View style={iconContainerStyle}>
-//               <Ionicons name="person" color="#1e90ff" size={25} />
-//             </View>
-//           );
-//         },
-//       }}
-//     />
-//   </Tab.Navigator>
-// ) : (
-//   <Stack.Navigator screenOptions={{ headerShown: false }}>
-//     <Stack.Screen name="GetStarted" component={GetStartedScreen} />
-//     <Stack.Screen name="SignUpFlow">
-//       {({ navigation }) => (
-//         <SignUpFlowScreen
-//           setIsSignedIn={setIsSignedIn}
-//           val={1}
-//           navigation={navigation}
-//         />
-//       )}
-//     </Stack.Screen>
-//   </Stack.Navigator>
-// )}

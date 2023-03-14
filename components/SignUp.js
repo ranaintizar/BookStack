@@ -16,7 +16,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignUp = ({ setSignUpFlow, setShowStartup }) => {
+const SignUp = ({ setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
     email: false,
@@ -123,16 +123,6 @@ const SignUp = ({ setSignUpFlow, setShowStartup }) => {
           <View style={[globalStyles.container, styles.container]}>
             <View style={globalStyles.signUpFlowHeader}>
               <Text style={globalStyles.signUpFlowTitle}>Get Started</Text>
-              <Text style={globalStyles.signUpFlowDesc}>
-                Already have an account?{" "}
-                <Text
-                  style={globalStyles.signUpFlowText}
-                  onPress={() => setSignUpFlow(1)}
-                >
-                  Sign In
-                </Text>
-                .
-              </Text>
             </View>
             <View>
               <Formik

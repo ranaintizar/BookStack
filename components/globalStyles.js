@@ -14,7 +14,7 @@ const globalStyles = StyleSheet.create({
     gap: 8,
   },
   signUpFlowTitle: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 500,
     color: "#fff",
   },

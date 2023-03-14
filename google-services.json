@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "871788597058-4qpm84e0fq0p05lrm9a71i4tj054f9sc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ranaintizar.bookstack",
+            "certificate_hash": "0268636b501919e4c9a7a69b77f5c3aef5ccc379"
+          }
+        },
+        {
           "client_id": "871788597058-672l6qu60301987s4a176feb7d95anov.apps.googleusercontent.com",
           "client_type": 3
         }
