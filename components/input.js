@@ -1,6 +1,13 @@
 import React from "react";
-import { TouchableWithoutFeedback } from "react-native";
-import { StyleSheet, View, Text, Image, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 const Input = ({
   props,
@@ -28,11 +35,7 @@ const Input = ({
         onBlur={props.handleBlur(`${name}`)}
         style={[
           styles.input,
-          isFocused
-            ? {
-                borderBottomColor: "#1e90ff",
-              }
-            : { undefined },
+          isFocused ? { borderColor: "#1e90ff" } : { borderColor: "#fff" },
         ]}
         cursorColor="#1e90ff"
         placeholder={placeholder}
@@ -52,9 +55,9 @@ const Input = ({
           {props.touched[name] && props.errors[name]}
         </Text>
         {forgot && (
-          <Text style={styles.desc} onPress={() => forgotOnPress()}>
-            Forgot Password?
-          </Text>
+          <TouchableOpacity onPress={forgotOnPress}>
+            <Text style={styles.desc}>Forgot Password?</Text>
+          </TouchableOpacity>
         )}
       </View>
     </View>
@@ -81,9 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ccc",
   },
   input: {
-    position: "relative",
     borderBottomWidth: 2,
-    borderColor: "#fff",
     paddingVertical: 5,
     paddingRight: 10,
     paddingLeft: 32,

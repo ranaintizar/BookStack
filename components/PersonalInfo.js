@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -9,11 +9,25 @@ import {
 } from "react-native";
 import Button from "./Button";
 
-const PersonalInfo = ({ theme, showModal }) => {
+const PersonalInfo = ({ user, theme, showModal }) => {
   const [scaleValue, setScaleValue] = useState(0);
   const [placeholder, setPlaceholder] = useState("");
   const [inputMode, setInputMode] = useState("text");
   const [value, setVal] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const fullName = user.username;
+    const nameParts = fullName.split(" ");
+    const firstName = nameParts[0];
+    const lastName = nameParts.slice(1).join(" ");
+
+    setFname(firstName);
+    setLname(lastName);
+    setEmail(user.email);
+  }, []);
 
   const handleChange = (name) => {
     if (name === "fname") {
@@ -91,7 +105,7 @@ const PersonalInfo = ({ theme, showModal }) => {
             >
               First Name
             </Text>
-            <Text style={styles.fieldVal}>John</Text>
+            <Text style={styles.fieldVal}>{fname}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
@@ -105,7 +119,7 @@ const PersonalInfo = ({ theme, showModal }) => {
             >
               Last Name
             </Text>
-            <Text style={styles.fieldVal}>Doe</Text>
+            <Text style={styles.fieldVal}>{lname}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
@@ -119,7 +133,7 @@ const PersonalInfo = ({ theme, showModal }) => {
             >
               Email
             </Text>
-            <Text style={styles.fieldVal}>johndoe@example.com</Text>
+            <Text style={styles.fieldVal}>{email}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>

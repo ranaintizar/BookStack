@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -8,22 +8,52 @@ import {
   Keyboard,
   Animated,
   Modal,
+  Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { firebase } from "../firebase.config";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Button from "./Button";
 import PersonalInfo from "./PersonalInfo";
 
-const Profile = ({ theme }) => {
+const Profile = ({ theme, handleLogout }) => {
   const [slideAnimation, setSlideAnimation] = useState(new Animated.Value(0));
   const [isVisible, setIsVisible] = useState(false);
   const [scaleValue, setScaleValue] = useState(0);
+  const [onConfirm, setOnConfirm] = useState();
+  const [label, setLabel] = useState("");
+  const [user, setUser] = useState({
+    email: "johndoe@example.com",
+    username: "John Doe",
+  });
+  const [username, setUsername] = useState("@johndoe");
 
-  const handleShow = () => {
+  useEffect(() => {
+    AsyncStorage.getItem("user")
+      .then((item) => {
+        const user = JSON.parse(item);
+        setUser(user);
+        const name = user.username;
+        const username = "@" + name.split(" ")[0].toLowerCase();
+        setUsername(username);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const handleShow = (opt) => {
     Animated.spring(slideAnimation, {
       toValue: 1,
       duration: 100,
       useNativeDriver: true,
     }).start();
+
+    if (opt === "logout") {
+      setOnConfirm("logout");
+      setLabel("Logout ?");
+    } else if (opt === "del") {
+      setOnConfirm("delete");
+      setLabel("Delete ?");
+    }
   };
 
   const handleHide = () => {
@@ -39,8 +69,50 @@ const Profile = ({ theme }) => {
     outputRange: [300, 0],
   });
 
+  const handleDelete = () => {
+    const currentUser = firebase.auth().currentUser;
+    currentUser
+      .delete()
+      .then(async () => {
+        handleLogout(true);
+        await AsyncStorage.clear();
+      })
+      .then(() => {
+        Alert.alert("Success!", "Your account has been deleted", [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]);
+      })
+      .then(async () => {
+        await AsyncStorage.removeItem("user");
+        console
+          .log(`Successfully removed item from localStorage.`)
+          .catch((err) =>
+            console.log(`Failed to remove item from localStorage: ${err}`)
+          );
+      })
+
+      .catch((error) => {
+        if (error.code === "auth/requires-recent-login") {
+          Alert.alert("Oops!", "You need to sign in again", [
+            {
+              text: "OK",
+              onPress: () => console.log("OK Pressed"),
+            },
+          ]);
+        }
+      });
+  };
+
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    <TouchableWithoutFeedback
+      onPress={() => {
+        handleHide();
+        Keyboard.dismiss();
+      }}
+    >
       <View
         style={[
           { flex: 1 },
@@ -61,7 +133,7 @@ const Profile = ({ theme }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              John Doe
+              {user.username}
             </Text>
             <Text
               style={[
@@ -69,12 +141,17 @@ const Profile = ({ theme }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              @johndoe
+              {username}
             </Text>
           </View>
         </View>
         <View style={styles.options}>
-          <TouchableWithoutFeedback onPress={() => setIsVisible(true)}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              handleHide();
+              setIsVisible(true);
+            }}
+          >
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <Ionicons
@@ -100,7 +177,12 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={() => setScaleValue(1)}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              handleHide();
+              setScaleValue(1);
+            }}
+          >
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <Ionicons
@@ -126,7 +208,7 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={handleShow}>
+          <TouchableWithoutFeedback onPress={() => handleShow("logout")}>
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <MaterialIcons
@@ -152,6 +234,17 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => handleShow("del")}>
+            <View style={styles.option}>
+              <View style={styles.optionName}>
+                <MaterialIcons name="delete" size={24} color="red" />
+                <Text style={[styles.optionTitle, { color: "red" }]}>
+                  Delete Account
+                </Text>
+              </View>
+              <MaterialIcons name="navigate-next" size={26} color="red" />
+            </View>
+          </TouchableWithoutFeedback>
         </View>
         <Animated.View
           style={[
@@ -173,7 +266,7 @@ const Profile = ({ theme }) => {
               theme === "light" ? { color: "#fff" } : { color: "#72757e" },
             ]}
           >
-            Log out?
+            {label}
           </Text>
           <View style={styles.divider}></View>
           <Button
@@ -182,6 +275,19 @@ const Profile = ({ theme }) => {
             fontSize={20}
             width={250}
             customClass={{ marginVertical: 5 }}
+            onPress={() => {
+              if (onConfirm === "logout") {
+                firebase
+                  .auth()
+                  .signOut()
+                  .then(() => {
+                    handleLogout(true);
+                    console.log("Succesfully logged out");
+                  });
+              } else if (onConfirm === "delete") {
+                handleDelete();
+              }
+            }}
           />
           <View style={styles.divider}></View>
           <Button
@@ -196,7 +302,7 @@ const Profile = ({ theme }) => {
           />
         </Animated.View>
         <Modal visible={isVisible} statusBarTranslucent={true}>
-          <PersonalInfo theme={theme} showModal={setIsVisible} />
+          <PersonalInfo user={user} theme={theme} showModal={setIsVisible} />
         </Modal>
         <View
           style={[
@@ -272,6 +378,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-evenly",
     backgroundColor: "#0009",
+    zIndex: 10,
   },
   confirmTitle: {
     fontSize: 20,
