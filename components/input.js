@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from "react-native";
-import { firebase } from "../firebase.config";
 
 const Input = ({
   props,
@@ -36,11 +35,7 @@ const Input = ({
         onBlur={props.handleBlur(`${name}`)}
         style={[
           styles.input,
-          isFocused
-            ? {
-                borderBottomColor: "#1e90ff",
-              }
-            : { undefined },
+          isFocused ? { borderColor: "#1e90ff" } : { borderColor: "#fff" },
         ]}
         cursorColor="#1e90ff"
         placeholder={placeholder}
@@ -89,9 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ccc",
   },
   input: {
-    position: "relative",
     borderBottomWidth: 2,
-    borderColor: "#fff",
     paddingVertical: 5,
     paddingRight: 10,
     paddingLeft: 32,

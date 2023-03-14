@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -16,12 +16,29 @@ import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Button from "./Button";
 import PersonalInfo from "./PersonalInfo";
 
-const Profile = ({ theme }) => {
+const Profile = ({ theme, handleLogout }) => {
   const [slideAnimation, setSlideAnimation] = useState(new Animated.Value(0));
   const [isVisible, setIsVisible] = useState(false);
   const [scaleValue, setScaleValue] = useState(0);
   const [onConfirm, setOnConfirm] = useState();
   const [label, setLabel] = useState("");
+  const [user, setUser] = useState({
+    email: "johndoe@example.com",
+    username: "John Doe",
+  });
+  const [username, setUsername] = useState("@johndoe");
+
+  useEffect(() => {
+    AsyncStorage.getItem("user")
+      .then((item) => {
+        const user = JSON.parse(item);
+        setUser(user);
+        const name = user.username;
+        const username = "@" + name.split(" ")[0].toLowerCase();
+        setUsername(username);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleShow = (opt) => {
     Animated.spring(slideAnimation, {
@@ -56,6 +73,10 @@ const Profile = ({ theme }) => {
     const currentUser = firebase.auth().currentUser;
     currentUser
       .delete()
+      .then(async () => {
+        handleLogout(true);
+        await AsyncStorage.clear();
+      })
       .then(() => {
         Alert.alert("Success!", "Your account has been deleted", [
           {
@@ -111,7 +132,7 @@ const Profile = ({ theme }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              John Doe
+              {user.username}
             </Text>
             <Text
               style={[
@@ -119,7 +140,7 @@ const Profile = ({ theme }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              @johndoe
+              {username}
             </Text>
           </View>
         </View>
@@ -255,7 +276,13 @@ const Profile = ({ theme }) => {
             customClass={{ marginVertical: 5 }}
             onPress={() => {
               if (onConfirm === "logout") {
-                firebase.auth().signOut();
+                firebase
+                  .auth()
+                  .signOut()
+                  .then(() => {
+                    handleLogout(true);
+                    console.log("Succesfully logged out");
+                  });
               } else if (onConfirm === "delete") {
                 handleDelete();
               }
@@ -274,7 +301,7 @@ const Profile = ({ theme }) => {
           />
         </Animated.View>
         <Modal visible={isVisible} statusBarTranslucent={true}>
-          <PersonalInfo theme={theme} showModal={setIsVisible} />
+          <PersonalInfo user={user} theme={theme} showModal={setIsVisible} />
         </Modal>
         <View
           style={[

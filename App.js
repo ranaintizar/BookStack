@@ -15,8 +15,10 @@ import LibraryScreen from "./components/screens/LibraryScreen";
 import DiscoverScreen from "./components/screens/DiscoverScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import Header from "./components/Header";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function App() {
+  const [showStartup, setShowStartup] = useState(false);
   const [user, setUser] = useState();
   const [theme, setTheme] = useState("light");
   const [fontsLoaded] = useFonts({
@@ -30,6 +32,13 @@ export default function App() {
     const subscriber = firebase
       .auth()
       .onAuthStateChanged((user) => setUser(user));
+
+    AsyncStorage.getItem("signedInUser").then((item) => {
+      if (item) {
+        setShowStartup(true);
+        console.log(item);
+      }
+    });
     return subscriber;
   }, []);
 
@@ -48,12 +57,16 @@ export default function App() {
 
   return (
     <NavigationContainer onLayout={onLayoutRootView}>
-      {(!user && (
+      {(!user && showStartup === true && (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="GetStarted" component={GetStartedScreen} />
           <Stack.Screen name="SignUpFlow">
             {({ navigation }) => (
-              <SignUpFlowScreen navigation={navigation} user={user} />
+              <SignUpFlowScreen
+                navigation={navigation}
+                user={user}
+                setShowStartup={setShowStartup}
+              />
             )}
           </Stack.Screen>
         </Stack.Navigator>
@@ -100,9 +113,7 @@ export default function App() {
                 },
               }}
             >
-              {({ navigation }) => (
-                <HomeScreen navigation={navigation} theme={theme} />
-              )}
+              {() => <HomeScreen theme={theme} />}
             </Tab.Screen>
             <Tab.Screen
               name="Library"
@@ -124,9 +135,7 @@ export default function App() {
                 },
               }}
             >
-              {({ navigation }) => (
-                <LibraryScreen navigation={navigation} theme={theme} />
-              )}
+              {() => <LibraryScreen theme={theme} />}
             </Tab.Screen>
             <Tab.Screen
               name="Discover"
@@ -148,9 +157,7 @@ export default function App() {
                 },
               }}
             >
-              {({ navigation }) => (
-                <DiscoverScreen navigation={navigation} theme={theme} />
-              )}
+              {() => <DiscoverScreen theme={theme} />}
             </Tab.Screen>
             <Tab.Screen
               name="Profile"
@@ -172,8 +179,8 @@ export default function App() {
                 },
               }}
             >
-              {({ navigation }) => (
-                <ProfileScreen navigation={navigation} theme={theme} />
+              {() => (
+                <ProfileScreen theme={theme} handleLogout={setShowStartup} />
               )}
             </Tab.Screen>
           </Tab.Navigator>

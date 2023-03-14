@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -15,7 +15,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignIn = ({ setSignUpFlow }) => {
+const SignIn = ({ setSignUpFlow, setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     email: false,
     password: false,
@@ -58,6 +58,15 @@ const SignIn = ({ setSignUpFlow }) => {
     await firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
+      .then(async () => {
+        await AsyncStorage.setItem(
+          "signedInUser",
+          JSON.stringify({ isSignedIn: true })
+        );
+        console.log("User Signed In Succesfully!");
+      })
+      .then(() => setShowStartup(true))
+      .catch((err) => console.log(err))
       .catch((error) => {
         const msg = error.message;
         const code = error.code;

@@ -16,7 +16,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignUp = ({ setSignUpFlow }) => {
+const SignUp = ({ setSignUpFlow, setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
     email: false,
@@ -79,6 +79,7 @@ const SignUp = ({ setSignUpFlow }) => {
             handleCodeInApp: true,
             url: "https://bookstack-7bc4a.firebaseapp.com",
           })
+          .then(() => setShowStartup(true))
           .catch((err) =>
             console.log("message: ", err.message, "code: ", err.code)
           )

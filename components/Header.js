@@ -41,10 +41,7 @@ const Header = ({ theme, setTheme }) => {
             styles.search,
             theme === "light"
               ? { color: "#888", borderColor: "#888" }
-              : {
-                  color: "#72757e",
-                  borderColor: "#72757e",
-                },
+              : { color: "#72757e", borderColor: "#72757e" },
           ]}
           onChangeText={(val) => setValue(val)}
         />

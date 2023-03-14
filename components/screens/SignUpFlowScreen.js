@@ -5,7 +5,7 @@ import BackgroundImage from "../BackgroundImage";
 import Verify from "../Verify";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const SignUpFlowScreen = ({ user }) => {
+const SignUpFlowScreen = ({ setShowStartup }) => {
   const [signUpFlow, setSignUpFlow] = useState(0);
 
   const getAuthData = async () => {
@@ -22,9 +22,19 @@ const SignUpFlowScreen = ({ user }) => {
   const renderForm = () => {
     switch (signUpFlow) {
       case 0:
-        return <SignUp setSignUpFlow={setSignUpFlow} />;
+        return (
+          <SignUp
+            setSignUpFlow={setSignUpFlow}
+            setShowStartup={setShowStartup}
+          />
+        );
       case 1:
-        return <SignIn setSignUpFlow={setSignUpFlow} />;
+        return (
+          <SignIn
+            setSignUpFlow={setSignUpFlow}
+            setShowStartup={setShowStartup}
+          />
+        );
       case 2:
         return <Verify setSignUpFlow={setSignUpFlow} />;
     }
