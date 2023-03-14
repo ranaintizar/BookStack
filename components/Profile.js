@@ -86,13 +86,14 @@ const Profile = ({ theme, handleLogout }) => {
         ]);
       })
       .then(async () => {
-        try {
-          await AsyncStorage.removeItem("user");
-          console.log(`Successfully removed item from localStorage.`);
-        } catch (error) {
-          console.log(`Failed to remove item from localStorage: ${error}`);
-        }
+        await AsyncStorage.removeItem("user");
+        console
+          .log(`Successfully removed item from localStorage.`)
+          .catch((err) =>
+            console.log(`Failed to remove item from localStorage: ${err}`)
+          );
       })
+
       .catch((error) => {
         if (error.code === "auth/requires-recent-login") {
           Alert.alert("Oops!", "You need to sign in again", [
