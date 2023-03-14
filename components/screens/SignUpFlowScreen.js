@@ -5,7 +5,7 @@ import BackgroundImage from "../BackgroundImage";
 import Verify from "../Verify";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const SignUpFlowScreen = () => {
+const SignUpFlowScreen = ({ user }) => {
   const [signUpFlow, setSignUpFlow] = useState(0);
 
   const getAuthData = async () => {

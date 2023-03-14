@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -7,8 +7,8 @@ import {
   Keyboard,
   Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Formik } from "formik";
-import * as Yup from "yup";
 import { firebase } from "../firebase.config";
 import BackgroundImage from "./BackgroundImage";
 import Input from "./input";
@@ -22,19 +22,6 @@ const SignIn = ({ setSignUpFlow }) => {
   });
   const [hideText, setHideText] = useState(true);
 
-  // const formSchema = Yup.object({
-  //   email: Yup.string().email("Invalid email").required("Email is required"),
-  //   password: Yup.string()
-  //     .required("Password is required")
-  //     .min(7, "Password must be at least 7 characters")
-  //     .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-  //     .matches(/[0-9]/, "Password must contain at least one number")
-  //     .matches(
-  //       /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/,
-  //       "Password must contain at least one special character"
-  //     ),
-  // });
-
   const handleFocus = (name) => {
     setIsFocused((prevState) => {
       const newState = {};
@@ -43,6 +30,24 @@ const SignIn = ({ setSignUpFlow }) => {
       });
       return newState;
     });
+  };
+
+  const resetPassword = async () => {
+    const user = await AsyncStorage.getItem("user");
+    const email = JSON.parse(user).email;
+
+    await firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        Alert.alert("Success", "Check your email for a password reset link", [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]);
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleGoogleLogin = () => {
@@ -160,6 +165,7 @@ const SignIn = ({ setSignUpFlow }) => {
                     hideText={hideText}
                     setHideText={setHideText}
                     forgot={true}
+                    forgotOnPress={resetPassword}
                   />
 
                   <Button

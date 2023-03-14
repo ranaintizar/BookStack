@@ -10,6 +10,7 @@ import {
   Modal,
   Alert,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { firebase } from "../firebase.config";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Button from "./Button";
@@ -19,13 +20,23 @@ const Profile = ({ theme }) => {
   const [slideAnimation, setSlideAnimation] = useState(new Animated.Value(0));
   const [isVisible, setIsVisible] = useState(false);
   const [scaleValue, setScaleValue] = useState(0);
+  const [onConfirm, setOnConfirm] = useState();
+  const [label, setLabel] = useState("");
 
-  const handleShow = () => {
+  const handleShow = (opt) => {
     Animated.spring(slideAnimation, {
       toValue: 1,
       duration: 100,
       useNativeDriver: true,
     }).start();
+
+    if (opt === "logout") {
+      setOnConfirm("logout");
+      setLabel("Logout ?");
+    } else if (opt === "del") {
+      setOnConfirm("delete");
+      setLabel("Delete ?");
+    }
   };
 
   const handleHide = () => {
@@ -53,8 +64,23 @@ const Profile = ({ theme }) => {
           },
         ]);
       })
+      .then(async () => {
+        try {
+          await AsyncStorage.removeItem("user");
+          console.log(`Successfully removed item from localStorage.`);
+        } catch (error) {
+          console.log(`Failed to remove item from localStorage: ${error}`);
+        }
+      })
       .catch((error) => {
-        console.log(error);
+        if (error.code === "auth/requires-recent-login") {
+          Alert.alert("Oops!", "You need to sign in again", [
+            {
+              text: "OK",
+              onPress: () => console.log("OK Pressed"),
+            },
+          ]);
+        }
       });
   };
 
@@ -160,7 +186,7 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={handleShow}>
+          <TouchableWithoutFeedback onPress={() => handleShow("logout")}>
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <MaterialIcons
@@ -186,7 +212,7 @@ const Profile = ({ theme }) => {
               />
             </View>
           </TouchableWithoutFeedback>
-          <TouchableWithoutFeedback onPress={handleDelete}>
+          <TouchableWithoutFeedback onPress={() => handleShow("del")}>
             <View style={styles.option}>
               <View style={styles.optionName}>
                 <MaterialIcons name="delete" size={24} color="red" />
@@ -218,7 +244,7 @@ const Profile = ({ theme }) => {
               theme === "light" ? { color: "#fff" } : { color: "#72757e" },
             ]}
           >
-            Log out?
+            {label}
           </Text>
           <View style={styles.divider}></View>
           <Button
@@ -227,7 +253,13 @@ const Profile = ({ theme }) => {
             fontSize={20}
             width={250}
             customClass={{ marginVertical: 5 }}
-            onPress={() => firebase.auth().signOut()}
+            onPress={() => {
+              if (onConfirm === "logout") {
+                firebase.auth().signOut();
+              } else if (onConfirm === "delete") {
+                handleDelete();
+              }
+            }}
           />
           <View style={styles.divider}></View>
           <Button

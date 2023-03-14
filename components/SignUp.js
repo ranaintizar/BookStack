@@ -97,11 +97,11 @@ const SignUp = ({ setSignUpFlow }) => {
       })
       .then(async () => {
         const user = { username: username, email: email };
-        try {
-          await AsyncStorage.setItem("user", JSON.stringify(user));
-        } catch (e) {
-          console.log("Error saving user authentication data:", e);
-        }
+        await AsyncStorage.setItem("user", JSON.stringify(user))
+          .then(() => console.log("Added"))
+          .catch((err) => {
+            console.log("Error saving user authentication data:", err);
+          });
       })
       .catch((err) =>
         console.error("message: ", err.message, "code: ", err.code)

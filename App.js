@@ -26,8 +26,6 @@ export default function App() {
     Inter: require("./assets/fonts/Inter-Regular.ttf"),
   });
 
-  console.log(user);
-
   useEffect(() => {
     const subscriber = firebase
       .auth()
@@ -55,7 +53,7 @@ export default function App() {
           <Stack.Screen name="GetStarted" component={GetStartedScreen} />
           <Stack.Screen name="SignUpFlow">
             {({ navigation }) => (
-              <SignUpFlowScreen val={1} navigation={navigation} />
+              <SignUpFlowScreen navigation={navigation} user={user} />
             )}
           </Stack.Screen>
         </Stack.Navigator>

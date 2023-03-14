@@ -1,6 +1,14 @@
 import React from "react";
-import { TouchableWithoutFeedback } from "react-native";
-import { StyleSheet, View, Text, Image, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
+import { firebase } from "../firebase.config";
 
 const Input = ({
   props,
@@ -52,9 +60,9 @@ const Input = ({
           {props.touched[name] && props.errors[name]}
         </Text>
         {forgot && (
-          <Text style={styles.desc} onPress={() => forgotOnPress()}>
-            Forgot Password?
-          </Text>
+          <TouchableOpacity onPress={forgotOnPress}>
+            <Text style={styles.desc}>Forgot Password?</Text>
+          </TouchableOpacity>
         )}
       </View>
     </View>
