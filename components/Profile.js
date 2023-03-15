@@ -23,6 +23,7 @@ const Profile = ({ theme, handleLogout }) => {
   const [onConfirm, setOnConfirm] = useState();
   const [label, setLabel] = useState("");
   const [user, setUser] = useState({});
+  const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
     AsyncStorage.getItem("userinfo")
@@ -31,6 +32,7 @@ const Profile = ({ theme, handleLogout }) => {
         setUser(user);
       })
       .catch((err) => console.log(err));
+    AsyncStorage.getItem("imageUri").then((value) => setImageUri(value));
   }, []);
 
   const handleShow = (opt) => {
@@ -111,10 +113,16 @@ const Profile = ({ theme, handleLogout }) => {
         ]}
       >
         <View style={styles.userInfo}>
-          <Image
-            source={require("../assets/Profile-Pic.jpg")}
-            style={styles.img}
-          />
+          <View style={styles.image}>
+            <Image
+              resizeMode="contain"
+              source={
+                (imageUri && { uri: imageUri }) ||
+                require("../assets/Profile-Pic.jpg")
+              }
+              style={styles.img}
+            />
+          </View>
           <View style={styles.nameContainer}>
             <Text
               style={[
@@ -166,6 +174,7 @@ const Profile = ({ theme, handleLogout }) => {
               />
             </View>
           </TouchableWithoutFeedback>
+          <View style={styles.divider3}></View>
           <TouchableWithoutFeedback
             onPress={() => {
               handleHide();
@@ -197,6 +206,7 @@ const Profile = ({ theme, handleLogout }) => {
               />
             </View>
           </TouchableWithoutFeedback>
+          <View style={styles.divider2}></View>
           <TouchableWithoutFeedback onPress={() => handleShow("logout")}>
             <View style={styles.option}>
               <View style={styles.optionName}>
@@ -223,6 +233,7 @@ const Profile = ({ theme, handleLogout }) => {
               />
             </View>
           </TouchableWithoutFeedback>
+          <View style={styles.divider2}></View>
           <TouchableWithoutFeedback onPress={() => handleShow("del")}>
             <View style={styles.option}>
               <View style={styles.optionName}>
@@ -234,6 +245,7 @@ const Profile = ({ theme, handleLogout }) => {
               <MaterialIcons name="navigate-next" size={26} color="red" />
             </View>
           </TouchableWithoutFeedback>
+          <View style={styles.divider4}></View>
         </View>
         <Animated.View
           style={[
@@ -312,13 +324,27 @@ const Profile = ({ theme, handleLogout }) => {
             We're in the process of building the settings section. Stay tuned
             for updates on its progress!
           </Text>
-          <Button
-            btnText="Ok"
-            background="#1e90ff"
-            fontSize={20}
-            width={150}
-            onPress={() => setScaleValue(0)}
-          />
+          <View style={styles.btnContainer}>
+            <Button
+              btnText="Clear Storage"
+              background="#1e90ff"
+              fontSize={20}
+              width={"50%"}
+              onPress={() => {
+                AsyncStorage.clear.then(() => {
+                  console.log("Data cleared!");
+                  setScaleValue(0);
+                });
+              }}
+            />
+            <Button
+              btnText="Ok"
+              background="#1e90ff"
+              fontSize={20}
+              width={"40%"}
+              onPress={() => setScaleValue(0)}
+            />
+          </View>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -336,7 +362,18 @@ const styles = StyleSheet.create({
   nameContainer: {
     alignItems: "center",
   },
-  img: { width: 150, height: 150, borderRadius: 100 },
+  image: {
+    elevation: 8,
+    shadowColor: "#000",
+    borderRadius: 110,
+    backgroundColor: "#fff",
+    overflow: "hidden",
+    width: 220,
+    height: 220,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  img: { width: 200, height: 200 },
   name: {
     fontSize: 20,
     fontWeight: 600,
@@ -346,7 +383,7 @@ const styles = StyleSheet.create({
   },
   options: { flex: 0.6, paddingTop: 10 },
   option: {
-    paddingVertical: 10,
+    paddingVertical: 15,
     paddingHorizontal: 20,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -394,6 +431,15 @@ const styles = StyleSheet.create({
   note: {
     fontSize: 18,
   },
+
+  btnContainer: {
+    flexDirection: "row",
+    gap: 10,
+    width: "100%",
+  },
+  divider2: { width: "100%", height: 1, backgroundColor: "#3333" },
+  divider3: { width: "100%", height: 0.7, backgroundColor: "#3333" },
+  divider4: { width: "100%", height: 1.2, backgroundColor: "#3333" },
 });
 
 export default Profile;

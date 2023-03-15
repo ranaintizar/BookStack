@@ -9,6 +9,8 @@ import {
   TouchableWithoutFeedback,
   Alert,
 } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as DocumentPicker from "expo-document-picker";
 import * as Yup from "yup";
 import Button from "./Button";
 
@@ -22,12 +24,14 @@ const PersonalInfo = ({ theme, showModal }) => {
     lname: "",
     email: "",
   });
+  const [imageUri, setImageUri] = useState(null);
 
   useEffect(() => {
     AsyncStorage.getItem("userinfo").then((value) => {
       const info = JSON.parse(value);
       setUserinfo(info);
     });
+    AsyncStorage.getItem("imageUri").then((value) => setImageUri(value));
   }, []);
 
   useEffect(() => {
@@ -93,24 +97,34 @@ const PersonalInfo = ({ theme, showModal }) => {
           }
         });
     } else if (placeholder === "Enter Email") {
-      emailSchema
-        .validate(value)
-        .then(() => {
-          let newUserInfo = { ...userinfo, email: value };
-          setUserinfo(newUserInfo);
-          setScaleValue(0);
-        })
-        .catch((error) => {
-          console.log(error);
-          if (error.message === "Invalid email") {
-            Alert.alert("Error", "Invalid email", [
-              {
-                text: "OK",
-                onPress: () => console.log("OK Pressed"),
-              },
-            ]);
-          }
-        });
+      Alert.alert(
+        "Sorry",
+        "This is service is not available for Email Address Yet.",
+        [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]
+      );
+      // emailSchema
+      //   .validate(value)
+      //   .then(() => {
+      //     let newUserInfo = { ...userinfo, email: value };
+      //     setUserinfo(newUserInfo);
+      //     setScaleValue(0);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     if (error.message === "Invalid email") {
+      //       Alert.alert("Error", "Invalid email", [
+      //         {
+      //           text: "OK",
+      //           onPress: () => console.log("OK Pressed"),
+      //         },
+      //       ]);
+      //     }
+      //   });
     }
 
     setVal("");
@@ -119,6 +133,33 @@ const PersonalInfo = ({ theme, showModal }) => {
   const handleCancel = () => {
     setScaleValue(0);
     setVal("");
+  };
+
+  const handleChoosePhoto = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 4],
+      quality: 1,
+    });
+    if (!result.canceled) {
+      setImageUri(result.assets[0].uri);
+      AsyncStorage.setItem("imageUri", result.assets[0].uri);
+    }
+  };
+
+  const handleTakePhoto = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      setImage(result.assets[0].uri);
+    }
+    AsyncStorage.setItem("imageUri", result.assets[0].uri);
   };
 
   return (
@@ -153,15 +194,21 @@ const PersonalInfo = ({ theme, showModal }) => {
         />
       </View>
       <View style={styles.imgContainer}>
-        <Image
-          source={require("../assets/Profile-Pic.jpg")}
-          style={styles.img}
-        />
+        <View style={styles.image}>
+          <Image
+            resizeMode="contain"
+            source={
+              (imageUri && { uri: imageUri }) ||
+              require("../assets/Profile-Pic.jpg")
+            }
+            style={styles.img}
+          />
+        </View>
         <Button
           btnText="Upload Image"
           color="#1e90ff"
           fontSize={18}
-          onPress={() => console.log("Upload Image")}
+          onPress={handleChoosePhoto}
         />
       </View>
       <View style={styles.content}>
@@ -264,10 +311,15 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
+  image: {
+    borderRadius: 100,
+    overflow: "hidden",
+    backgroundColor: "#fff",
+    elevation: 8,
+  },
   img: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    width: 200,
+    height: 200,
   },
   modal: {
     position: "absolute",
