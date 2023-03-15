@@ -29,21 +29,18 @@ const GetStartedScreen = ({ navigation }) => {
           style={[
             styles.dot,
             showGetStarted === 0 && { backgroundColor: "#1e90ff" },
-            showGetStarted === 2 && { bottom: 80 },
           ]}
         ></View>
         <View
           style={[
             styles.dot,
             showGetStarted === 1 && { backgroundColor: "#1e90ff" },
-            showGetStarted === 2 && { bottom: 80 },
           ]}
         ></View>
         <View
           style={[
             styles.dot,
             showGetStarted === 2 && { backgroundColor: "#1e90ff" },
-            showGetStarted === 2 && { bottom: 80 },
           ]}
         ></View>
       </View>

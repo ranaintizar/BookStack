@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
@@ -6,28 +7,40 @@ import {
   Image,
   TextInput,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
+import * as Yup from "yup";
 import Button from "./Button";
 
-const PersonalInfo = ({ user, theme, showModal }) => {
+const PersonalInfo = ({ theme, showModal }) => {
   const [scaleValue, setScaleValue] = useState(0);
   const [placeholder, setPlaceholder] = useState("");
   const [inputMode, setInputMode] = useState("text");
   const [value, setVal] = useState("");
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
-  const [email, setEmail] = useState("");
+  const [userinfo, setUserinfo] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+  });
 
   useEffect(() => {
-    const fullName = user.username;
-    const nameParts = fullName.split(" ");
-    const firstName = nameParts[0];
-    const lastName = nameParts.slice(1).join(" ");
-
-    setFname(firstName);
-    setLname(lastName);
-    setEmail(user.email);
+    AsyncStorage.getItem("userinfo").then((value) => {
+      const info = JSON.parse(value);
+      setUserinfo(info);
+    });
   }, []);
+
+  useEffect(() => {
+    AsyncStorage.setItem("userinfo", JSON.stringify(userinfo));
+  }, [userinfo]);
+
+  const emailSchema = Yup.string()
+    .email("Invalid email")
+    .required("Email is required");
+
+  const nameSchema = Yup.string()
+    .min(4, "Name must be at least 4 characters")
+    .required("Name is required");
 
   const handleChange = (name) => {
     if (name === "fname") {
@@ -41,7 +54,65 @@ const PersonalInfo = ({ user, theme, showModal }) => {
   };
 
   const handleSubmit = () => {
-    setScaleValue(0);
+    if (placeholder === "Enter First Name") {
+      nameSchema
+        .validate(value)
+        .then(() => {
+          let newUserInfo = { ...userinfo, fname: value };
+          setUserinfo(newUserInfo);
+          setScaleValue(0);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          if (error.message === "Name must be at least 4 characters") {
+            Alert.alert("Error", "Name must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          }
+        });
+    } else if (placeholder === "Enter Last Name") {
+      nameSchema
+        .validate(value)
+        .then(() => {
+          let newUserInfo = { ...userinfo, lname: value };
+          setUserinfo(newUserInfo);
+          setScaleValue(0);
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.message === "Name must be at least 4 characters") {
+            Alert.alert("Error", "Name must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          }
+        });
+    } else if (placeholder === "Enter Email") {
+      emailSchema
+        .validate(value)
+        .then(() => {
+          let newUserInfo = { ...userinfo, email: value };
+          setUserinfo(newUserInfo);
+          setScaleValue(0);
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.message === "Invalid email") {
+            Alert.alert("Error", "Invalid email", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          }
+        });
+    }
+
     setVal("");
   };
 
@@ -105,7 +176,7 @@ const PersonalInfo = ({ user, theme, showModal }) => {
             >
               First Name
             </Text>
-            <Text style={styles.fieldVal}>{fname}</Text>
+            <Text style={styles.fieldVal}>{userinfo.fname}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
@@ -119,7 +190,7 @@ const PersonalInfo = ({ user, theme, showModal }) => {
             >
               Last Name
             </Text>
-            <Text style={styles.fieldVal}>{lname}</Text>
+            <Text style={styles.fieldVal}>{userinfo.lname}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
@@ -133,7 +204,7 @@ const PersonalInfo = ({ user, theme, showModal }) => {
             >
               Email
             </Text>
-            <Text style={styles.fieldVal}>{email}</Text>
+            <Text style={styles.fieldVal}>{userinfo.email}</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.divider}></View>
@@ -231,12 +302,12 @@ const styles = StyleSheet.create({
   field: {
     flexDirection: "row",
   },
-  fieldName: { padding: 10, fontSize: 20, fontWeight: "bold", width: "35%" },
+  fieldName: { padding: 10, fontSize: 20, fontWeight: "bold", width: "30%" },
   fieldVal: {
-    padding: 10,
+    paddingVertical: 10,
     fontSize: 20,
     fontWeight: 600,
-    width: "65%",
+    width: "70%",
     color: "#72757e",
   },
 });

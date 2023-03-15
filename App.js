@@ -18,7 +18,7 @@ import Header from "./components/Header";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function App() {
-  const [showStartup, setShowStartup] = useState(false);
+  const [showStartup, setShowStartup] = useState(true);
   const [user, setUser] = useState();
   const [theme, setTheme] = useState("light");
   const [fontsLoaded] = useFonts({
@@ -29,15 +29,12 @@ export default function App() {
   });
 
   useEffect(() => {
-    const subscriber = firebase
-      .auth()
-      .onAuthStateChanged((user) => setUser(user));
+    firebase.auth().onAuthStateChanged((user) => setUser(user));
     AsyncStorage.getItem("signedInUser").then((item) => {
       if (item) {
-        setShowStartup(true);
+        setShowStartup(false);
       }
     });
-    return subscriber;
   }, []);
 
   const onLayoutRootView = useCallback(async () => {
@@ -53,9 +50,20 @@ export default function App() {
   const Stack = createNativeStackNavigator();
   const Tab = createMaterialBottomTabNavigator();
 
+  // const clearStorage = async () => {
+  //   try {
+  //     await AsyncStorage.clear();
+  //     console.log("Storage successfully cleared!");
+  //   } catch (error) {
+  //     console.log("Error clearing storage:", error);
+  //   }
+  // };
+
+  // clearStorage();
+
   return (
     <NavigationContainer onLayout={onLayoutRootView}>
-      {(!user && showStartup === true && (
+      {(user === null && showStartup === true && (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="GetStarted" component={GetStartedScreen} />
           <Stack.Screen name="SignUpFlow">

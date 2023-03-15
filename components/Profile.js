@@ -22,20 +22,13 @@ const Profile = ({ theme, handleLogout }) => {
   const [scaleValue, setScaleValue] = useState(0);
   const [onConfirm, setOnConfirm] = useState();
   const [label, setLabel] = useState("");
-  const [user, setUser] = useState({
-    email: "johndoe@example.com",
-    username: "John Doe",
-  });
-  const [username, setUsername] = useState("@johndoe");
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    AsyncStorage.getItem("user")
+    AsyncStorage.getItem("userinfo")
       .then((item) => {
         const user = JSON.parse(item);
         setUser(user);
-        const name = user.username;
-        const username = "@" + name.split(" ")[0].toLowerCase();
-        setUsername(username);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -70,40 +63,36 @@ const Profile = ({ theme, handleLogout }) => {
   });
 
   const handleDelete = () => {
-    const currentUser = firebase.auth().currentUser;
-    currentUser
-      .delete()
-      .then(async () => {
-        handleLogout(true);
-        await AsyncStorage.clear();
-      })
-      .then(() => {
-        Alert.alert("Success!", "Your account has been deleted", [
-          {
-            text: "OK",
-            onPress: () => console.log("OK Pressed"),
-          },
-        ]);
-      })
-      .then(async () => {
-        await AsyncStorage.removeItem("user");
-        console
-          .log(`Successfully removed item from localStorage.`)
-          .catch((err) =>
-            console.log(`Failed to remove item from localStorage: ${err}`)
-          );
-      })
+    firebase
+      .auth()
+      .currentUser?.delete()
+      .then(() => console.log("User Deleted"));
+    const collectionRef = firebase.firestore().collection("acc-del-reqs");
 
-      .catch((error) => {
-        if (error.code === "auth/requires-recent-login") {
-          Alert.alert("Oops!", "You need to sign in again", [
-            {
-              text: "OK",
-              onPress: () => console.log("OK Pressed"),
-            },
-          ]);
-        }
-      });
+    handleLogout(false);
+
+    collectionRef
+      .add({
+        email: user.email,
+        uid: user.uid,
+        fname: user.fname,
+      })
+      .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .then(() =>
+        AsyncStorage.clear().then(() => console.log("Data cleared!"))
+      );
+
+    Alert.alert(
+      "Request Submited",
+      "We acknowledge that you have requested for the deletion of your account. We are currently processing your request and will notify you once the deletion is completed.",
+      [
+        {
+          text: "Ok",
+        },
+      ]
+    );
   };
 
   return (
@@ -133,7 +122,7 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {user.username}
+              {user.fullName}
             </Text>
             <Text
               style={[
@@ -141,7 +130,7 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {username}
+              {user.username}
             </Text>
           </View>
         </View>
@@ -286,6 +275,7 @@ const Profile = ({ theme, handleLogout }) => {
                   });
               } else if (onConfirm === "delete") {
                 handleDelete();
+                handleLogout(true);
               }
             }}
           />
@@ -302,7 +292,7 @@ const Profile = ({ theme, handleLogout }) => {
           />
         </Animated.View>
         <Modal visible={isVisible} statusBarTranslucent={true}>
-          <PersonalInfo user={user} theme={theme} showModal={setIsVisible} />
+          <PersonalInfo theme={theme} showModal={setIsVisible} />
         </Modal>
         <View
           style={[

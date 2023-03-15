@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import Button from "../Button";
 import globalStyles from "../globalStyles";
 
@@ -31,30 +31,6 @@ const GetStarted3 = ({ navigation }) => {
             })
           }
         />
-        <View style={globalStyles.gettingStartedSignIn}>
-          <Text style={globalStyles.gettingStartedSignInText}>
-            Already have an account?
-          </Text>
-          <Button
-            borderColor="#1e90ff"
-            borderWidth={3}
-            borderRadius={50}
-            width={270}
-            fontSize={22}
-            fontWeight="bold"
-            color="#1e90ff"
-            customClass={{
-              paddingHorizontal: 20,
-              justifyContent: "center",
-            }}
-            btnText="Sign In"
-            onPress={() =>
-              navigation.navigate("SignUpFlow", {
-                val: 1,
-              })
-            }
-          />
-        </View>
       </View>
     </View>
   );

@@ -54,6 +54,24 @@ const SignUp = ({ setShowStartup }) => {
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then(async (res) => {
+        const nameParts = username.split(" ");
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(" ");
+        const userName = "@" + username.split(" ")[0].toLowerCase();
+        const uid = res.user.uid;
+        const userinfo = {
+          fullName: username,
+          fname: firstName,
+          lname: lastName,
+          email: email,
+          username: userName,
+          uid: uid,
+        };
+        AsyncStorage.setItem("userinfo", JSON.stringify(userinfo)).then(() => {
+          console.log("Saved user info successfully");
+        });
+      })
       .catch((err) => {
         const msg = err.message;
         const code = err.code;
@@ -95,6 +113,12 @@ const SignUp = ({ setShowStartup }) => {
               ]
             );
           });
+      })
+      .then(async () => {
+        await AsyncStorage.setItem(
+          "signedInUser",
+          JSON.stringify({ isSignedIn: true })
+        );
       })
       .then(async () => {
         const user = { username: username, email: email };

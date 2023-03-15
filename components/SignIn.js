@@ -15,7 +15,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignIn = ({ setSignUpFlow, setShowStartup }) => {
+const SignIn = ({ setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     email: false,
     password: false,
