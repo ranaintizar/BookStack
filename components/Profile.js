@@ -10,6 +10,7 @@ import {
   Modal,
   Alert,
 } from "react-native";
+import sgMail from "@sendgrid/mail";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { firebase } from "../firebase.config";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
@@ -65,23 +66,34 @@ const Profile = ({ theme, handleLogout }) => {
   });
 
   const handleDelete = () => {
-    firebase
-      .auth()
-      .currentUser?.delete()
-      .then(() => console.log("User Deleted"));
     const collectionRef = firebase.firestore().collection("acc-del-reqs");
 
     handleLogout(false);
+    console.log("Starting...");
 
     collectionRef
       .add({
-        email: user.email,
-        uid: user.uid,
-        fname: user.fname,
+        email: "hriam47426@gmail.com",
+        uid: 1111,
+        fname: "dfjasdfasdfa",
       })
-      .then((docRef) => {
+      .then(async (docRef) => {
         console.log("Document written with ID: ", docRef.id);
+        await sgMail.setApiKey(
+          "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"
+        );
+        const msg = {
+          to: "hriam47426@gmail.com",
+          from: "intizaralirana2@gmail.com",
+          subject: "New document added to Firestore",
+          text: `A new document was added to Firestore: ${JSON.stringify(
+            docRef
+          )}`,
+        };
+        await sgMail.send(msg);
       })
+      .then(() => console.log("Mail sent successfully"))
+      .catch((err) => console.log("The Error is : ", err))
       .then(() =>
         AsyncStorage.clear().then(() => console.log("Data cleared!"))
       );
@@ -95,6 +107,8 @@ const Profile = ({ theme, handleLogout }) => {
         },
       ]
     );
+
+    console.log("Ending...");
   };
 
   return (
@@ -130,7 +144,8 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {user.fullName}
+              {/* {user.fullName} */}
+              Rana Intizar
             </Text>
             <Text
               style={[
@@ -138,7 +153,8 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {user.username}
+              {/* {user.username} */}
+              @rana
             </Text>
           </View>
         </View>
@@ -331,7 +347,7 @@ const Profile = ({ theme, handleLogout }) => {
               fontSize={20}
               width={"50%"}
               onPress={() => {
-                AsyncStorage.clear.then(() => {
+                AsyncStorage.clear().then(() => {
                   console.log("Data cleared!");
                   setScaleValue(0);
                 });
