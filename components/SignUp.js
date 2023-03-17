@@ -16,7 +16,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignUp = ({ setSignUpFlow, setShowStartup }) => {
+const SignUp = ({ setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     username: false,
     email: false,
@@ -54,6 +54,24 @@ const SignUp = ({ setSignUpFlow, setShowStartup }) => {
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then(async (res) => {
+        const nameParts = username.split(" ");
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(" ");
+        const userName = "@" + username.split(" ")[0].toLowerCase();
+        const uid = res.user.uid;
+        const userinfo = {
+          fullName: username,
+          fname: firstName,
+          lname: lastName,
+          email: email,
+          username: userName,
+          uid: uid,
+        };
+        AsyncStorage.setItem("userinfo", JSON.stringify(userinfo)).then(() => {
+          console.log("Saved user info successfully");
+        });
+      })
       .catch((err) => {
         const msg = err.message;
         const code = err.code;
@@ -97,6 +115,12 @@ const SignUp = ({ setSignUpFlow, setShowStartup }) => {
           });
       })
       .then(async () => {
+        await AsyncStorage.setItem(
+          "signedInUser",
+          JSON.stringify({ isSignedIn: true })
+        );
+      })
+      .then(async () => {
         const user = { username: username, email: email };
         await AsyncStorage.setItem("user", JSON.stringify(user))
           .then(() => console.log("Added"))
@@ -123,16 +147,6 @@ const SignUp = ({ setSignUpFlow, setShowStartup }) => {
           <View style={[globalStyles.container, styles.container]}>
             <View style={globalStyles.signUpFlowHeader}>
               <Text style={globalStyles.signUpFlowTitle}>Get Started</Text>
-              <Text style={globalStyles.signUpFlowDesc}>
-                Already have an account?{" "}
-                <Text
-                  style={globalStyles.signUpFlowText}
-                  onPress={() => setSignUpFlow(1)}
-                >
-                  Sign In
-                </Text>
-                .
-              </Text>
             </View>
             <View>
               <Formik

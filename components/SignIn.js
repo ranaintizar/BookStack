@@ -15,7 +15,7 @@ import Input from "./input";
 import Button from "./Button";
 import globalStyles from "./globalStyles";
 
-const SignIn = ({ setSignUpFlow, setShowStartup }) => {
+const SignIn = ({ setShowStartup }) => {
   const [isFocused, setIsFocused] = useState({
     email: false,
     password: false,
@@ -48,10 +48,6 @@ const SignIn = ({ setSignUpFlow, setShowStartup }) => {
         ]);
       })
       .catch((err) => console.log(err));
-  };
-
-  const handleGoogleLogin = () => {
-    console.log("Signing in with Google");
   };
 
   const handleSignIn = async (email, password) => {
@@ -128,21 +124,7 @@ const SignIn = ({ setSignUpFlow, setShowStartup }) => {
         blurRadius={5}
         child={
           <View style={[globalStyles.container, styles.container]}>
-            <View style={globalStyles.signUpFlowHeader}>
-              <Text style={globalStyles.signUpFlowTitle}>
-                Sign In to Your Account
-              </Text>
-              <Text style={globalStyles.signUpFlowDesc}>
-                Don't have an account?{" "}
-                <Text
-                  style={globalStyles.signUpFlowText}
-                  onPress={() => setSignUpFlow(0)}
-                >
-                  Sign Up
-                </Text>
-                .
-              </Text>
-            </View>
+            <View style={globalStyles.signUpFlowHeader}></View>
             <Formik
               initialValues={{ email: "", password: "" }}
               onSubmit={async (values, actions) => {
@@ -190,24 +172,6 @@ const SignIn = ({ setSignUpFlow, setShowStartup }) => {
                 </View>
               )}
             </Formik>
-            <Text style={globalStyles.signUpFlowDesc}>OR</Text>
-            <Button
-              borderColor="#1e90ff"
-              borderWidth={2}
-              borderRadius={50}
-              width={270}
-              fontSize={20}
-              fontWeight="bold"
-              color="#1e90ff"
-              customClass={{
-                paddingVertical: 7,
-                justifyContent: "center",
-              }}
-              btnText="Continue with Google"
-              iconLeftSrc={require("../assets/google.png")}
-              imgHeight={20}
-              onPress={() => handleGoogleLogin()}
-            />
           </View>
         }
       />

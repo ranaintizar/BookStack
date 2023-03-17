@@ -45,15 +45,6 @@ const Home = ({ theme }) => {
     likedData,
   });
 
-  // const clearStorage = async () => {
-  //   try {
-  //     await AsyncStorage.clear();
-  //     console.log("Storage successfully cleared!");
-  //   } catch (error) {
-  //     console.log("Error clearing storage:", error);
-  //   }
-  // };
-
   useEffect(() => {
     AsyncStorage.getItem("data").then((storedData) => {
       new Date().toLocaleString();
