@@ -11,10 +11,40 @@ import { Entypo } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ToggleBtn from "./ToggleBtn";
 import ShowCase from "./ShowCase";
+import {
+  topReadings,
+  children,
+  newReleases,
+  bestSellers,
+  recentlyAdded,
+  popularFiction,
+  category,
+  fiction,
+  short,
+  classic,
+  general,
+  historical,
+  poetry,
+} from "./data";
 
 const Header = ({ theme, setTheme }) => {
   const [flex, setFlex] = useState(0);
   const [data, setData] = useState([]);
+  const [combinedData, setCombinedData] = useState({
+    topReadings,
+    children,
+    newReleases,
+    bestSellers,
+    recentlyAdded,
+    popularFiction,
+    category,
+    fiction,
+    short,
+    classic,
+    general,
+    historical,
+    poetry,
+  });
   const [value, setValue] = useState("");
   const [showClearBtn, setShowClearBtn] = useState(false);
   const [filtered, setFiltered] = useState([]);
@@ -22,18 +52,25 @@ const Header = ({ theme, setTheme }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    AsyncStorage.getItem("data").then((value) => {
-      const parsedData = JSON.parse(value);
-      const combinedArray = Object.values(parsedData).reduce(
-        (acc, arr) => acc.concat(arr),
-        []
-      );
-      setData(combinedArray);
-    });
+    const combinedArray = Object.values(combinedData).reduce(
+      (acc, arr) => acc.concat(arr),
+      []
+    );
+    setData(combinedArray);
+
+    setTimeout(() => {
+      AsyncStorage.getItem("data").then((value) => {
+        const parsedData = JSON.parse(value);
+        const combinedArray = Object.values(parsedData).reduce(
+          (acc, arr) => acc.concat(arr),
+          []
+        );
+        setData(combinedArray);
+      });
+    }, 1000);
   }, []);
 
   const submitValue = () => {
-    console.log(value);
     let searchQuery = value.toLowerCase();
 
     const filteredBooks = data.filter((book) => {
@@ -123,13 +160,14 @@ const Header = ({ theme, setTheme }) => {
         </View>
         <View style={{ flex: 1 }}>
           <ShowCase
+            title={`Showing results for "${value}"`}
             data={filtered}
             theme={theme}
             numOfCols={2}
             width={200}
             imgWidth={160}
             imgHeight={190}
-            customClass={{ gap: 20, paddingTop: 30, paddingBottom: 20 }}
+            customClass={{ gap: 20, paddingTop: 20, paddingBottom: 20 }}
           />
         </View>
       </View>
