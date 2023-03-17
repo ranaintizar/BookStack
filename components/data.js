@@ -1,6 +1,6 @@
 export const topReadings = [
   {
-    key: "47",
+    key: Math.random(),
     title: "Count of Monte Cristo",
     description:
       "The Count of Monte Cristo (French: Le Comte de Monte-Cristo) is an adventure novel by Alexandre Dumas, père. It is often considered, along with The Three Musketeers, as Dumas's most popular work. The writing of the work was completed in 1844. Like many of his novels, it is expanded from the plot outlines suggested by his collaborating ghostwriter Auguste Maquet.The story takes place in France, Italy, islands in the Mediterranean and the Levant during the historical events of 1815–1838 (from just before the Hundred Days through the reign of Louis-Philippe of France). The historical setting is a fundamental element of the book. It is primarily concerned with themes of justice, vengeance, mercy, and forgiveness, and is told in the style of an adventure story. (Summary from Wikipedia)\nThis book contains alternate versions of a number of chapters – indicated by an alt after the file number. The Zip files contain both versions of these chapters.There are 2 versions of the M4Bs made , one containing the original files for these chapters (4 parts), the other containing the alternate files for the chapters (5 parts).",
@@ -22,7 +22,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "52",
+    key: Math.random(),
     title: "Letters of Two Brides",
     description:
       "Letters of Two Brides is an epistolary novel. The two brides are Louise de Chaulieu (Madame Gaston) and Renée de Maucombe (Madame l'Estorade). The women became friends during their education at a convent and upon leaving began a life-long correspondence. For a 17 year period, they exchange letters describing their lives.Michelle Crandall reads Renee’s letters, and Kara Shallenberg reads Louise’s. Letters from the men in their lives are read by Peter Yearsley, David Barnes, Denny Sayers, and Sean McKinley",
@@ -44,7 +44,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "53",
+    key: Math.random(),
     title: "Bleak House",
     description:
       "Bleak House is the ninth novel by Charles Dickens, published in 20 monthly parts between March 1852 and September 1853. It is widely held to be one of Dickens' finest and most complete novels, containing one of the most vast, complex and engaging arrays of minor characters and sub-plots in his entire canon. Dickens tells all of these both through the narrative of the novel's heroine, Esther Summerson, and as an omniscient narrator. Memorable characters include the menacing lawyer Tulkinghorn, the friendly but depressive John Jarndyce and the childish Harold Skimpole. The plot concerns a long-running legal dispute (Jarndyce and Jarndyce) which has far-reaching consequences for all involved. (Summary from Wikipedia)",
@@ -66,7 +66,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "54",
+    key: Math.random(),
     title: "Penguin Island",
     description:
       "The novel (original French title -- L'Île des Pingouins) is a satire on human nature. The first publication was in 1908. These penguins are mistaken for humans by the 97-year-old priest, Father Mael, because of his bad eyesight. He baptizes them, and once baptized, they have no choice but to become human. They take on human traits (build civilizations, go to war, etc.). The book is very funny and powerful. (Summary by Michael)",
@@ -88,7 +88,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "55",
+    key: Math.random(),
     title: "This Side of Paradise",
     description:
       "This Side of Paradise is the debut novel of F. Scott Fitzgerald. Published in 1920, and taking its title from a line of the Rupert Brooke poem Tiare Tahiti, the book examines the lives and morality of post-World War I youth. Its protagonist, Amory Blaine, is a wealthy and attractive Princeton University student who dabbles in literature and has a series of romances that eventually lead to his disillusionment. In his later novels, Fitzgerald would further develop the book's theme of love warped by greed and status-seeking. (Summary from Wikipedia)",
@@ -110,7 +110,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "56",
+    key: Math.random(),
     title: "Secret Garden",
     description:
       "Mary Lennox is a spoiled, middle-class, self-centered child who has been recently orphaned. She is accepted into the quiet and remote country house of an uncle, who has almost completely withdrawn into himself after the death of his wife. Mary gradually becomes drawn into the hidden side of the house: why does she hear the crying of a unseen child? Why is there an overgrown, walled garden, its door long locked? (Summary by Peter)",
@@ -132,7 +132,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "57",
+    key: Math.random(),
     title: "Twenty Years After",
     description:
       "Let's continue the D'Artagnan Romances that we've already started with The Three Musketeers.",
@@ -154,10 +154,10 @@ export const topReadings = [
     ],
   },
   {
-    key: "59",
+    key: Math.random(),
     title: "Adventures of Huckleberry Finn",
     description:
-      '<em>Adventures of Huckleberry Finn</em> (1884) by Mark Twain is one of the truly great American novels, beloved by children, adults, and literary critics alike.  The book tells the story of “Huck” Finn (first introduced as Tom Sawyer’s sidekick in <em>The Adventures of Tom Sawyer</em>), his friend Jim, and their journey down the Mississippi River on a raft.  Both are on the run, Huck from his drunk and abusive father, and Jim as a runaway slave.As Huck and Jim drift down the river, they meet many colorful characters and have many great adventures.  The true heart of the story, however, is the friendship between Huck and Jim.  A constant theme throughout the book is Huck’s internal struggle between what he has been taught, that helping a runaway slave is a sin, and what he truly believes, that Jim is a good man and it couldn’t possibly be wrong to help him.<em>Adventures of Huckleberry Finn</em> was unique at the time of its publication (1884) because it is narrated by Huck himself and is written in the numerous dialects common in the area and time in which the book is set.  Although the book was originally intended as a sequel to the children’s book <em>The Adventures of Tom Sawyer</em>, as Twain wrote <em>Adventures of Huckleberry Finn</em> it progressed into a more serious work.  Twain’s views on slavery and other social issues of the time become clear through the words, thoughts, and actions of Huck Finn.  The book has always been the subject of great controversy, and according to <a href="http://www.ala.org/bbooks/100-most-frequently-challenged-books-1990–1999" target="_blank">The American Library Association</a> it was fifth on the list of most frequently challenged books in the 1990s.(Summary by Annie Coleman)',
+      "Adventures of Huckleberry Finn (1884) by Mark Twain is one of the truly great American novels, beloved by children, adults, and literary critics alike.  The book tells the story of “Huck” Finn (first introduced as Tom Sawyer’s sidekick in The Adventures of Tom Sawyer), his friend Jim, and their journey down the Mississippi River on a raft.  Both are on the run, Huck from his drunk and abusive father, and Jim as a runaway slave.As Huck and Jim drift down the river, they meet many colorful characters and have many great adventures.  The true heart of the story, however, is the friendship between Huck and Jim.  A constant theme throughout the book is Huck’s internal struggle between what he has been taught, that helping a runaway slave is a sin, and what he truly believes, that Jim is a good man and it couldn’t possibly be wrong to help him.Adventures of Huckleberry Finn was unique at the time of its publication (1884) because it is narrated by Huck himself and is written in the numerous dialects common in the area and time in which the book is set.  Although the book was originally intended as a sequel to the children’s book The Adventures of Tom Sawyer, as Twain wrote Adventures of Huckleberry Finn it progressed into a more serious work.  Twain’s views on slavery and other social issues of the time become clear through the words, thoughts, and actions of Huck Finn.  The book has always been the subject of great controversy, and according to The American Library Association it was fifth on the list of most frequently challenged books in the 1990s.(Summary by Annie Coleman)",
     language: "English",
     copyright_year: "1884",
     downloadLink:
@@ -176,7 +176,7 @@ export const topReadings = [
     ],
   },
   {
-    key: "64",
+    key: Math.random(),
     title: "Heart of Darkness",
     description:
       "Set in a time of oppressive colonisation, when large areas of the world were still unknown to Europe, and Africa was literally on maps and minds as a mysterious shadow, Heart of Darkness famously explores the rituals of civilisation and barbarism, and the frighteningly fine line between them.\n    We get the tale through a classic unreliable narrator, relating as Marlow, a ship’s captain, tells how he was sent by the Company to retrieve the wayward Kurtz, and was shaken to discover the true depths of darkness in that creature’s, and in his own, soul. Conrad based the work closely on his own terrible experience in the Congo.\n\n    This work has been reinterpreted and adapted into many modern forms, the most well known being the film Apocalypse Now.\n    (Summary written by Marlo Dianne)",
@@ -198,10 +198,10 @@ export const topReadings = [
     ],
   },
   {
-    key: "65",
+    key: Math.random(),
     title: "Odyssey",
     description:
-      "The Odyssey is one of the two major ancient Greek epic poems (the other being the Iliad), attributed to the poet Homer. The poem is commonly dated to between 800 and 600 BC. The poem is, in part, a sequel to the Iliad, and concerns the events that befall the Greek hero Odysseus in his long journey back to his native land Ithaca after the fall of Troy.<br><br>It takes Odysseus ten years to return to his native land of Ithaca after ten years of war; during his 20-year absence, his son Telemachus and his wife Penelope must deal with a group of unruly suitors who have moved into Odysseus' home to compete for Penelope's hand in marriage, since most have assumed that Odysseus has died.<br><br>The poem is a fundamental text in the Western canon and continues to be read in both Homeric Greek and translations around the world. (Summary from Wikipedia)",
+      "The Odyssey is one of the two major ancient Greek epic poems (the other being the Iliad), attributed to the poet Homer. The poem is commonly dated to between 800 and 600 BC. The poem is, in part, a sequel to the Iliad, and concerns the events that befall the Greek hero Odysseus in his long journey back to his native land Ithaca after the fall of Troy.It takes Odysseus ten years to return to his native land of Ithaca after ten years of war; during his 20-year absence, his son Telemachus and his wife Penelope must deal with a group of unruly suitors who have moved into Odysseus' home to compete for Penelope's hand in marriage, since most have assumed that Odysseus has died.The poem is a fundamental text in the Western canon and continues to be read in both Homeric Greek and translations around the world. (Summary from Wikipedia)",
     language: "English",
     copyright_year: "1900",
     downloadLink:
@@ -223,7 +223,7 @@ export const topReadings = [
 
 export const children = [
   {
-    key: "74",
+    key: Math.random(),
     title: "Mother Goose in Prose",
     description:
       "Whether Mother Goose was a real person or a myth, the songs that are attributed to her name are what we remember from our childhood. Some of these nursery rhymes are complete tales in themselves.  There are others which are mere suggestions, leaving the imagination to weave in the details of the story. Many of the rhymes’ origins even at the time of this books writing, could be traced back decades or centuries. L Frank Baum in 1897, while living in Chicago, collected the rhymes and created short stories around them which add context and understanding for children who are drawn to the familiar melodies. (Summary by Westwinds12)",
@@ -245,7 +245,7 @@ export const children = [
     ],
   },
   {
-    key: "79",
+    key: Math.random(),
     title: "Ranald Bannerman's Boyhood",
     description:
       "George MacDonald is mainly known for his fantasy works and fairy tales such as At the Back of the North Wind and the Princess and the Goblin. However, during his life he was more famous for many more realistic novels. . . among them the somewhat autobiographical Ranald Bannerman's Boyhood.\n<p>This story of a young motherless boy growing up with his brothers in a Scottish manse is full of delightful characters. There is Kirsty, an enchanting Highland storyteller, Turkey, the intrepid cowherd, the evil Kelpie, and the lovely Elsie Duff. Throughout the twists and turns of his escapades and adventures Ranald learns from his father the important lessons of courage and integrity.</p><p>When Ranald Bannerman's Boyhood came out in 1871 the New York Independent praised it as \"full of sweetness, full of boy-life and true goodness\". Perhaps, but it is also a good story, from the master of storytellers. (Summary by Bookworm)",
@@ -267,7 +267,7 @@ export const children = [
     ],
   },
   {
-    key: "96",
+    key: Math.random(),
     title: "Junior Classics Volume 1: Fairy and Wonder Tales",
     description:
       "The purpose of The Junior Classics is to provide, in ten volumes containing about five thousand pages, a classified collection of tales, stories, and poems, both ancient and modern, suitable for boys and girls of from six to sixteen years of age. (summary from book introduction)This collection consists of Volume 1 of The Junior Classics, and it contains many well known stories in their original forms. Among stories from other authors, you'll find Hans Christian Anderson, Aesop, and the Grimm brothers.",
@@ -296,10 +296,10 @@ export const children = [
     ],
   },
   {
-    key: "104",
+    key: Math.random(),
     title: "Merry Adventures of Robin Hood",
     description:
-      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.<br><br>The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
+      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
     language: "English",
     copyright_year: "1883",
     downloadLink:
@@ -318,7 +318,7 @@ export const children = [
     ],
   },
   {
-    key: "142",
+    key: Math.random(),
     title: "American Indian Fairy Tales",
     description:
       "With no written language, Native Americans living in the Lake Superior region passed their cultural identity down through the generations by way of stories. Far more than mere tales to amuse children, they passed along the collective wisdom of the tribes. In the 1830s, government Indian Agent and ethnologist Henry R Schoolcraft learned the language of these people and went out to collect and preserve their stories before the tribes disappeared under the westward rush of American civilization. Though these stories were recast as children’s fairy tales in the 1920s, they contain much of the old wisdom of a culture which has largely disappeared. (Summary by Chip)",
@@ -347,7 +347,7 @@ export const children = [
     ],
   },
   {
-    key: "145",
+    key: Math.random(),
     title: "Anne of Avonlea",
     description:
       "Following Anne of Green Gables, the book covers the second chapter in the life of Anne Shirley. Anne of Avonlea follows Anne from the age of 16 to 18, during the two years that she teaches at Avonlea school. It includes many of the characters from Anne of Green Gables, as well new ones like Mr Harrison, Miss Lavendar Lewis, Paul Irving, and the twins Dora and Davy. (Summary from Wikipedia.org)",
@@ -369,7 +369,7 @@ export const children = [
     ],
   },
   {
-    key: "146",
+    key: Math.random(),
     title: "Anne of Green Gables",
     description:
       "Lucy Maud Montgomery’s classic children’s novel, Anne of Green Gables tells the story of a red headed orphan girl with a personality you can’t help but love. Despite her “tragical” past, Anne’s optimism and imagination have helped her to always see the best in things. Anne’s life changes considerably when she is accidentally adopted by the Cuthberts, a brother and sister who thought they were getting a boy to help out on the farm. The Cuthberts decide Anne will have to be sent back to the orphange but before they know it, she has begun to work her way into their hearts. (Summary by Annie Coleman)",
@@ -391,7 +391,7 @@ export const children = [
     ],
   },
   {
-    key: "154",
+    key: Math.random(),
     title: "Bildergeschichten",
     description:
       "Wilhelm Busch war einer der bedeutendsten humoristischen Zeichner und Dichter Deutschlands. Er gilt wegen seiner satirischen Bildergeschichten (u.a. Max und Moritz) in Versen als einer der Urväter des Comics. Die Bilder zu diesem Buch sind im Online Text enthalten. (Zusammenfassung von Wikipedia)",
@@ -413,7 +413,7 @@ export const children = [
     ],
   },
   {
-    key: "172",
+    key: Math.random(),
     title: "Kleine Häwelmann",
     description:
       "Das berühmte Märchen von Theodor Storm erzählt von einem kleinen Jungen, der Häwelmann hieß. Häwelmann schlief in einem Bett mit Rollen, “wenn er aber nicht müde war, so musste seine Mutter ihn darin in der Stube umherfahren”. - In der Nacht von der diese Geschichte handelt, schlief die Mutter aber so tief ein, daß sie sein Rufen nach “Mehr, mehr!” nicht mehr hören konnte. Und so baute sich Häwelmann aus seinem Nachthemd ein Segel und fuhr allein durch das Zimmer, die Stadt, den Wald und bis in den Himmel hinein, mit lehrreichen Konsequenzen.\r\n(Zusammenfassung von Franziska)",
@@ -435,7 +435,7 @@ export const children = [
     ],
   },
   {
-    key: "175",
+    key: Math.random(),
     title: "Little Princess",
     description:
       "The novel tells of the troubles of a wealthy young girl, Sara Crewe, who is sent to an oppressive London boarding school during her father’s campaign in India. Thanks to Capt. Crewe’s money, Sara is treated as a little princess until, one day, word comes of her father’s tragic death. Miss Minchin, the school’s greedy headmistress, wastes no time in putting the now-penniless Sara to work for her room and board. It is only through the friendship of two other girls, her own resolute nature, and some astonishing luck that Sara eventually finds her way back to happiness. (Summary from wikipedia.org)",
@@ -460,7 +460,7 @@ export const children = [
 
 export const newReleases = [
   {
-    key: "67",
+    key: Math.random(),
     title: "Divine Comedy",
     description:
       'The Divine Comedy (Italian: Commedia, later christened "Divina" by Giovanni Boccaccio), written by Dante Alighieri between 1308 and his death in 1321, is widely considered the central epic poem of Italian literature, the last great work of literature of the Middle Ages and the first great work of the Renaissance. A culmination of the medieval world-view of the afterlife, it establishes the Tuscan dialect in which it is written as the Italian standard, and is seen as one of the greatest works of world literature. - The Divine Comedy is composed of three canticas (or "cantiche") — Inferno (Hell), Purgatorio (Purgatory), and Paradiso (Paradise) — composed each of 33 cantos (or "canti"). The very first canto serves as an introduction to the poem and is generally not considered to be part of the first cantica, bringing the total number of cantos to 100. - The poet tells in the first person his travel through the three realms of the dead, lasting during the Easter Triduum in the spring of 1300. (Summary from Wikipedia)',
@@ -482,10 +482,10 @@ export const newReleases = [
     ],
   },
   {
-    key: "68",
+    key: Math.random(),
     title: "Unbeaten Tracks in Japan",
     description:
-      "Isabella Lucy Bird was a 19th century English traveller, writer, and natural historian. She was a sickly child, however, while she was travelling she was almost always healthy. Her first trip, in 1854, took her to America, visiting relatives. Her first book, The Englishwoman in America was published anonymously two years later.<br><br>\nUnbeaten Tracks in Japan is compiled of the letters she sent to her sister during her 7 months sojourn in Japan in 1878. Her travels there took her from Edo (now called Tokyo) through the interior - where she was often the first foreigner the locals had met - to Niigata, and from there to Aomori. There she crossed over to Yezo (Hokkaido), and her account on the life of the Ainu, an indigenous people of Japan, provides an interesting glimpse of days long past. (Summary by Availle)",
+      "Isabella Lucy Bird was a 19th century English traveller, writer, and natural historian. She was a sickly child, however, while she was travelling she was almost always healthy. Her first trip, in 1854, took her to America, visiting relatives. Her first book, The Englishwoman in America was published anonymously two years later.\nUnbeaten Tracks in Japan is compiled of the letters she sent to her sister during her 7 months sojourn in Japan in 1878. Her travels there took her from Edo (now called Tokyo) through the interior - where she was often the first foreigner the locals had met - to Niigata, and from there to Aomori. There she crossed over to Yezo (Hokkaido), and her account on the life of the Ainu, an indigenous people of Japan, provides an interesting glimpse of days long past. (Summary by Availle)",
     language: "English",
     copyright_year: "1878",
     downloadLink:
@@ -504,7 +504,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "71",
+    key: Math.random(),
     title: "Canterville Ghost",
     description:
       "The American Minister and his family have bought the English stately home Canterville Chase, complete with the ghost of Sir Simon de Canterville - blood-stains, clanking chains and all. But these modern Americans will have no truck with ghostly goings-on, and set out to beat the spectre at his own game. (Summary by David Barnes)",
@@ -526,7 +526,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "74",
+    key: Math.random(),
     title: "Mother Goose in Prose",
     description:
       "Whether Mother Goose was a real person or a myth, the songs that are attributed to her name are what we remember from our childhood. Some of these nursery rhymes are complete tales in themselves.  There are others which are mere suggestions, leaving the imagination to weave in the details of the story. Many of the rhymes’ origins even at the time of this books writing, could be traced back decades or centuries. L Frank Baum in 1897, while living in Chicago, collected the rhymes and created short stories around them which add context and understanding for children who are drawn to the familiar melodies. (Summary by Westwinds12)",
@@ -548,7 +548,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "75",
+    key: Math.random(),
     title: "Uncle Tom's Cabin",
     description:
       "Among the most “banned” books in the United States, Uncle Tom’s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North’s view of slavery. In fact, when he met Harriet Beecher Stowe, President Lincoln is said to have commented, “So you’re the little lady whose book started the Civil War.” First published on March 20, 1852, the story focuses on the tale of Uncle Tom, a long-suffering black slave, the central character around whose life the other characters—both fellow slaves and slave owners—revolve. The novel depicts the harsh reality of slavery while also showing that Christian love and faith can overcome even something as evil as enslavement of fellow human beings. (summary by Wikipedia and John Greenman)\n<b>Note From the Reader: </b>\nThe listener is about to enter a world rich with diverse characters. In order to differentiate between the characters, the reader has given each, his/her own voice. As an adult male reader, however, the reader's representation of women and children will, necessarily be less than adequate. He asks for your indulgence.",
@@ -570,7 +570,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "76",
+    key: Math.random(),
     title: "Truth About Jesus. Is He a Myth?",
     description:
       "The following work offers in book form the series of studies on the question of the historicity of Jesus, presented from time to time before the Independent Religious Society in Orchestra Hall, Chicago, 1909. No effort has been made to change the manner of the spoken, into the more regular form of the written, word. (Summary by M.M. Mangasarian (1859-1943) and Joanne Pauwels)",
@@ -592,7 +592,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "78",
+    key: Math.random(),
     title: "Foolish Dictionary",
     description:
       '"The Foolish Dictionary" was written by "Gideon Wurdz" (the pen name for Charles Wayland Towne) and was published in 1904. According to the beginning of the book, it is "An exhausting work of reference to un-certain English words, their origin, meaning, legitimate and illegitimate use..." This a a short but amusing dictionary which "redefines" words in some interesting ways. Funny and sometimes bizarre observations are sprinkled throughout. In keeping with LibriVox policy to read, rather than attempt to rewrite, books - even those with offensive content - nothing has been omitted. While many of the definitions may just seem confusing or "corny" to modern readers, there are a couple that also might be considered "objectionable," particularly in section 10, which contains offensive content of a racial nature. \n\nSummary by Maddie',
@@ -614,7 +614,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "79",
+    key: Math.random(),
     title: "Ranald Bannerman's Boyhood",
     description:
       "George MacDonald is mainly known for his fantasy works and fairy tales such as At the Back of the North Wind and the Princess and the Goblin. However, during his life he was more famous for many more realistic novels. . . among them the somewhat autobiographical Ranald Bannerman's Boyhood.\n<p>This story of a young motherless boy growing up with his brothers in a Scottish manse is full of delightful characters. There is Kirsty, an enchanting Highland storyteller, Turkey, the intrepid cowherd, the evil Kelpie, and the lovely Elsie Duff. Throughout the twists and turns of his escapades and adventures Ranald learns from his father the important lessons of courage and integrity.</p><p>When Ranald Bannerman's Boyhood came out in 1871 the New York Independent praised it as \"full of sweetness, full of boy-life and true goodness\". Perhaps, but it is also a good story, from the master of storytellers. (Summary by Bookworm)",
@@ -636,7 +636,7 @@ export const newReleases = [
     ],
   },
   {
-    key: "81",
+    key: Math.random(),
     title: "Dream Psychology",
     description:
       "Not a few serious-minded students, [...], have been discouraged from attempting a study of Freud's dream psychology. The book in which he originally offered to the world his interpretation of dreams was as circumstantial as a legal record to be pondered over by scientists at their leisure, not to be assimilated in a few hours by the average alert reader. In those days, Freud could not leave out any detail likely to make his extremely novel thesis evidentially acceptable to those willing to sift data. - Freud himself, however, realized the magnitude of the task which the reading of his magnum opus imposed upon those who have not been prepared for it by long psychological and scientific training and he abstracted from that gigantic work the parts which constitute the essential of his discoveries.The publishers of the present book deserve credit for presenting to the reading public the gist of Freud's psychology in the master's own words, and in a form which shall neither discourage beginners, nor appear too elementary to those who are more advanced in psychoanalytic study. - Dream psychology is the key to Freud's works and to all modern psychology. With a simple, compact manual such as Dream Psychology there shall be no longer any excuse for ignorance of the most revolutionary psychological system of modern times. (From the book introduction, by Andre Tridon)",
@@ -658,10 +658,10 @@ export const newReleases = [
     ],
   },
   {
-    key: "83",
+    key: Math.random(),
     title: "Vindication of the Rights of Woman",
     description:
-      "Wollstonecraft (1759-1797) is best known for A Vindication of the Rights of Woman, in which she argued that women are not naturally inferior to men, but only appeared to be because they lacked education. She suggested that both men and women should be treated as rational beings and imagined a social order founded on reason. - Today, Wollstonecraft is considered a foundational thinker in feminist philosophy. Her early advocacy of women's equality and her attacks on conventional femininity and the degradation of women presaged the later emergence of the feminist political movement. Feminist scholars and activists have cited both her philosophical ideas and personal struggles as important influences in their work. <br><br>\n<em>This is one of the 12 Books That Changed the World by Melvyn Bragg.</em> (Summary from Wikipedia and Alex Foster)",
+      "Wollstonecraft (1759-1797) is best known for A Vindication of the Rights of Woman, in which she argued that women are not naturally inferior to men, but only appeared to be because they lacked education. She suggested that both men and women should be treated as rational beings and imagined a social order founded on reason. - Today, Wollstonecraft is considered a foundational thinker in feminist philosophy. Her early advocacy of women's equality and her attacks on conventional femininity and the degradation of women presaged the later emergence of the feminist political movement. Feminist scholars and activists have cited both her philosophical ideas and personal struggles as important influences in their work. \nThis is one of the 12 Books That Changed the World by Melvyn Bragg. (Summary from Wikipedia and Alex Foster)",
     language: "English",
     copyright_year: "1792",
     downloadLink:
@@ -683,7 +683,7 @@ export const newReleases = [
 
 export const bestSellers = [
   {
-    key: "84",
+    key: Math.random(),
     title: "Getting of Wisdom",
     description:
       "The Getting of Wisdom tells the story of Laura Rambotham, a 12-year-old girl who is just starting at her boarding school. This is based on Henry Handel Richardson's experiences of her own school, the Presbyterian Ladies College in central Melbourne. The story goes through her friends and enemies and all the life of a boarding school in early 20th century Australia, and all the subjects and learning too. Laura learns a lot but her education does not satisfy her, and her social life is thrown upon her as very different from her peers. (Summary by Bronwyn Kate)",
@@ -705,10 +705,10 @@ export const bestSellers = [
     ],
   },
   {
-    key: "85",
+    key: Math.random(),
     title: "Consolation of Philosophy",
     description:
-      "Consolation of Philosophy (Latin: Consolatio Philosophiae) is a philosophical work by Boethius written in about the year 524 AD. It has been described as the single most important and influential work in the West in medieval and early Renaissance Christianity, and is also the last great work that can be called Classical. <br><br> Consolation of Philosophy was written during Boethius' one year imprisonment while awaiting trial, and eventual horrific execution, for the crime of treason by Ostrogothic King Theodoric the Great. Boethius was at the very heights of power in Rome and was brought down by treachery. It was from this experience he was inspired to write a philosophical book from prison reflecting on how a lord's favor could change so quickly and why friends would turn against him. It has been described as “by far the most interesting example of prison literature the world has ever seen.” <br><br> The Consolation of Philosophy stands, by its note of fatalism and its affinities with the Christian doctrine of humility, midway between the heathen philosophy of Seneca the Younger and the later Christian philosophy of consolation represented by Thomas Aquinas. <br><br>The book is heavily influenced by Plato and his dialogues (as was Boethius himself). (Summary from Wikipedia)",
+      "Consolation of Philosophy (Latin: Consolatio Philosophiae) is a philosophical work by Boethius written in about the year 524 AD. It has been described as the single most important and influential work in the West in medieval and early Renaissance Christianity, and is also the last great work that can be called Classical.  Consolation of Philosophy was written during Boethius' one year imprisonment while awaiting trial, and eventual horrific execution, for the crime of treason by Ostrogothic King Theodoric the Great. Boethius was at the very heights of power in Rome and was brought down by treachery. It was from this experience he was inspired to write a philosophical book from prison reflecting on how a lord's favor could change so quickly and why friends would turn against him. It has been described as “by far the most interesting example of prison literature the world has ever seen.”  The Consolation of Philosophy stands, by its note of fatalism and its affinities with the Christian doctrine of humility, midway between the heathen philosophy of Seneca the Younger and the later Christian philosophy of consolation represented by Thomas Aquinas. The book is heavily influenced by Plato and his dialogues (as was Boethius himself). (Summary from Wikipedia)",
     language: "English",
     copyright_year: "1900",
     downloadLink:
@@ -727,7 +727,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "86",
+    key: Math.random(),
     title: "Emma",
     description:
       "Sherry reads Jane Austen’s sparkling comedy of manners with wit and vivacity, and brings the characters to life. Mr. Woodhouse worries and frets, Miss Bates chatters on, and Emma blithely manipulates and misunderstands her friends and family until she finally learns her lesson! (Summary by Kara)",
@@ -749,7 +749,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "88",
+    key: Math.random(),
     title: "Mrs. Caudle's Curtain Lectures",
     description:
       "Douglas William Jerrold (1803-1857) was the son of an actor manager. After some time in the Navy and as an apprentice printer he became a playwright and later a journalist. He was a contemporary and friend of Charles Dickens. As a journalist he worked for Punch magazine in which Mrs Caudle's Curtain Lectures were serialised, to be published in book form in 1846.Job Caudle, the 'hero' of the book is a Victorian shopkeeper whose wife finds she can only talk to him without interruption in bed. Caudle, who outlives his wife, finds he can no longer sleep easily because of his memory of these 'lectures' and resolves to exorcise his wife's memory by recording the lectures, it seems with a view to future publication for the edification of others. Jerrold's humour shines through this insight into Victorian middle class culture. (Summary by Martin Clifton)",
@@ -771,10 +771,10 @@ export const bestSellers = [
     ],
   },
   {
-    key: "90",
+    key: Math.random(),
     title: "Importance of Being Earnest",
     description:
-      'The Importance of Being Earnest is a classic comedy of manners in which two flippant young men, in order to impress their respected beloveds, pretend that their names are “Ernest,” which both young ladies believe confers magical qualities on the possessor. It was first performed for the public on February 14, 1895 at the St. James’ Theatre in London, and is regarded by many critics and scholars as being the wittiest play in the English language. (Summary from Wikipedia.org)<b>Characters:</b><em>John Worthing, J.P.</em> - Read by <a href="http://www.johngon.com" rel="nofollow">John Gonzalez</a><em>Algernon Moncrieff</em> - Read by <a href="http://www.gordmackenzie.com/" rel="nofollow">Gord Mackenzie</a><em>Rev. Canon Chasuble, D.D.</em> - Read by <a href="http://tis.goringe.net/" rel="nofollow">Chris Goringe</a><em>Merriman, Butler</em> - Read by Peter Yearsley<em>Lane, Manservant</em> - Read by <a href="http://dosemagazine.blogsome.com/" rel="nofollow">Hugh McGuire</a><em>Lady Bracknell</em> - Read by <a href="http://www.mediatinker.com/" rel="nofollow">Kristen McQuillin</a><em>Hon. Gwendolen Fairfax</em> - Read by Deana<em>Cecily Cardew</em> - Read by <a href="http://kayray.org/" rel="nofollow">Kara Shallenberg</a><em>Miss Prism, Governess</em> - Read by Sureka<em>Narrator</em> - Read by <a href="http://betsie.info" rel="nofollow">Betsie Bush</a><em>Project Editor</em> - <a href="http://www.writingshow.com/" rel="nofollow">Paula Berinstein</a>',
+      "The Importance of Being Earnest is a classic comedy of manners in which two flippant young men, in order to impress their respected beloveds, pretend that their names are “Ernest,” which both young ladies believe confers magical qualities on the possessor. It was first performed for the public on February 14, 1895 at the St. James’ Theatre in London, and is regarded by many critics and scholars as being the wittiest play in the English language. (Summary from Wikipedia.org)<b>Characters:</b>John Worthing, J.P. - Read by John GonzalezAlgernon Moncrieff - Read by Gord MackenzieRev. Canon Chasuble, D.D. - Read by Chris GoringeMerriman, Butler - Read by Peter YearsleyLane, Manservant - Read by Hugh McGuireLady Bracknell - Read by Kristen McQuillinHon. Gwendolen Fairfax - Read by DeanaCecily Cardew - Read by Kara ShallenbergMiss Prism, Governess - Read by SurekaNarrator - Read by Betsie BushProject Editor - Paula Berinstein",
     language: "English",
     copyright_year: "1899",
     downloadLink:
@@ -793,7 +793,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "93",
+    key: Math.random(),
     title: "Story of a Stuffed Elephant",
     description:
       "The Story of a Stuffed Elephant is... well, the story of a Stuffed Elephant and the little boy who owns him, and his sister, and all their adventures. A delightful children's book by the author of The Bobbsey Twins series. (Summary by Vlooi and Kara)",
@@ -815,7 +815,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "94",
+    key: Math.random(),
     title: "Wind in the Willows",
     description:
       "This much-loved story follows a group of animal friends in the English countryside as they pursue adventure … and as adventure pursues them! The chief characters - Mole, Rat, and Toad - generally lead upbeat and happy lives, but their tales are leavened with moments of terror, homesickness, awe, madcap antics, and derring-do.\nAlthough classed as children’s literature, The Wind in the Willows holds a gentle fascination for adults too. The vocabulary is decidedly not “Dick and Jane”, and a reader with a love of words will find new ones to treasure, even if well-equipped for the journey. Parents will appreciate the themes of loyalty, manners, self-restraint, and comradeship which are evident throughout the book. When the characters err, they are prompt to acknowledge it, and so a reading of this book can model good behavior to children, who will otherwise be enchanted with the many ways in which the lives of these bucolic characters differ from modern life.\nThis book was so successful that it enabled the author to retire from banking and take up a country life somewhat like that of his creations. It has been adapted for screen, stage, and even a ride at the original Disneyland.\n(Summary by Mark F. Smith)",
@@ -837,7 +837,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "96",
+    key: Math.random(),
     title: "Junior Classics Volume 1: Fairy and Wonder Tales",
     description:
       "The purpose of The Junior Classics is to provide, in ten volumes containing about five thousand pages, a classified collection of tales, stories, and poems, both ancient and modern, suitable for boys and girls of from six to sixteen years of age. (summary from book introduction)This collection consists of Volume 1 of The Junior Classics, and it contains many well known stories in their original forms. Among stories from other authors, you'll find Hans Christian Anderson, Aesop, and the Grimm brothers.",
@@ -866,7 +866,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "97",
+    key: Math.random(),
     title: "Lord Jim",
     description:
       'A classic of early literary modernism, Lord Jim tells the story of a young "simple and sensitive character" who loses his honor in a display of cowardice at sea -- and of his expiation of that sin against his own "shadowy ideal of conduct" on the remote island of Patusan. The novel, written by Conrad for magazine serialization during an intense and chaotic ten months in 1899 and 1900, has, in the words of Thomas C. Moser, "the rare distinction of being a masterpiece in two separate genres. It is at once an exotic adventure story of the Eastern seas in the popular tradition of Kipling and Stevenson and a complexly wrought \'art novel\' in the tradition of Flaubert and James. (summary by Stewart Wills)',
@@ -888,7 +888,7 @@ export const bestSellers = [
     ],
   },
   {
-    key: "99",
+    key: Math.random(),
     title: "Villette",
     description:
       "After a tragedy in her family, Lucy Snow leaves her home to become a teacher at a French boarding school. Lucy soon begins to fight against an overwhelming sense of desolation. Meeting a charming doctor and a strict, peculiar schoolmaster changes her life forever-- and threatens to break her spirit. (summary by heatherausten)",
@@ -913,10 +913,10 @@ export const bestSellers = [
 
 export const recentlyAdded = [
   {
-    key: "100",
+    key: Math.random(),
     title: "Narrative of Arthur Gordon Pym of Nantucket",
     description:
-      "The Narrative of Arthur Gordon Pym of Nantucket is Edgar Allan Poe’s only complete novel, published in 1838.<br><br>The work relates the tale of the young Arthur Gordon Pym who stows away aboard a whaling ship called Grampus. Various adventures and mis-adventures befall Pym including shipwreck, mutiny and cannibalism. The story starts out as a fairly conventional adventure at sea, but it becomes increasingly strange and hard to classify in later chapters, involving religious symbolism and the Hollow Earth. (Summary from Wikipedia)",
+      "The Narrative of Arthur Gordon Pym of Nantucket is Edgar Allan Poe’s only complete novel, published in 1838.The work relates the tale of the young Arthur Gordon Pym who stows away aboard a whaling ship called Grampus. Various adventures and mis-adventures befall Pym including shipwreck, mutiny and cannibalism. The story starts out as a fairly conventional adventure at sea, but it becomes increasingly strange and hard to classify in later chapters, involving religious symbolism and the Hollow Earth. (Summary from Wikipedia)",
     language: "English",
     copyright_year: "1838",
     downloadLink:
@@ -935,10 +935,10 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "104",
+    key: Math.random(),
     title: "Merry Adventures of Robin Hood",
     description:
-      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.<br><br>The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
+      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
     language: "English",
     copyright_year: "1883",
     downloadLink:
@@ -957,7 +957,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "105",
+    key: Math.random(),
     title: "Wives and Daughters",
     description:
       "If you like Jane Austen, you will probably like this book!Mrs. Gaskell, as she was often referred to, is considered one of the greatest British novelists of the Victorian era. She was one of the earliest novelists ever to use dialect in her works, finding often that no word but the vernacular would suffice to convey the meaning she wanted to achieve. She was the author of The Life of Charlotte Brontë, a much-acclaimed and sometimes-reviled biography of her friend and peer.Wives and Daughters revolves around Molly Gibson, only daughter of a widowed doctor living in a provincial English town in the 1830s. The novel was first published in the Cornhill Magazine as a serial from August 1864 to January 1866. When Mrs Gaskell died suddenly in 1865, it was not quite complete, and the last section was written by Frederick Greenwood. (Summary from Wikipedia)",
@@ -979,7 +979,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "106",
+    key: Math.random(),
     title: "Poems Every Child Should Know",
     description:
       "This anthology of poetry, published in 1904, contains such favorites as The Raven, My Shadow, and The Village Blacksmith, as well as many lovely poems that may be unfamiliar. Most of the poems in this collection are short enough for children to memorize.",
@@ -1008,7 +1008,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "119",
+    key: Math.random(),
     title: "Art of War",
     description:
       '"The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. The Art of War is one of the oldest and most famous studies of strategy and has had a huge influence on both military planning and beyond. The Art of War has also been applied, with much success, to business and managerial strategies." (summary from Wikipedia)',
@@ -1030,10 +1030,10 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "120",
+    key: Math.random(),
     title: "Three Musketeers",
     description:
-      "The Three Musketeers (Les Trois Mousquetaires) is a novel by Alexandre Dumas, père. It recounts the adventures of a young man named d'Artagnan after he leaves home to become a musketeer. D'Artagnan is not one of the musketeers of the title; those are his friends Athos, Porthos, and Aramis -- inseparable friends who live by the motto, \"One for all, and all for one\".<br><br>\nThe Three Musketeers was first published in serial form in the magazine Le Siècle between March and July 1844. Dumas claimed it was based on manuscripts he had discovered in the Bibliothèque Nationale. It was later proven that Dumas had based his work on the book Mémoires de Monsieur D'Artagnan, capitaine lieutenant de la première compagnie des Mousquetaires du Roi (Memoirs of Mister D'Artagnan, Lieutenant Captain of the first company of the King's Musketeers) by Gatien de Courtilz de Sandras (Cologne, 1700). <br><br>\nDumas' version of the story covers the adventures of D'Artagnan and his friends from 1625 to 1628, as they are involved in intrigues involving the weak King Louis XIII of France, his powerful and cunning advisor Cardinal Richelieu, the beautiful Queen Anne of Austria, her English lover, George Villiers, 1st Duke of Buckingham, and the Siege of La Rochelle. Adding to the intrigue are the mysterious Milady de Winter, and Richelieu's right-hand man, the Comte de Rochefort. (summary from wikipedia)\nGet <a href=\"http://librivox.org/twenty-years-after-by-alexandre-dumas/\"> Twenty Years After</a> here.\nGet <a href=\"http://librivox.org/the-man-in-the-iron-mask-by-alexandre-dumas/\"> The Man in the Iron Mask</a> here.",
+      "The Three Musketeers (Les Trois Mousquetaires) is a novel by Alexandre Dumas, père. It recounts the adventures of a young man named d'Artagnan after he leaves home to become a musketeer. D'Artagnan is not one of the musketeers of the title; those are his friends Athos, Porthos, and Aramis -- inseparable friends who live by the motto, \"One for all, and all for one\".\nThe Three Musketeers was first published in serial form in the magazine Le Siècle between March and July 1844. Dumas claimed it was based on manuscripts he had discovered in the Bibliothèque Nationale. It was later proven that Dumas had based his work on the book Mémoires de Monsieur D'Artagnan, capitaine lieutenant de la première compagnie des Mousquetaires du Roi (Memoirs of Mister D'Artagnan, Lieutenant Captain of the first company of the King's Musketeers) by Gatien de Courtilz de Sandras (Cologne, 1700). \nDumas' version of the story covers the adventures of D'Artagnan and his friends from 1625 to 1628, as they are involved in intrigues involving the weak King Louis XIII of France, his powerful and cunning advisor Cardinal Richelieu, the beautiful Queen Anne of Austria, her English lover, George Villiers, 1st Duke of Buckingham, and the Siege of La Rochelle. Adding to the intrigue are the mysterious Milady de Winter, and Richelieu's right-hand man, the Comte de Rochefort. (summary from wikipedia)\nGet  Twenty Years After here.\nGet  The Man in the Iron Mask here.",
     language: "English",
     copyright_year: "1846",
     downloadLink:
@@ -1052,7 +1052,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "123",
+    key: Math.random(),
     title: "Amateur Cracksman",
     description:
       '"I\'d tasted blood, and it was all over with me. Why should I work when I could steal? Why settle down to some humdrum uncongenial billet, when excitement, romance, danger and a decent living were all going begging together?"- A. J. Raffles, The Ides of March.The Amateur Cracksman is the first collection of stories about A. J. Raffles, gentleman, cricketer, and thief. After stopping his old school friend, Bunny Manders, from a desperate attempt at suicide, Raffles introduces the unsuspecting Bunny to a new way of earning a living, burglary. Though frequently horrified by Raffles\'s actions, the conscience-stricken Bunny stands by him through all their adventures, firm to his promise, "When you want me, I\'m your man!" (Summary by Kristin Hughes)',
@@ -1074,7 +1074,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "124",
+    key: Math.random(),
     title: "Girl of the Limberlost",
     description:
       "A Girl of the Limberlost, a novel written by the American writer and naturalist Gene Stratton-Porter, was first published in August, 1909. The story takes place in Indiana, in and around the Limberlost Swamp, during the early 20th century. (Summary from Wikipedia)",
@@ -1096,7 +1096,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "126",
+    key: Math.random(),
     title: "Rosary",
     description:
       "\"The Rosary\" is a beautiful love story. Gareth Dalmain falls in love with the Honorable Jane Champion. She loves him back, but does not trust his love, as is known to be a great lover of beauty, and she - alas - is very plain. Just as she decides to trust him, she receives news that he has been blinded in a hunting accident. She wants to go visit him, but he will not receive her, as he wants only her love - not her pity. With the help of their mutual friend and doctor, she gets the position as his nurse under a presumed name, and thereby gets to know the 'new' Gareth. (Summary by Maria Elmvang)",
@@ -1118,7 +1118,7 @@ export const recentlyAdded = [
     ],
   },
   {
-    key: "127",
+    key: Math.random(),
     title: "Golden mean to 5000 digits",
     description:
       "The golden section is a line segment sectioned into two according to the golden ratio. The total length a+b is to the longer segment a as a is to the shorter segment b. In mathematics and the arts, two quantities are in the golden ratio if the ratio between the sum of those quantities and the larger one is the same as the ratio between the larger one and the smaller. The golden ratio is a mathematical constant, approximately 1.6180339887.... At least since the Renaissance, many artists and architects have proportioned their works to approximate the golden ratio—especially in the form of the golden rectangle, in which the ratio of the longer side to the shorter is the golden ratio—believing this proportion to be aesthetically pleasing. Mathematicians have studied the golden ratio because of its unique and interesting properties. (From Wikipedia)",
@@ -1150,7 +1150,7 @@ export const recentlyAdded = [
 
 export const popularFiction = [
   {
-    key: "128",
+    key: Math.random(),
     title: "Queen Lucia",
     description:
       "E. F. Benson was born at Wellington College in Berkshire, where his father, who later went on to become the Archbishop of Canterbury, was the first Headmaster. He wrote 105 books in all.Queen Lucia (first published in 1920) was the first of Benson’s ‘Mapp and Lucia’ novels of which there were six. This first book is a comedy of manners based in the provincial village of Riseholme, where Emmeline Lucas (the Queen Lucia of the title) presides over the social and artistic universe of the gullible residents. Her aide-de-camp in these matters is the somewhat effete Georgie Pillson and the chief competitor for her ‘crown’ is Daisy Quantock. The scandal of the Guru, the psychical goings on with Princess Popoffski and the arrival into the sleepy village of a famous Prima Donna all conspire to threaten her supremacy… </br>(summary by Martin Clifton)",
@@ -1172,7 +1172,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "132",
+    key: Math.random(),
     title: "Last of the Mohicans - A Narrative of 1757 (version 2)",
     description:
       "This story is set in the British province of New York during the French and Indian War, and concerns a Huron massacre (with passive French acquiescence) of from 500 to 1,500 unarmed Anglo-American troops, who had honorably surrendered at Fort William Henry, plus some women and servants; the kidnapping of two sisters, daughters of the British commander; and their rescue by Hawkeye, the last two Mohicans, and others. Parts of the story may have been derived from the capture and death of Jane McCrea in July 1777 near Fort Edward, New York, by members of an Algonquian tribe. (Summary from Wikipedia)",
@@ -1194,7 +1194,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "133",
+    key: Math.random(),
     title: "Jane Eyre",
     description:
       "Jane Eyre is not your typical romance. It is a story of a woman who struggles with a world in which she doesn't quite fit. Once finished with her schooling, and with no family that really cares of her she strikes out on her own as a governess. Jane Eyre searches for love, someone to care for her, and someone to care for, and finds it in unexpected places. (summary by Kri)",
@@ -1216,10 +1216,10 @@ export const popularFiction = [
     ],
   },
   {
-    key: "134",
+    key: Math.random(),
     title: "Eclogues",
     description:
-      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)<BR> The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.<BR><BR>\nReaders of the eclogues that were done by multiple readers:<BR><BR>\nEclogue 1<BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>Tityrus: <a href="http://kayray.org/">Kara Shallenberg</a><br>\nEclogue 3<BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Damoetas: <a href="http://librivox.org/reader/87">Rosalind Wills</a><br>Palaemon: <a href="http://kayray.org/">Kara Shallenberg</a><br>\nEclogue 5<BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Mopsus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\nEclogue 7<BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>\nCorydon: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>\nTityrus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\nEclogue 8<BR>\nPollio: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\nDamon: <a href="http://librivox.org/reader/2607">Ruthie Golding</a><br>\nAlphesiboeus: <a href="http://frisco-squid.blogspot.com/">Squid Varilekova</a><br>\nEclogue 9<BR>\nLycidas: <a href="www.gregelmensdorp.com">Greg Elmensdorp</a><br>\nMoeris: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br><BR>\nAlso available: <a href="http://librivox.org/eclogae-by-publius-vergilius-maro/">a Librivox recording of The Eclogues in their original Latin.</a>',
+      "This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona) The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.\nReaders of the eclogues that were done by multiple readers:\nEclogue 1\nMeliboeus: Denny SayersTityrus: Kara Shallenberg\nEclogue 3\nMenalcas: Leni RibeiroDamoetas: Rosalind WillsPalaemon: Kara Shallenberg\nEclogue 5\nMenalcas: Leni RibeiroMopsus: Anna Simon\nEclogue 7\nMeliboeus: Denny Sayers\nCorydon: Leni Ribeiro\nTityrus: Anna Simon\nEclogue 8\nPollio: Anna Simon\nDamon: Ruthie Golding\nAlphesiboeus: Squid Varilekova\nEclogue 9\nLycidas: Greg Elmensdorp\nMoeris: Leni Ribeiro\nAlso available: a Librivox recording of The Eclogues in their original Latin.",
     language: "English",
     copyright_year: "0",
     downloadLink:
@@ -1238,10 +1238,10 @@ export const popularFiction = [
     ],
   },
   {
-    key: "136",
+    key: Math.random(),
     title: "Around the World in Seventy-Two Days",
     description:
-      "This is a true account by American woman journalist who, in 1889, set out to see whether she could beat the fictional journey in Jules Verne’s 1873 novel, <em>Around the World in Eighty Days</em>. Wearing one dress and carrying one handbag, Elizabeth Cochrane Seaman (pen name “Nellie Bly”), reported her travels back to avid readers in America. (Summary by Mary Reagan)",
+      "This is a true account by American woman journalist who, in 1889, set out to see whether she could beat the fictional journey in Jules Verne’s 1873 novel, Around the World in Eighty Days. Wearing one dress and carrying one handbag, Elizabeth Cochrane Seaman (pen name “Nellie Bly”), reported her travels back to avid readers in America. (Summary by Mary Reagan)",
     language: "English",
     copyright_year: "1890",
     downloadLink:
@@ -1260,7 +1260,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "137",
+    key: Math.random(),
     title: "My Man Jeeves",
     description:
       "Bertram Wooster is an English gentleman living in New York, who seems to get himself into all sorts of jams. It’s up to his manservant Jeeves to come up with the plan to save the day from unpleasant houseguests, stingy uncles, broken hearts, and hard-partying aunts. (Summary by Mark Nelson)",
@@ -1282,10 +1282,10 @@ export const popularFiction = [
     ],
   },
   {
-    key: "138",
+    key: Math.random(),
     title: "Ballad of John Silver",
     description:
-      "LibriVox volunteers bring you nine different recordings of\n<em>A Ballad of John Silver</em>, by John Masefield, to celebrate <a href='http://en.wikipedia.org/wiki/Talk_like_a_pirate_day'>\nInternational Talk Like a Pirate Day</a>. This was the weekly poetry project for the week of September 17th, 2006.",
+      "LibriVox volunteers bring you nine different recordings of\nA Ballad of John Silver, by John Masefield, to celebrate \nInternational Talk Like a Pirate Day. This was the weekly poetry project for the week of September 17th, 2006.",
     language: "English",
     copyright_year: "1902",
     downloadLink:
@@ -1304,7 +1304,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "139",
+    key: Math.random(),
     title: "Calendar of Sonnets",
     description:
       "Helen Hunt Jackson is probably most famous for her work on behalf of Native Americans’ rights. However, this short volume presents a sonnet for each month of the year, devoted simply and beautifully to the shifting wonder of nature through the seasons.\n(Summary by Laura Fox)",
@@ -1326,7 +1326,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "140",
+    key: Math.random(),
     title: "Christmas Carol",
     description:
       "A classic tale of what comes to those whose hearts are hard. In a series of ghostly visits, Scrooge visits his happy past, sees the difficulties of the present, views a bleak future, and in the end amends his mean ways. (Summary written by Kristen McQuillin)",
@@ -1348,7 +1348,7 @@ export const popularFiction = [
     ],
   },
   {
-    key: "141",
+    key: Math.random(),
     title: "Connecticut Yankee in King Arthur's Court",
     description:
       "Come and hear the strange tale of The Boss Hank Morgan, a modern day (at the time of publication) Connecticut Yankee who inexplicably finds himself transported to the court of the legendary King Arthur (as the title of the book implies). Hank, or simply, The Boss, as he comes to be most frequently known, quickly uses his modern day knowledge and education to pass himself off as a great magician, to get himself out of all sorts of surprising, (and frequently amusing) situations, as well as to advance the technological and cultural status of the nation in which he finds himself.In the rather un-subtle sub-text of the story, Twain uses The Boss to express a surprisingly pragmatic and frequently contradictory philosophy. The Boss explores the relative merits of Democracy, and Monarchy, he expresses his views on the “Nature v. Nurture” debate, he frequently speaks forcefully against an established Church, but just as strongly advocates for religion and a variety of churches (just not a compulsory one) and he devotes at least one afternoon to introducing his companions to the concept of inflation. In a far more subtle, yet no less forceful manner, the Boss shares with the reader some views about taxation, slavery (both literal and wage slavery), trade unions, the origins of the German language, the nature of marriage, and probably most powerfully, death.It is a tall order for a relatively brief text, but Twain manages it all with surprising clarity. No one will agree fully with the Boss on all of these matters, and I would be surprised if Twain himself would. In fact the Boss’s views are so pragmatic, and often contradictory, the reader is left to wonder if Twain himself is alternately speaking through the Boss, and setting him up as a straw man. Either way it is a delightful story and a great piece of American Literature, to say nothing of an excellent argument for education.\n\n(Review written by Steve Andersen)",
@@ -1411,7 +1411,7 @@ export const category = [
 
 export const fiction = [
   {
-    key: "162",
+    key: Math.random(),
     title: "Childhood",
     description:
       "Childhood, published in 1852, is the first novel in Leo Tolstoy’s autobiographical trilogy, which also includes Boyhood, and Youth. Published when Tolstoy was twenty-three, the book gained immediate notice among Russian writers including Ivan Turgenev, and heralded the young Tolstoy as a major figure in Russian letters. Childhood is an expressionist exploration of the internal life of a young boy, Nikolenka, and was a new form in Russian writing, mixing fact, fiction and emotions to render the moods and reactions of the narrator. Childhood is Tolstoy’s first published work. Translated into English by C. J. Hogarth. (Summary by Hugh)",
@@ -1433,10 +1433,10 @@ export const fiction = [
     ],
   },
   {
-    key: "210",
+    key: Math.random(),
     title: "Childhood - Детство",
     description:
-      "Childhood (Детство [Detstvo]; 1852) is the first novel in Leo Tolstoy’s autobiographical trilogy. They are the works that launched his writing career. These books earned him instant acclaim. This book describes the major physiological decisions of boyhood that all boys experience.<br>\r\n(Summary by Wikipedia)",
+      "Childhood (Детство [Detstvo]; 1852) is the first novel in Leo Tolstoy’s autobiographical trilogy. They are the works that launched his writing career. These books earned him instant acclaim. This book describes the major physiological decisions of boyhood that all boys experience.\r\n(Summary by Wikipedia)",
     language: "Russian",
     copyright_year: "1852",
     downloadLink:
@@ -1455,10 +1455,10 @@ export const fiction = [
     ],
   },
   {
-    key: "939",
+    key: Math.random(),
     title: "Stalky & Co.",
     description:
-      "Rudyard Kipling published Stalky & Co. in 1899. Set at an English boarding school in a seaside town on the North Devon coast. (The town, Westward Ho!, is not only unusual in having an exclamation mark, but also in being itself named after a novel, by Charles Kingsley.)<br /><br />\nThe book is a collection of linked short stories, with some information about the eponymous Stalky's later life. Beetle, one of the main trio, is said to be based on Kipling himself, while Stalky may be based on Lionel Dunsterville. <br /><br />\nThe stories have elements of the macabre (dead cats), bullying and violence, and hints about sex, making them far from the childish or idealised world of the typical school story. Edmund Wilson, critic, in The Wound and the Bow, was both shocked and uncomprehending.<br />\nAdapted by Tim Bulkeley from the Wikipedia entry.",
+      "Rudyard Kipling published Stalky & Co. in 1899. Set at an English boarding school in a seaside town on the North Devon coast. (The town, Westward Ho!, is not only unusual in having an exclamation mark, but also in being itself named after a novel, by Charles Kingsley.)\nThe book is a collection of linked short stories, with some information about the eponymous Stalky's later life. Beetle, one of the main trio, is said to be based on Kipling himself, while Stalky may be based on Lionel Dunsterville. \nThe stories have elements of the macabre (dead cats), bullying and violence, and hints about sex, making them far from the childish or idealised world of the typical school story. Edmund Wilson, critic, in The Wound and the Bow, was both shocked and uncomprehending.\nAdapted by Tim Bulkeley from the Wikipedia entry.",
     language: "English",
     copyright_year: "1899",
     downloadLink:
@@ -1477,7 +1477,7 @@ export const fiction = [
     ],
   },
   {
-    key: "2065",
+    key: Math.random(),
     title: "Shakspere: Personal Recollections",
     description:
       'A fictitious account of a "friend" of William Shakespeare, who accompanies him from his birth to his death and beyond, chronicling Shakespeare\'s life, adventures, speeches, and impromptu bursts of poetry. (Summary by Tricia G.)',
@@ -1499,10 +1499,10 @@ export const fiction = [
     ],
   },
   {
-    key: "2620",
+    key: Math.random(),
     title: "Chancellor",
     description:
-      'Der Chancellor ist eines von Jules Vernes ungewöhnlichsten Werken. <br><br>Es erzählt vom Untergang eines Schiffes in Form eines Tagebuches, das der Passagier J.-R. Kazallon führt, wird die letzte Fahrt des Dreimasters Chancellor geschildert, der irgendwo im Atlantik zwischen Charleston (South Carolina) und Liverpool untergeht, nachdem an Bord Feuer ausgebrochen ist, weil die Ladung (Baumwolle) Feuer gefangen hat. Die Situation wird noch dadurch erschwert, dass ein Passagier, der Kaufmann John Ruby, eigenmächtig hochexplosiven Sprengstoff mit an Bord gebracht hat. <br><br>Der Autor schildert die Umstände, die zur Katastrophe führen, die Versuche der Mannschaft, das Schiff noch zu retten und die Leiden der Überlebenden, die nach dem Untergang der Chancellor auf einem Floß über den Atlantik treiben. Die Überlebenden leiden Hunger, sie haben Halluzinationen. Einige Matrosen begehen Selbstmord, indem sie sich erhängen oder von Bord springen und sich den Haien, die das Floß umkreisen, zum Fraß vorwerfen. Allmählich blättert das Zivilisierte von den Schiffbrüchigen ab, Gier und Missgunst kommen zum Vorschein. Die Mannschaft lehnt sich gegen die Passagiere auf. Erst im allerletzten Moment wird durch eine "wunderbare Rettung" verhindert, dass die Schiffbrüchigen zu Menschenfressern werden. (Summary by Wikipedia)',
+      'Der Chancellor ist eines von Jules Vernes ungewöhnlichsten Werken. Es erzählt vom Untergang eines Schiffes in Form eines Tagebuches, das der Passagier J.-R. Kazallon führt, wird die letzte Fahrt des Dreimasters Chancellor geschildert, der irgendwo im Atlantik zwischen Charleston (South Carolina) und Liverpool untergeht, nachdem an Bord Feuer ausgebrochen ist, weil die Ladung (Baumwolle) Feuer gefangen hat. Die Situation wird noch dadurch erschwert, dass ein Passagier, der Kaufmann John Ruby, eigenmächtig hochexplosiven Sprengstoff mit an Bord gebracht hat. Der Autor schildert die Umstände, die zur Katastrophe führen, die Versuche der Mannschaft, das Schiff noch zu retten und die Leiden der Überlebenden, die nach dem Untergang der Chancellor auf einem Floß über den Atlantik treiben. Die Überlebenden leiden Hunger, sie haben Halluzinationen. Einige Matrosen begehen Selbstmord, indem sie sich erhängen oder von Bord springen und sich den Haien, die das Floß umkreisen, zum Fraß vorwerfen. Allmählich blättert das Zivilisierte von den Schiffbrüchigen ab, Gier und Missgunst kommen zum Vorschein. Die Mannschaft lehnt sich gegen die Passagiere auf. Erst im allerletzten Moment wird durch eine "wunderbare Rettung" verhindert, dass die Schiffbrüchigen zu Menschenfressern werden. (Summary by Wikipedia)',
     language: "German",
     copyright_year: "1877",
     downloadLink:
@@ -1521,10 +1521,10 @@ export const fiction = [
     ],
   },
   {
-    key: "2760",
+    key: Math.random(),
     title: "Last of the Plainsmen",
     description:
-      "Travel along as Mike Vendetti aka miketheauctioneer narrates an outstanding true account of a trip made in 1909 by Zane Grey and a plainsman, Buffalo Jones, through the Grand Canyon to lasso a cougar. That’s right, lasso. Throw a rope around. That’s equivalent to catching one by the tail.\n<BR><BR>\nAs I narrated this book, I found fact to be as exciting as fiction. This part of the west was relatively wild and untamed at this time. Wolves, wild horses, buffalo and other wildlife were quite prevalent, and the Indians were not that friendly.\n<BR><BR>\nThis adventure would never make it to “Animal Planet”, or as a National Geographic special, because there is quite a lot of what we would consider cruelty to animals, but this is a true story, and life as it was at the turn of the last century. Parts of this story will offend the sensibilities of some, but it is a glimpse into a world that no longer exists. I was definitely drawn into this story, as I hope the listener will be. (Summary by Mike Vendetti)",
+      "Travel along as Mike Vendetti aka miketheauctioneer narrates an outstanding true account of a trip made in 1909 by Zane Grey and a plainsman, Buffalo Jones, through the Grand Canyon to lasso a cougar. That’s right, lasso. Throw a rope around. That’s equivalent to catching one by the tail.\n\nAs I narrated this book, I found fact to be as exciting as fiction. This part of the west was relatively wild and untamed at this time. Wolves, wild horses, buffalo and other wildlife were quite prevalent, and the Indians were not that friendly.\n\nThis adventure would never make it to “Animal Planet”, or as a National Geographic special, because there is quite a lot of what we would consider cruelty to animals, but this is a true story, and life as it was at the turn of the last century. Parts of this story will offend the sensibilities of some, but it is a glimpse into a world that no longer exists. I was definitely drawn into this story, as I hope the listener will be. (Summary by Mike Vendetti)",
     language: "English",
     copyright_year: "1908",
     downloadLink:
@@ -1543,7 +1543,7 @@ export const fiction = [
     ],
   },
   {
-    key: "3066",
+    key: Math.random(),
     title: "Diary of a Superfluous Man",
     description:
       'Turgenev\'s shy hero, Tchulkaturin, is a representative example of a Russian archetype - the "superfluous man", a sort of Hamlet not necessarily dignified with the title Prince: an individual of comfortable means leading a dreary existence, without purpose and led on by events which may, as in this story, engulf him. The novella takes the form of a diary started by Tchulkaturin in the shock of being diagnosed as having a terminal illness. The journal entries cover a period of two weeks, leading to his death. Tchulkaturin quickly homes in on the only significant event in his life - an unreciprocated falling-in-love leading haphazardly to a non-fatal duel that leaves him desolated and fully conscious of the futility of his inactive existence.(Summary by Martin Geeson)',
@@ -1565,7 +1565,7 @@ export const fiction = [
     ],
   },
   {
-    key: "3194",
+    key: Math.random(),
     title: "Memoirs of Miss Sidney Bidulph",
     description:
       "Sidney and Cecilia are best childhood friends who are forced to part for 5 years. In that interval, Sidney Bidulph - an undoubtedly good and dutiful woman - writes to her friend about everything: her marriage, her children, her other friendships and, above all, about her great love for Mr. Faulkland. In an amazing and unforgettable way, this book shows us that the road to happiness is not always clear - and that sometimes doing what seems to be right is not really the right thing to do. With Rachel's lovely reading, we see her - Sidney Bidulph - as she was meant to be, and as she really is. (Summary by Stav Nisser)",
@@ -1587,10 +1587,10 @@ export const fiction = [
     ],
   },
   {
-    key: "3411",
+    key: Math.random(),
     title: "Mary Cary, Frequently Martha",
     description:
-      '"My name is Mary Cary. I live in the Yorkburg Female Orphan Asylum. You may think nothing happens in an Orphan Asylum. It does. The orphans are sure enough children, and real much like the kind that have Mothers and Fathers; and that’s why I am going to write this story." So begins Mary’s diary, which she fills with her various doings and misadventures at the Asylum in Virginia and her sharp observations about life and human nature. She loathes Miss Bray, the head of the Asylum, who is not above telling bald-faced lies to the Board to further her own selfish ends. She loves Miss Katherine, the Asylum’s resident nurse, who has befriended Mary and serves as a gentle role model for the child. As for Martha, she is Mary’s "other self" who speaks out—and sometimes acts out—in spite of Mary’s better nature. When she unexpectedly discovers her family background, Mary writes a letter to her uncle that leads to some surprising results on the way to a happy ending.<br><br>\r\n\r\nThe <i>Chicago Record-Herald</i> of March 12, 1910 stated, "Let’s be glad for books like Mary Cary. It isn’t so much what Mary Cary does, however, as what she is, bless her! that warms the cockles of the chilliest, most snugly corseted heart." (Summary by Jan MacGillivray)',
+      '"My name is Mary Cary. I live in the Yorkburg Female Orphan Asylum. You may think nothing happens in an Orphan Asylum. It does. The orphans are sure enough children, and real much like the kind that have Mothers and Fathers; and that’s why I am going to write this story." So begins Mary’s diary, which she fills with her various doings and misadventures at the Asylum in Virginia and her sharp observations about life and human nature. She loathes Miss Bray, the head of the Asylum, who is not above telling bald-faced lies to the Board to further her own selfish ends. She loves Miss Katherine, the Asylum’s resident nurse, who has befriended Mary and serves as a gentle role model for the child. As for Martha, she is Mary’s "other self" who speaks out—and sometimes acts out—in spite of Mary’s better nature. When she unexpectedly discovers her family background, Mary writes a letter to her uncle that leads to some surprising results on the way to a happy ending.\r\n\r\nThe Chicago Record-Herald of March 12, 1910 stated, "Let’s be glad for books like Mary Cary. It isn’t so much what Mary Cary does, however, as what she is, bless her! that warms the cockles of the chilliest, most snugly corseted heart." (Summary by Jan MacGillivray)',
     language: "English",
     copyright_year: "1910",
     downloadLink:
@@ -1609,10 +1609,10 @@ export const fiction = [
     ],
   },
   {
-    key: "3487",
+    key: Math.random(),
     title: "Kleine Johannes",
     description:
-      "De Kleine Johannes is een sprookje, waarin de ontwikkeling van kind tot volwassene en de worsteling met de levensraadsels centraal staan. We volgen het opgroeien van de kleine Johannes of in realiteit de schrijver zelf.<BR><BR>Short summary in English: This book is a fairytale, which represents the growing up of the author from a small boy to an adult.",
+      "De Kleine Johannes is een sprookje, waarin de ontwikkeling van kind tot volwassene en de worsteling met de levensraadsels centraal staan. We volgen het opgroeien van de kleine Johannes of in realiteit de schrijver zelf.Short summary in English: This book is a fairytale, which represents the growing up of the author from a small boy to an adult.",
     language: "Dutch",
     copyright_year: "1885",
     downloadLink:
@@ -1634,7 +1634,7 @@ export const fiction = [
 
 export const short = [
   {
-    key: "142",
+    key: Math.random(),
     title: "American Indian Fairy Tales",
     description:
       "With no written language, Native Americans living in the Lake Superior region passed their cultural identity down through the generations by way of stories. Far more than mere tales to amuse children, they passed along the collective wisdom of the tribes. In the 1830s, government Indian Agent and ethnologist Henry R Schoolcraft learned the language of these people and went out to collect and preserve their stories before the tribes disappeared under the westward rush of American civilization. Though these stories were recast as children’s fairy tales in the 1920s, they contain much of the old wisdom of a culture which has largely disappeared. (Summary by Chip)",
@@ -1663,7 +1663,7 @@ export const short = [
     ],
   },
   {
-    key: "180",
+    key: Math.random(),
     title: "Struwwelpeter",
     description:
       "Der Struwwelpeter, zuerst erschienen als “Lustige Geschichten und drollige Bilder mit 15 schön kolorierten Tafeln für Kinder von 3-6 Jahren”, wurde 1845 von Heinrich Hoffmann als ein Kinderbuch für seine eigene Familie geschrieben. Es wurde als eine illustrierte Sammlung von Kindergeschichten sehr bekannt durch seine erste englische Übersetzung im Jahre 1848. Das Buch wird oft als brutal angesehen, da die Kinder in den Geschichten nicht notwendigerweise gut behandelt werden. Trotzdem hatte es einen Einfluß auf spätere Literatur. (Summary by Aldark and Rainer)",
@@ -1685,7 +1685,7 @@ export const short = [
     ],
   },
   {
-    key: "261",
+    key: Math.random(),
     title: "Ghost Story Collection 001",
     description:
       "A collection of ten pieces, read by various readers, about the unreal edges of this world in legend and story; tales of love, death and beyond. If just one story prickles the hair on the back of your neck, or prickles your eyelids with the touch of tears, we will have succeeded. (Summary by Peter Yearsley)",
@@ -1707,7 +1707,7 @@ export const short = [
     ],
   },
   {
-    key: "262",
+    key: Math.random(),
     title: "Short Story Collection Vol. 006",
     description:
       "LibriVox's Short Story Collection 006: a collection of 20 short essays and fiction in the public domain read by a variety of LibriVox members.",
@@ -1729,10 +1729,10 @@ export const short = [
     ],
   },
   {
-    key: "276",
+    key: Math.random(),
     title: "Eve’s Diary",
     description:
-      "Eve’s Diary is a humorous monologue about Eve’s experiences at the dawn of creation. She is fascinated by every aspect of the new world around her and… Adam! The following is an extract from Adam:<br /><br /> “She is all interest, eagerness, vivacity, the world is to her a charm, a wonder, a mystery, a joy; she can’t speak for delight when she finds a new flower, she must pet it and caress it and smell it and talk to it…. And she is color-mad: brown rocks, yellow sand, gray moss, green foliage, blue sky…none of them is of any practical value, so far as I can see, but because they have color and majesty, that is enough for her, and she loses her mind over them…. If there is anything on the planet that she is not interested in, it is not in my list.”<br /> (Summary by Esther Lockwood)",
+      "Eve’s Diary is a humorous monologue about Eve’s experiences at the dawn of creation. She is fascinated by every aspect of the new world around her and… Adam! The following is an extract from Adam: “She is all interest, eagerness, vivacity, the world is to her a charm, a wonder, a mystery, a joy; she can’t speak for delight when she finds a new flower, she must pet it and caress it and smell it and talk to it…. And she is color-mad: brown rocks, yellow sand, gray moss, green foliage, blue sky…none of them is of any practical value, so far as I can see, but because they have color and majesty, that is enough for her, and she loses her mind over them…. If there is anything on the planet that she is not interested in, it is not in my list.” (Summary by Esther Lockwood)",
     language: "English",
     copyright_year: "1906",
     downloadLink:
@@ -1751,10 +1751,10 @@ export const short = [
     ],
   },
   {
-    key: "281",
+    key: Math.random(),
     title: "Gerrard Street Mystery and Other Weird Tales",
     description:
-      "John Charles Dent, the author of the following remarkable stories, was born in Kendal, Westmorland, England, in 1841. His parents emigrated to Canada shortly after that event, bringing with them, of course, the youth who was afterwards to become the Canadian author and historian. Mr. Dent received his primary education in Canadian schools, and afterwards studied law, becoming in due course a member of the Upper Canada Bar. He only practised for a few years, then returned to England to pursue a literary career, writing mostly for periodicals. After remaining in England for several years, Mr. Dent and his family moved to Boston, in America, for about two years. But he finally returned to Canada, accepting a journalistic position in Toronto. Mr. Dent proceeded to write 'The Canadian Portrait Gallery', which ran to four large volumes, 'The Last Forty Years: Canada since the Union of 1841', and a 'History of the Rebellion in Upper Canada'.<BR>This collected work of his short fiction, contributed by their author at considerable intervals to different periodicals, was published posthumously. The stories themselves are delightfully anchored in the physical geography of Upper Canada (or in the case of 'Gagtooth's Image', Illinois), and have a mystical and spooky air about them. (Summary by Pipesdreams)",
+      "John Charles Dent, the author of the following remarkable stories, was born in Kendal, Westmorland, England, in 1841. His parents emigrated to Canada shortly after that event, bringing with them, of course, the youth who was afterwards to become the Canadian author and historian. Mr. Dent received his primary education in Canadian schools, and afterwards studied law, becoming in due course a member of the Upper Canada Bar. He only practised for a few years, then returned to England to pursue a literary career, writing mostly for periodicals. After remaining in England for several years, Mr. Dent and his family moved to Boston, in America, for about two years. But he finally returned to Canada, accepting a journalistic position in Toronto. Mr. Dent proceeded to write 'The Canadian Portrait Gallery', which ran to four large volumes, 'The Last Forty Years: Canada since the Union of 1841', and a 'History of the Rebellion in Upper Canada'.This collected work of his short fiction, contributed by their author at considerable intervals to different periodicals, was published posthumously. The stories themselves are delightfully anchored in the physical geography of Upper Canada (or in the case of 'Gagtooth's Image', Illinois), and have a mystical and spooky air about them. (Summary by Pipesdreams)",
     language: "English",
     copyright_year: "1888",
     downloadLink:
@@ -1773,7 +1773,7 @@ export const short = [
     ],
   },
   {
-    key: "296",
+    key: Math.random(),
     title: "Short Story Collection Vol. 001",
     description:
       "LibriVox’s Short Story Collection 001: a collection of 10 short works of fiction in the public domain read by a variety of LibriVox members.",
@@ -1795,7 +1795,7 @@ export const short = [
     ],
   },
   {
-    key: "297",
+    key: Math.random(),
     title: "Short Story Collection Vol. 002",
     description:
       "LibriVox’s Short Story Collection 002: a collection of 10 short works of fiction in the public domain read by a variety of LibriVox members.",
@@ -1817,7 +1817,7 @@ export const short = [
     ],
   },
   {
-    key: "298",
+    key: Math.random(),
     title: "Short Story Collection Vol. 003",
     description:
       "LibriVox’s Short Story Collection 003: a collection of 20 short fictional works in the public domain read by a variety of LibriVox members.",
@@ -1839,7 +1839,7 @@ export const short = [
     ],
   },
   {
-    key: "299",
+    key: Math.random(),
     title: "Short Story Collection Vol. 004",
     description:
       "LibriVox’s Short Story Collection 004: a collection of 20 short works of fiction in the public domain read by a variety of LibriVox members.",
@@ -1864,10 +1864,10 @@ export const short = [
 
 export const classic = [
   {
-    key: "65",
+    key: Math.random(),
     title: "Odyssey",
     description:
-      "The Odyssey is one of the two major ancient Greek epic poems (the other being the Iliad), attributed to the poet Homer. The poem is commonly dated to between 800 and 600 BC. The poem is, in part, a sequel to the Iliad, and concerns the events that befall the Greek hero Odysseus in his long journey back to his native land Ithaca after the fall of Troy.<br><br>It takes Odysseus ten years to return to his native land of Ithaca after ten years of war; during his 20-year absence, his son Telemachus and his wife Penelope must deal with a group of unruly suitors who have moved into Odysseus' home to compete for Penelope's hand in marriage, since most have assumed that Odysseus has died.<br><br>The poem is a fundamental text in the Western canon and continues to be read in both Homeric Greek and translations around the world. (Summary from Wikipedia)",
+      "The Odyssey is one of the two major ancient Greek epic poems (the other being the Iliad), attributed to the poet Homer. The poem is commonly dated to between 800 and 600 BC. The poem is, in part, a sequel to the Iliad, and concerns the events that befall the Greek hero Odysseus in his long journey back to his native land Ithaca after the fall of Troy.It takes Odysseus ten years to return to his native land of Ithaca after ten years of war; during his 20-year absence, his son Telemachus and his wife Penelope must deal with a group of unruly suitors who have moved into Odysseus' home to compete for Penelope's hand in marriage, since most have assumed that Odysseus has died.The poem is a fundamental text in the Western canon and continues to be read in both Homeric Greek and translations around the world. (Summary from Wikipedia)",
     language: "English",
     copyright_year: "1900",
     downloadLink:
@@ -1886,10 +1886,10 @@ export const classic = [
     ],
   },
   {
-    key: "134",
+    key: Math.random(),
     title: "Eclogues",
     description:
-      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)<BR> The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.<BR><BR>\nReaders of the eclogues that were done by multiple readers:<BR><BR>\n<I>Eclogue 1</I><BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>Tityrus: <a href="http://kayray.org/">Kara Shallenberg</a><br>\n<I>Eclogue 3</I><BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Damoetas: <a href="http://librivox.org/reader/87">Rosalind Wills</a><br>Palaemon: <a href="http://kayray.org/">Kara Shallenberg</a><br>\n<I>Eclogue 5</I><BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Mopsus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\n<I>Eclogue 7</I><BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>\nCorydon: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>\nTityrus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\n<I>Eclogue 8</I><BR>\nPollio: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\nDamon: <a href="http://librivox.org/reader/2607">Ruthie Golding</a><br>\nAlphesiboeus: <a href="http://frisco-squid.blogspot.com/">Squid Varilekova</a><br>\n<I>Eclogue 9</I><BR>\nLycidas: <a href="www.gregelmensdorp.com">Greg Elmensdorp</a><br>\nMoeris: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br><BR>\nAlso available: <a href="http://librivox.org/eclogae-by-publius-vergilius-maro/">a Librivox recording of The Eclogues in their original Latin.</a>',
+      "This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona) The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.\nReaders of the eclogues that were done by multiple readers:\nEclogue 1\nMeliboeus: Denny SayersTityrus: Kara Shallenberg\nEclogue 3\nMenalcas: Leni RibeiroDamoetas: Rosalind WillsPalaemon: Kara Shallenberg\nEclogue 5\nMenalcas: Leni RibeiroMopsus: Anna Simon\nEclogue 7\nMeliboeus: Denny Sayers\nCorydon: Leni Ribeiro\nTityrus: Anna Simon\nEclogue 8\nPollio: Anna Simon\nDamon: Ruthie Golding\nAlphesiboeus: Squid Varilekova\nEclogue 9\nLycidas: Greg Elmensdorp\nMoeris: Leni Ribeiro\nAlso available: a Librivox recording of The Eclogues in their original Latin.",
     language: "English",
     copyright_year: "0",
     downloadLink:
@@ -1908,10 +1908,10 @@ export const classic = [
     ],
   },
   {
-    key: "135",
+    key: Math.random(),
     title: "Eclogae (dramatic reading)",
     description:
-      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)<br /><br />This recording is done in the original Latin, in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer. Two eclogues are included twice - giving you a "Choice of Voice" !',
+      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)This recording is done in the original Latin, in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer. Two eclogues are included twice - giving you a "Choice of Voice" !',
     language: "Latin",
     copyright_year: "0",
     downloadLink:
@@ -1930,7 +1930,7 @@ export const classic = [
     ],
   },
   {
-    key: "275",
+    key: Math.random(),
     title: "Euthyphro",
     description:
       "Awaiting his trial on charges of impiety and heresy, Socrates encounters Euthyphro, a self-proclaimed authority on matters of piety and the will of the gods. Socrates, desiring instruction in these matters, converses with Euthyphro, but as usual, the man who professes to know nothing fares better than the man who claims to be an expert. One of Plato’s well-known Socratic Dialogues, Euthyphro probes the nature of piety, and notably poses the so-called Euthyphro Dilemma: Do the gods love a thing because it is holy, or is a thing holy because it is loved by the gods? (Summary by LauraFox)",
@@ -1952,10 +1952,10 @@ export const classic = [
     ],
   },
   {
-    key: "842",
+    key: Math.random(),
     title: "Timaeus",
     description:
-      "\"Our intention is, that Timaeus, who is the most of an astronomer amongst us, and has made the nature of the universe his special study, should speak first, beginning with the generation of the world and going down to the creation of man...\"<br /><br />'Timaeus' is usually regarded as one of Plato's later dialogues, and provides an account of the creation of the universe, with physical, metaphysical and ethical dimensions, which had great influence over philosophers for centuries following. It attributes the order and beauty of the universe to a benevolent demiurge - a 'craftsman' or god - fashioning the physical world after the pattern of an ideal, eternal one. <br /><br />The dramatic setting of the dialogue is the day after a discussion in which Socrates has described his ideal state - as in the 'Republic'. A conversation between Socrates, Critias, Hermocrates and Timaeus, including Critias' account of Solon's journey to Egypt (where he hears the story of Atlantis), soon gives way to the monologue by Timaeus that forms the bulk of the work.<br /><br />'Timaeus' is translated by Benjamin Jowett and his comprehensive introduction to and analysis of the work precedes the text itself, which he describes as \"the growth of an age in which philosophy is not wholly separated from poetry and mythology\". <br />(Summary by Philippa)",
+      "\"Our intention is, that Timaeus, who is the most of an astronomer amongst us, and has made the nature of the universe his special study, should speak first, beginning with the generation of the world and going down to the creation of man...\"'Timaeus' is usually regarded as one of Plato's later dialogues, and provides an account of the creation of the universe, with physical, metaphysical and ethical dimensions, which had great influence over philosophers for centuries following. It attributes the order and beauty of the universe to a benevolent demiurge - a 'craftsman' or god - fashioning the physical world after the pattern of an ideal, eternal one. The dramatic setting of the dialogue is the day after a discussion in which Socrates has described his ideal state - as in the 'Republic'. A conversation between Socrates, Critias, Hermocrates and Timaeus, including Critias' account of Solon's journey to Egypt (where he hears the story of Atlantis), soon gives way to the monologue by Timaeus that forms the bulk of the work.'Timaeus' is translated by Benjamin Jowett and his comprehensive introduction to and analysis of the work precedes the text itself, which he describes as \"the growth of an age in which philosophy is not wholly separated from poetry and mythology\". (Summary by Philippa)",
     language: "English",
     copyright_year: "1871",
     downloadLink:
@@ -1974,7 +1974,7 @@ export const classic = [
     ],
   },
   {
-    key: "1095",
+    key: Math.random(),
     title: "Meditations",
     description:
       'Marcus Aurelius wrote Meditations in Greek while on campaign between 170 and 180, as a source for his own guidance and self-improvement. These memos survive and continue to inspire others to this day. These writings take the form of quotations varying in length from one sentence to long paragraphs. He explicates the Stoic philosophy that the only way a man can be harmed by others is to allow his reaction to overpower him. He shows no particular religious faith in his writings, but seems to believe that some sort of logical, benevolent force organizes the universe in such a way that even "bad" occurrences happen for the good of the whole. (Summary by Ticktockman)',
@@ -1996,10 +1996,10 @@ export const classic = [
     ],
   },
   {
-    key: "1171",
+    key: Math.random(),
     title: "Ion",
     description:
-      "In Plato's ION, Socrates questions Ion, whether he should really claim laud and glory for his 'rhapsodic' recitals of Homer's poetry.<br />\n—Description by Simon-Peter Zak",
+      "In Plato's ION, Socrates questions Ion, whether he should really claim laud and glory for his 'rhapsodic' recitals of Homer's poetry.\n—Description by Simon-Peter Zak",
     language: "English",
     copyright_year: "1892",
     downloadLink:
@@ -2018,7 +2018,7 @@ export const classic = [
     ],
   },
   {
-    key: "1268",
+    key: Math.random(),
     title: "Apology of Socrates (version 3)",
     description:
       "Plato's account of Socrates' defense at his trial for \"corrupting the youth\" is a classic summation of his teacher's life and mission, centered in Socrates' most famous line, \"The unexamined life is not worth living.\" - Written by FrZeile",
@@ -2040,7 +2040,7 @@ export const classic = [
     ],
   },
   {
-    key: "1358",
+    key: Math.random(),
     title: "Golden Sayings of Epictetus",
     description: "Aphorisms from the Stoic Greek.",
     language: "English",
@@ -2061,10 +2061,10 @@ export const classic = [
     ],
   },
   {
-    key: "1360",
+    key: Math.random(),
     title: "Politics",
     description:
-      "The <em>Politics</em>, by the ancient Greek philosopher Aristotle, is one of the most influential texts in political philosophy. In it, Aristotle explores the role that the political community should play in developing the virtue of its citizens. One of his central ideas is that \"Man is a political animal,\" meaning that people can only become virtuous by active participation in the political community. Aristotle also criticizes his teacher Plato, classifies and evaluates six different types of constitutions and political institutions, and describes his vision of the ideal state. Aristotle's views on women and slavery are unenlightened by today's standards, but his work remains enduring and relevant to this day. <br>(Summary by Leon Mire)",
+      "The Politics, by the ancient Greek philosopher Aristotle, is one of the most influential texts in political philosophy. In it, Aristotle explores the role that the political community should play in developing the virtue of its citizens. One of his central ideas is that \"Man is a political animal,\" meaning that people can only become virtuous by active participation in the political community. Aristotle also criticizes his teacher Plato, classifies and evaluates six different types of constitutions and political institutions, and describes his vision of the ideal state. Aristotle's views on women and slavery are unenlightened by today's standards, but his work remains enduring and relevant to this day. (Summary by Leon Mire)",
     language: "English",
     copyright_year: "1885",
     downloadLink:
@@ -2086,7 +2086,7 @@ export const classic = [
 
 export const general = [
   {
-    key: "53",
+    key: Math.random(),
     title: "Bleak House",
     description:
       "Bleak House is the ninth novel by Charles Dickens, published in 20 monthly parts between March 1852 and September 1853. It is widely held to be one of Dickens' finest and most complete novels, containing one of the most vast, complex and engaging arrays of minor characters and sub-plots in his entire canon. Dickens tells all of these both through the narrative of the novel's heroine, Esther Summerson, and as an omniscient narrator. Memorable characters include the menacing lawyer Tulkinghorn, the friendly but depressive John Jarndyce and the childish Harold Skimpole. The plot concerns a long-running legal dispute (Jarndyce and Jarndyce) which has far-reaching consequences for all involved. (Summary from Wikipedia)",
@@ -2108,7 +2108,7 @@ export const general = [
     ],
   },
   {
-    key: "84",
+    key: Math.random(),
     title: "Getting of Wisdom",
     description:
       "The Getting of Wisdom tells the story of Laura Rambotham, a 12-year-old girl who is just starting at her boarding school. This is based on Henry Handel Richardson's experiences of her own school, the Presbyterian Ladies College in central Melbourne. The story goes through her friends and enemies and all the life of a boarding school in early 20th century Australia, and all the subjects and learning too. Laura learns a lot but her education does not satisfy her, and her social life is thrown upon her as very different from her peers. (Summary by Bronwyn Kate)",
@@ -2130,10 +2130,10 @@ export const general = [
     ],
   },
   {
-    key: "104",
+    key: Math.random(),
     title: "Merry Adventures of Robin Hood",
     description:
-      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.<br><br>The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
+      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
     language: "English",
     copyright_year: "1883",
     downloadLink:
@@ -2152,10 +2152,10 @@ export const general = [
     ],
   },
   {
-    key: "133",
+    key: Math.random(),
     title: "Jane Eyre",
     description:
-      "<i>Jane Eyre</i> is not your typical romance. It is a story of a woman who struggles with a world in which she doesn't quite fit. Once finished with her schooling, and with no family that really cares of her she strikes out on her own as a governess. Jane Eyre searches for love, someone to care for her, and someone to care for, and finds it in unexpected places. (summary by Kri)",
+      "Jane Eyre is not your typical romance. It is a story of a woman who struggles with a world in which she doesn't quite fit. Once finished with her schooling, and with no family that really cares of her she strikes out on her own as a governess. Jane Eyre searches for love, someone to care for her, and someone to care for, and finds it in unexpected places. (summary by Kri)",
     language: "English",
     copyright_year: "1847",
     downloadLink:
@@ -2174,7 +2174,7 @@ export const general = [
     ],
   },
   {
-    key: "140",
+    key: Math.random(),
     title: "Christmas Carol",
     description:
       "A classic tale of what comes to those whose hearts are hard. In a series of ghostly visits, Scrooge visits his happy past, sees the difficulties of the present, views a bleak future, and in the end amends his mean ways. (Summary written by Kristen McQuillin)",
@@ -2196,7 +2196,7 @@ export const general = [
     ],
   },
   {
-    key: "145",
+    key: Math.random(),
     title: "Anne of Avonlea",
     description:
       "Following Anne of Green Gables, the book covers the second chapter in the life of Anne Shirley. Anne of Avonlea follows Anne from the age of 16 to 18, during the two years that she teaches at Avonlea school. It includes many of the characters from Anne of Green Gables, as well new ones like Mr Harrison, Miss Lavendar Lewis, Paul Irving, and the twins Dora and Davy. (Summary from Wikipedia.org)",
@@ -2218,7 +2218,7 @@ export const general = [
     ],
   },
   {
-    key: "146",
+    key: Math.random(),
     title: "Anne of Green Gables",
     description:
       "Lucy Maud Montgomery’s classic children’s novel, Anne of Green Gables tells the story of a red headed orphan girl with a personality you can’t help but love. Despite her “tragical” past, Anne’s optimism and imagination have helped her to always see the best in things. Anne’s life changes considerably when she is accidentally adopted by the Cuthberts, a brother and sister who thought they were getting a boy to help out on the farm. The Cuthberts decide Anne will have to be sent back to the orphange but before they know it, she has begun to work her way into their hearts. (Summary by Annie Coleman)",
@@ -2240,10 +2240,10 @@ export const general = [
     ],
   },
   {
-    key: "213",
+    key: Math.random(),
     title: "Country of the Pointed Firs",
     description:
-      "The Country of the Pointed Firs (1896) is considered Jewett’s finest work, described by Henry James as her “beautiful little quantum of achievement.” Despite James’s diminutives, the novel remains a classic. Because it is loosely structured, many critics view the book not as a novel, but a series of sketches; however, its structure is unified through both setting and theme. Jewett herself felt that her strengths as a writer lay not in plot development or dramatic tension, but in character development. Indeed, she determined early in her career to preserve a disappearing way of life, and her novel can be read as a study of the effects of isolation and hardship on the inhabitants who lived in the decaying fishing villages along the Maine coast.<br />\n(summary from Gutenberg e-text)",
+      "The Country of the Pointed Firs (1896) is considered Jewett’s finest work, described by Henry James as her “beautiful little quantum of achievement.” Despite James’s diminutives, the novel remains a classic. Because it is loosely structured, many critics view the book not as a novel, but a series of sketches; however, its structure is unified through both setting and theme. Jewett herself felt that her strengths as a writer lay not in plot development or dramatic tension, but in character development. Indeed, she determined early in her career to preserve a disappearing way of life, and her novel can be read as a study of the effects of isolation and hardship on the inhabitants who lived in the decaying fishing villages along the Maine coast.\n(summary from Gutenberg e-text)",
     language: "English",
     copyright_year: "1896",
     downloadLink:
@@ -2262,7 +2262,7 @@ export const general = [
     ],
   },
   {
-    key: "279",
+    key: Math.random(),
     title: "Main Street",
     description:
       "Carol Milford is a liberal, free-spirited young woman, reared in the metropolis of Minneapolis. She marries Will Kennicott, a doctor, who is a small-town boy at heart. When they marry, Will convinces her to live in his home-town of Gopher Prairie, Minnesota. Carol is appalled at the backwardness of Gopher Prairie. But her disdain for the town's physical ugliness and smug conservatism compels her to reform it. (Summary from Wikipedia).",
@@ -2284,10 +2284,10 @@ export const general = [
     ],
   },
   {
-    key: "316",
+    key: Math.random(),
     title: "Our Mutual Friend",
     description:
-      "Dickens' last complete novel was published serially 1864-5. It begins with an intriguing fortune offered to John Harmon by his late father, a rich dust contractor, in his will. <br><br>To receive the money, John must marry a certain Bella Wilfer who he does not know from Eve. He is returning from the exile enforced by his father and confides in a ship's mate who attempts to murder him. The mate gets killed instead, leaving one inconvenient corpse. Because John is considered dead (the body is found with his papers), the money passes to Mr Boffin, old Harmon's foreman. Harmon adopts Bella and John comes into his employ disguised as John Rokesmith. Bella does not fall for John but through kindly Boffin's contrivances learns to hate money and fall for her suitor under his false name. Eventually she learns of his true identity as the Boffins had previously, and the villainous one-legged Silas Wegg's plot to blackmail Mr Boffin is brought to light.<br><br> There is also a story running behind the main plot about a certain Eugene Wrayburn and his love for Lizzie Hexam, and his rival's attempt to murder him. The two plots are only really connected through the waterside murders but it allows Dickens to indulge in an extremely socially diverse cast of characters. (Summary written by Alan Chant).",
+      "Dickens' last complete novel was published serially 1864-5. It begins with an intriguing fortune offered to John Harmon by his late father, a rich dust contractor, in his will. To receive the money, John must marry a certain Bella Wilfer who he does not know from Eve. He is returning from the exile enforced by his father and confides in a ship's mate who attempts to murder him. The mate gets killed instead, leaving one inconvenient corpse. Because John is considered dead (the body is found with his papers), the money passes to Mr Boffin, old Harmon's foreman. Harmon adopts Bella and John comes into his employ disguised as John Rokesmith. Bella does not fall for John but through kindly Boffin's contrivances learns to hate money and fall for her suitor under his false name. Eventually she learns of his true identity as the Boffins had previously, and the villainous one-legged Silas Wegg's plot to blackmail Mr Boffin is brought to light. There is also a story running behind the main plot about a certain Eugene Wrayburn and his love for Lizzie Hexam, and his rival's attempt to murder him. The two plots are only really connected through the waterside murders but it allows Dickens to indulge in an extremely socially diverse cast of characters. (Summary written by Alan Chant).",
     language: "English",
     copyright_year: "1865",
     downloadLink:
@@ -2309,10 +2309,10 @@ export const general = [
 
 export const historical = [
   {
-    key: "75",
+    key: Math.random(),
     title: "Uncle Tom's Cabin",
     description:
-      "Among the most “banned” books in the United States, Uncle Tom’s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North’s view of slavery. In fact, when he met Harriet Beecher Stowe, President Lincoln is said to have commented, “So you’re the little lady whose book started the Civil War.” First published on March 20, 1852, the story focuses on the tale of Uncle Tom, a long-suffering black slave, the central character around whose life the other characters—both fellow slaves and slave owners—revolve. The novel depicts the harsh reality of slavery while also showing that Christian love and faith can overcome even something as evil as enslavement of fellow human beings. (summary by Wikipedia and John Greenman)<br /><br />\n<b>Note From the Reader: </b>\nThe listener is about to enter a world rich with diverse characters. In order to differentiate between the characters, the reader has given each, his/her own voice. As an adult male reader, however, the reader's representation of women and children will, necessarily be less than adequate. He asks for your indulgence.",
+      "Among the most “banned” books in the United States, Uncle Tom’s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North’s view of slavery. In fact, when he met Harriet Beecher Stowe, President Lincoln is said to have commented, “So you’re the little lady whose book started the Civil War.” First published on March 20, 1852, the story focuses on the tale of Uncle Tom, a long-suffering black slave, the central character around whose life the other characters—both fellow slaves and slave owners—revolve. The novel depicts the harsh reality of slavery while also showing that Christian love and faith can overcome even something as evil as enslavement of fellow human beings. (summary by Wikipedia and John Greenman)\n<b>Note From the Reader: </b>\nThe listener is about to enter a world rich with diverse characters. In order to differentiate between the characters, the reader has given each, his/her own voice. As an adult male reader, however, the reader's representation of women and children will, necessarily be less than adequate. He asks for your indulgence.",
     language: "English",
     copyright_year: "1852",
     downloadLink:
@@ -2331,10 +2331,10 @@ export const historical = [
     ],
   },
   {
-    key: "104",
+    key: Math.random(),
     title: "Merry Adventures of Robin Hood",
     description:
-      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.<br><br>The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
+      'Robin Hood is the archetypal English folk hero; a courteous, pious and swashbuckling outlaw of the mediæval era who, in modern versions of the legend, is famous for robbing the rich to feed the poor and fighting against injustice and tyranny. He operates with his "seven score" (140 strong) group of fellow outlawed yeomen – named the Merry Men. He and his band are usually associated with Sherwood Forest, Nottinghamshire.The Victorian era generated its own distinct versions of Robin Hood. The traditional tales were often adapted for children, most notably in Howard Pyle\'s Merry Adventures of Robin Hood. These versions firmly stamp Robin as a staunch philanthropist, a man who takes from the rich to give to the poor.(Summary from Wikipedia)\n\n\n\n\n\n\n\n\n\n\n\n',
     language: "English",
     copyright_year: "1883",
     downloadLink:
@@ -2353,7 +2353,7 @@ export const historical = [
     ],
   },
   {
-    key: "132",
+    key: Math.random(),
     title: "Last of the Mohicans - A Narrative of 1757 (version 2)",
     description:
       "This story is set in the British province of New York during the French and Indian War, and concerns a Huron massacre (with passive French acquiescence) of from 500 to 1,500 unarmed Anglo-American troops, who had honorably surrendered at Fort William Henry, plus some women and servants; the kidnapping of two sisters, daughters of the British commander; and their rescue by Hawkeye, the last two Mohicans, and others. Parts of the story may have been derived from the capture and death of Jane McCrea in July 1777 near Fort Edward, New York, by members of an Algonquian tribe. (Summary from Wikipedia)",
@@ -2375,10 +2375,10 @@ export const historical = [
     ],
   },
   {
-    key: "342",
+    key: Math.random(),
     title: "Canterbury Tales",
     description:
-      "The Canterbury Tales is a collection of stories written in Middle English by Geoffrey Chaucer in the 14th century (two of them in prose, the rest in verse). The tales, some of which are originals and others not, are contained inside a frame tale and told by a group of pilgrims on their way from Southwark to Canterbury to visit the shrine of Saint Thomas Becket at Canterbury Cathedral.<br /><br />\nThe themes of the tales vary, and include topics such as courtly love, treachery, and avarice. The genres also vary, and include romance, Breton lai, sermon, beast fable, and fabliau. The characters, introduced in the General Prologue of the book, tell tales of great cultural relevance.<br />\nThe version read here was edited by D. Laing Purves (1838-1873) “for popular perusal” and the language is mostly updated.\n(Summary by Wikipedia/Gesine)\n\n",
+      "The Canterbury Tales is a collection of stories written in Middle English by Geoffrey Chaucer in the 14th century (two of them in prose, the rest in verse). The tales, some of which are originals and others not, are contained inside a frame tale and told by a group of pilgrims on their way from Southwark to Canterbury to visit the shrine of Saint Thomas Becket at Canterbury Cathedral.\nThe themes of the tales vary, and include topics such as courtly love, treachery, and avarice. The genres also vary, and include romance, Breton lai, sermon, beast fable, and fabliau. The characters, introduced in the General Prologue of the book, tell tales of great cultural relevance.\nThe version read here was edited by D. Laing Purves (1838-1873) “for popular perusal” and the language is mostly updated.\n(Summary by Wikipedia/Gesine)\n\n",
     language: "English",
     copyright_year: "1870",
     downloadLink:
@@ -2397,7 +2397,7 @@ export const historical = [
     ],
   },
   {
-    key: "430",
+    key: Math.random(),
     title: "Ivanhoe",
     description:
       "Follows the fortunes of the son of a noble Saxon family in Norman England as he woos his lady, disobeys his father, and is loved by another. Set in late 12C England and in Palestine with Richard Cœur-de-Lion at the Crusades, it's another ripping historical yarn by Scott. (summary by annise)",
@@ -2419,10 +2419,10 @@ export const historical = [
     ],
   },
   {
-    key: "510",
+    key: Math.random(),
     title: "Tale of Two Cities",
     description:
-      "A Tale of Two Cities (1859) is a historical novel by Charles Dickens; it is moreover a moral novel strongly concerned with themes of guilt, shame, redemption and patriotism.<br><br>The plot centers on the years leading up to French Revolution and culminates in the Jacobin Reign of Terror. It tells the story of two men, Charles Darnay and Sydney Carton, who look very alike but are entirely different in character.(Summary from Wikipedia)",
+      "A Tale of Two Cities (1859) is a historical novel by Charles Dickens; it is moreover a moral novel strongly concerned with themes of guilt, shame, redemption and patriotism.The plot centers on the years leading up to French Revolution and culminates in the Jacobin Reign of Terror. It tells the story of two men, Charles Darnay and Sydney Carton, who look very alike but are entirely different in character.(Summary from Wikipedia)",
     language: "English",
     copyright_year: "1859",
     downloadLink:
@@ -2441,10 +2441,10 @@ export const historical = [
     ],
   },
   {
-    key: "578",
+    key: Math.random(),
     title: "Oliver Twist",
     description:
-      "Oliver Twist is an 1838 novel by Charles Dickens. It was originally published as a serial.<br><br>Like most of Dickens' work, the book is used to call the public's attention to various contemporary social evils, including the workhouse, child labour and the recruitment of children as criminals. The novel is full of sarcasm and dark humour, even as it treats its serious subject, revealing the hypocrisies of the time.<br><br>It has been the subject of numerous film and television adaptations, and the basis for a highly successful British musical, Oliver!. (Summary from Wikipedia)",
+      "Oliver Twist is an 1838 novel by Charles Dickens. It was originally published as a serial.Like most of Dickens' work, the book is used to call the public's attention to various contemporary social evils, including the workhouse, child labour and the recruitment of children as criminals. The novel is full of sarcasm and dark humour, even as it treats its serious subject, revealing the hypocrisies of the time.It has been the subject of numerous film and television adaptations, and the basis for a highly successful British musical, Oliver!. (Summary from Wikipedia)",
     language: "English",
     copyright_year: "1838",
     downloadLink:
@@ -2463,7 +2463,7 @@ export const historical = [
     ],
   },
   {
-    key: "629",
+    key: Math.random(),
     title: "Journal of the Plague Year",
     description:
       "The novel is a fictionalized account of one man's experiences of the year 1665, in which the Great Plague struck the city of London. The book is told roughly chronologically, though without sections or chapter headings.",
@@ -2485,10 +2485,10 @@ export const historical = [
     ],
   },
   {
-    key: "646",
+    key: Math.random(),
     title: "Scaramouche",
     description:
-      '<i>Scaramouche</i> is a romantic adventure and tells the story of a young aristocrat during the French Revolution. His successive endeavors as a lawyer, politician, actor, lover, and buffoon lead his enemies to call him "Scaramouche" (also called Scaramuccia, a roguish character in the commedia dell\'arte), but he impresses many with his elegant orations and precision swordsmanship. The later film version includes one of the longest, and many believe, best swashbuckling sword-fighting scenes ever filmed.</p><p>The novel has a memorable start (Book I: The Robe, Chapter I, \'The Republican\'): "He was born with the gift of laughter and a sense that the world was mad. And that was all his patrimony. His very paternity was obscure, although the village of Gavrillacs had long since dispelled the cloud of mystery that hung about it."\n(Summary by Gord)',
+      'Scaramouche is a romantic adventure and tells the story of a young aristocrat during the French Revolution. His successive endeavors as a lawyer, politician, actor, lover, and buffoon lead his enemies to call him "Scaramouche" (also called Scaramuccia, a roguish character in the commedia dell\'arte), but he impresses many with his elegant orations and precision swordsmanship. The later film version includes one of the longest, and many believe, best swashbuckling sword-fighting scenes ever filmed.</p><p>The novel has a memorable start (Book I: The Robe, Chapter I, \'The Republican\'): "He was born with the gift of laughter and a sense that the world was mad. And that was all his patrimony. His very paternity was obscure, although the village of Gavrillacs had long since dispelled the cloud of mystery that hung about it."\n(Summary by Gord)',
     language: "English",
     copyright_year: "1921",
     downloadLink:
@@ -2507,10 +2507,10 @@ export const historical = [
     ],
   },
   {
-    key: "722",
+    key: Math.random(),
     title: "War and Peace, Book 01: 1805",
     description:
-      "War and Peace (Russian: Война и мир, Voyna i mir; in original orthography: Война и миръ, Voyna i mir\") is an epic novel by Leo Tolstoy, first published from 1865 to 1869 in Russki Vestnik, which tells the story of Russian society during the Napoleonic Era. It is usually described as one of Tolstoy's two major masterpieces (the other being Anna Karenina) as well as one of the world's greatest novels.<br /><br />\nWar and Peace offered a new kind of fiction, with a great many characters caught up in a plot that covered nothing less than the grand subjects indicated by the title, combined with the equally large topics of youth, age and marriage. While today it is considered a novel, it broke so many novelistic conventions of its day that many critics of Tolstoy's time did not consider it as such. Tolstoy himself considered Anna Karenina (1878) to be his first attempt at a novel in the European sense. (Summary by Wikipedia)<br /><br />\n\nNote: The novel is split in 15 books. This is the recording of book one, which covers the events in the year 1805.",
+      "War and Peace (Russian: Война и мир, Voyna i mir; in original orthography: Война и миръ, Voyna i mir\") is an epic novel by Leo Tolstoy, first published from 1865 to 1869 in Russki Vestnik, which tells the story of Russian society during the Napoleonic Era. It is usually described as one of Tolstoy's two major masterpieces (the other being Anna Karenina) as well as one of the world's greatest novels.\nWar and Peace offered a new kind of fiction, with a great many characters caught up in a plot that covered nothing less than the grand subjects indicated by the title, combined with the equally large topics of youth, age and marriage. While today it is considered a novel, it broke so many novelistic conventions of its day that many critics of Tolstoy's time did not consider it as such. Tolstoy himself considered Anna Karenina (1878) to be his first attempt at a novel in the European sense. (Summary by Wikipedia)\n\nNote: The novel is split in 15 books. This is the recording of book one, which covers the events in the year 1805.",
     language: "English",
     copyright_year: "1922",
     downloadLink:
@@ -2532,7 +2532,7 @@ export const historical = [
 
 export const poetry = [
   {
-    key: "67",
+    key: Math.random(),
     title: "Divine Comedy",
     description:
       'The Divine Comedy (Italian: Commedia, later christened "Divina" by Giovanni Boccaccio), written by Dante Alighieri between 1308 and his death in 1321, is widely considered the central epic poem of Italian literature, the last great work of literature of the Middle Ages and the first great work of the Renaissance. A culmination of the medieval world-view of the afterlife, it establishes the Tuscan dialect in which it is written as the Italian standard, and is seen as one of the greatest works of world literature. - The Divine Comedy is composed of three canticas (or "cantiche") — Inferno (Hell), Purgatorio (Purgatory), and Paradiso (Paradise) — composed each of 33 cantos (or "canti"). The very first canto serves as an introduction to the poem and is generally not considered to be part of the first cantica, bringing the total number of cantos to 100. - The poet tells in the first person his travel through the three realms of the dead, lasting during the Easter Triduum in the spring of 1300. (Summary from Wikipedia)',
@@ -2554,7 +2554,7 @@ export const poetry = [
     ],
   },
   {
-    key: "106",
+    key: Math.random(),
     title: "Poems Every Child Should Know",
     description:
       "This anthology of poetry, published in 1904, contains such favorites as The Raven, My Shadow, and The Village Blacksmith, as well as many lovely poems that may be unfamiliar. Most of the poems in this collection are short enough for children to memorize.",
@@ -2583,10 +2583,10 @@ export const poetry = [
     ],
   },
   {
-    key: "134",
+    key: Math.random(),
     title: "Eclogues",
     description:
-      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)<BR> The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.<BR><BR>\nReaders of the eclogues that were done by multiple readers:<BR><BR>\n<I>Eclogue 1</I><BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>Tityrus: <a href="http://kayray.org/">Kara Shallenberg</a><br>\n<I>Eclogue 3</I><BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Damoetas: <a href="http://librivox.org/reader/87">Rosalind Wills</a><br>Palaemon: <a href="http://kayray.org/">Kara Shallenberg</a><br>\n<I>Eclogue 5</I><BR>\nMenalcas: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>Mopsus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\n<I>Eclogue 7</I><BR>\nMeliboeus: <a href="http://librivox.org/reader/26">Denny Sayers</a><br>\nCorydon: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br>\nTityrus: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\n<I>Eclogue 8</I><BR>\nPollio: <a href="http://librivox.org/reader/1724">Anna Simon</a><br>\nDamon: <a href="http://librivox.org/reader/2607">Ruthie Golding</a><br>\nAlphesiboeus: <a href="http://frisco-squid.blogspot.com/">Squid Varilekova</a><br>\n<I>Eclogue 9</I><BR>\nLycidas: <a href="www.gregelmensdorp.com">Greg Elmensdorp</a><br>\nMoeris: <a href="http://librivox.org/reader/2961">Leni Ribeiro</a><br><BR>\nAlso available: <a href="http://librivox.org/eclogae-by-publius-vergilius-maro/">a Librivox recording of The Eclogues in their original Latin.</a>',
+      "This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona) The translator of this version is unknown. This recording is done in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer.\nReaders of the eclogues that were done by multiple readers:\nEclogue 1\nMeliboeus: Denny SayersTityrus: Kara Shallenberg\nEclogue 3\nMenalcas: Leni RibeiroDamoetas: Rosalind WillsPalaemon: Kara Shallenberg\nEclogue 5\nMenalcas: Leni RibeiroMopsus: Anna Simon\nEclogue 7\nMeliboeus: Denny Sayers\nCorydon: Leni Ribeiro\nTityrus: Anna Simon\nEclogue 8\nPollio: Anna Simon\nDamon: Ruthie Golding\nAlphesiboeus: Squid Varilekova\nEclogue 9\nLycidas: Greg Elmensdorp\nMoeris: Leni Ribeiro\nAlso available: a Librivox recording of The Eclogues in their original Latin.",
     language: "English",
     copyright_year: "0",
     downloadLink:
@@ -2605,10 +2605,10 @@ export const poetry = [
     ],
   },
   {
-    key: "135",
+    key: Math.random(),
     title: "Eclogae (dramatic reading)",
     description:
-      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)<br /><br />This recording is done in the original Latin, in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer. Two eclogues are included twice - giving you a "Choice of Voice" !',
+      'This book of poems, written between 42 en 39 BC, was a bestseller in ancient Rome, and still holds a fascination today. Held to be divinely inspired not only by the Romans themselves, but by the Medieval Catholic church, The Eclogues is one of the most beloved collections of Latin short poetry. (Summary by Caeristhiona)This recording is done in the original Latin, in the form of a dramatic reading: in each eclogue, every character is read by a different Librivox volunteer. Two eclogues are included twice - giving you a "Choice of Voice" !',
     language: "Latin",
     copyright_year: "0",
     downloadLink:
@@ -2627,7 +2627,7 @@ export const poetry = [
     ],
   },
   {
-    key: "150",
+    key: Math.random(),
     title: "Barbara Frietchie",
     description:
       "This was the weekly poem for Flag Day 2006. It tells the largely-apocryphal but nonetheless inspiring story of one old woman’s act of patriotism during a Confederate advance in the civil war. (summary by LauraFox)",
@@ -2649,7 +2649,7 @@ export const poetry = [
     ],
   },
   {
-    key: "151",
+    key: Math.random(),
     title: "Beowulf",
     description:
       "This is a short but beautiful book, and the Gummere translation really captures the feel of the Old English. Beowulf tells the story of a mysterious young warrior who saves the Spear-Danes from the terrible monster Grendel and his venomous mother. Long a mainstay of English Literature 101 courses at universities around the world, it is not only one of the oldest, but one of the most exciting English folktales ever invented. (Summary by Caeristhiona)",
@@ -2671,7 +2671,7 @@ export const poetry = [
     ],
   },
   {
-    key: "154",
+    key: Math.random(),
     title: "Bildergeschichten",
     description:
       "Wilhelm Busch war einer der bedeutendsten humoristischen Zeichner und Dichter Deutschlands. Er gilt wegen seiner satirischen Bildergeschichten (u.a. Max und Moritz) in Versen als einer der Urväter des Comics. Die Bilder zu diesem Buch sind im Online Text enthalten. (Zusammenfassung von Wikipedia)",
@@ -2693,7 +2693,7 @@ export const poetry = [
     ],
   },
   {
-    key: "157",
+    key: Math.random(),
     title: "Caedmon's Hymn",
     description:
       "Cædmon was an Anglo-Saxon herdsman attached to the double monastery of Streonæshalch (657–681). Originally ignorant of the art of song, Cædmon learned to compose one night in the course of a dream. Cædmon’s only known surviving work is Cædmon’s Hymn, the nine-line alliterative vernacular praise poem in honour of the Christian god he supposedly learned to sing in his initial dream. The poem is one of the earliest attested examples of Old English and is one of three candidates for the earliest attested example of Old English poetry. It is also one of the earliest recorded examples of sustained poetry in a Germanic language. (Summary from Wikipedia)",
@@ -2715,7 +2715,7 @@ export const poetry = [
     ],
   },
   {
-    key: "159",
+    key: Math.random(),
     title: "Cathay",
     description:
       "The Cathay poems appeared in a slim volume in 1915. They are, in effect, Ezra Pound’s English translations/interpretations from notebooks written by the Japanese scholar Ernest Fenollosa. Pound, not knowing any Chinese or Japanese at all, promptly created a new and somewhat complex style of translation, as he had done with words from several other languages. The Cathay poems are primarily written by the Chinese poet Li Po, referred to throughout these translations as Rihaku, the Japanese form of his name. These poems came to have a profound influence on 20th Century poetry, spawning, among other things, the Imagist movement, and helped in the generation of widespread interest in Asian literature and thought. Also included in this collection are two poems from Pound’s 1912 collection Ripostes. “The Seafarer” is another of Pound’s experiments in translation, this one from the Anglo-Saxon. (Summary by Alan Davis-Drake)",
@@ -2744,10 +2744,10 @@ export const poetry = [
     ],
   },
   {
-    key: "169",
+    key: Math.random(),
     title: "Death Be Not Proud",
     description:
-      "This week we’re marking the American Memorial Day with eleven readings of a John Donne poem. Memorial Day was conceived as a time to remember military men and women who had lost their lives in war. Kings and presidents come and go and some of the reasons that wars have come about are now lost from memory or are obscured in our history texts.<br /><br /> A consistent aspect of war is that those who fight them are not those who arrange them. The soldiers and sailors who suffer loss of limb, scarred minds or forfeit their lives mostly come from the lower and middle rungs of our societal ladder. They are our sons and daughters, husbands and wives, fathers and mothers, brothers and sisters.<br /><br /> Once gone, it is the family who notices the empty chair at the family table while society at large knows not their name. Death has captured them and taken them forever from our midst. It has become personal and not a vague philosophical idea. The theme of Donne’s poem is that, though Death is irresistible, it has no cause to be proud. The human spirit and its hope for redemption is indomitable. This was the weekly poetry project for the week of May 27th, 2006.<br />  (Summary by Robert Garrison)",
+      "This week we’re marking the American Memorial Day with eleven readings of a John Donne poem. Memorial Day was conceived as a time to remember military men and women who had lost their lives in war. Kings and presidents come and go and some of the reasons that wars have come about are now lost from memory or are obscured in our history texts. A consistent aspect of war is that those who fight them are not those who arrange them. The soldiers and sailors who suffer loss of limb, scarred minds or forfeit their lives mostly come from the lower and middle rungs of our societal ladder. They are our sons and daughters, husbands and wives, fathers and mothers, brothers and sisters. Once gone, it is the family who notices the empty chair at the family table while society at large knows not their name. Death has captured them and taken them forever from our midst. It has become personal and not a vague philosophical idea. The theme of Donne’s poem is that, though Death is irresistible, it has no cause to be proud. The human spirit and its hope for redemption is indomitable. This was the weekly poetry project for the week of May 27th, 2006.  (Summary by Robert Garrison)",
     language: "English",
     copyright_year: "1633",
     downloadLink:

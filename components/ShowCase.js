@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "Inter",
     fontWeight: "bold",
+    paddingHorizontal: 20,
   },
   content: {
     flexDirection: "row",
