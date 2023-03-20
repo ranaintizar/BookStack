@@ -96,10 +96,11 @@ const Profile = ({ theme, handleLogout }) => {
           <View style={styles.image}>
             <Image
               resizeMode="contain"
-              source={
-                (imageUri && { uri: imageUri }) ||
-                require("../assets/Profile-Pic.jpg")
-              }
+              source={{
+                uri:
+                  (imageUri && imageUri) ||
+                  "https://i.postimg.cc/Gm0zSwW8/default-Pic.jpg",
+              }}
               style={styles.img}
             />
           </View>
@@ -272,7 +273,7 @@ const Profile = ({ theme, handleLogout }) => {
                   });
               } else if (onConfirm === "delete") {
                 handleDelete();
-                // handleLogout(true);
+                handleLogout(true);
               }
             }}
           />

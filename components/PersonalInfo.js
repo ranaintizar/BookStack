@@ -1,19 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  TextInput,
-  TouchableWithoutFeedback,
-  Alert,
-} from "react-native";
+import { StyleSheet, View, Text, Image, TextInput, Alert } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import * as DocumentPicker from "expo-document-picker";
 import * as Yup from "yup";
 import Button from "./Button";
 import InputField from "./PersonalInfoField";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const PersonalInfo = ({ theme, showModal }) => {
   const [scaleValue, setScaleValue] = useState(0);
@@ -26,6 +18,8 @@ const PersonalInfo = ({ theme, showModal }) => {
     email: "",
   });
   const [imageUri, setImageUri] = useState(null);
+  const [scale, setScale] = useState(0);
+  const [zIndex, setzIndex] = useState(-10);
 
   useEffect(() => {
     AsyncStorage.getItem("userinfo").then((value) => {
@@ -213,6 +207,7 @@ const PersonalInfo = ({ theme, showModal }) => {
     if (!result.canceled) {
       setImageUri(result.assets[0].uri);
       AsyncStorage.setItem("imageUri", result.assets[0].uri);
+      closeModal();
     }
   };
 
@@ -226,8 +221,19 @@ const PersonalInfo = ({ theme, showModal }) => {
 
     if (!result.cancelled) {
       setImage(result.assets[0].uri);
+      AsyncStorage.setItem("imageUri", result.assets[0].uri);
+      closeModal();
     }
-    AsyncStorage.setItem("imageUri", result.assets[0].uri);
+  };
+
+  const closeModal = () => {
+    setScale(0);
+    setzIndex(-10);
+  };
+
+  const openModal = () => {
+    setScale(1);
+    setzIndex(10);
   };
 
   return (
@@ -265,10 +271,11 @@ const PersonalInfo = ({ theme, showModal }) => {
         <View style={styles.image}>
           <Image
             resizeMode="contain"
-            source={
-              (imageUri && { uri: imageUri }) ||
-              require("../assets/Profile-Pic.jpg")
-            }
+            source={{
+              uri:
+                (imageUri && imageUri) ||
+                "https://i.postimg.cc/Gm0zSwW8/default-Pic.jpg",
+            }}
             style={styles.img}
           />
         </View>
@@ -276,7 +283,7 @@ const PersonalInfo = ({ theme, showModal }) => {
           btnText="Upload Image"
           color="#1e90ff"
           fontSize={18}
-          onPress={handleChoosePhoto}
+          onPress={openModal}
         />
       </View>
       <View style={styles.content}>
@@ -343,12 +350,58 @@ const PersonalInfo = ({ theme, showModal }) => {
           />
         </View>
       </View>
+      <View
+        style={[
+          styles.imageUploadContainer,
+          { transform: [{ scaleY: scale }] },
+          { zIndex: zIndex },
+        ]}
+      >
+        <MaterialIcons
+          name="close"
+          size={24}
+          color="#fff"
+          style={styles.closeIcon}
+          onPress={closeModal}
+        />
+        <View
+          style={[
+            styles.imageUpload,
+            theme === "light"
+              ? { backgroundColor: "#fff", shadowColor: "#000" }
+              : { backgroundColor: "#f1f2f3", shadowColor: "#fff" },
+          ]}
+        >
+          <Button
+            background="#1e90ff"
+            btnText="Choose Photo"
+            fontSize={18}
+            height={40}
+            onPress={handleChoosePhoto}
+          />
+          <Button
+            btnText="Capture Photo"
+            color="#1e90ff"
+            borderColor="#1e90ff"
+            fontSize={18}
+            borderWidth={1}
+            height={40}
+            onPress={handleTakePhoto}
+          />
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingTop: 25, alignItems: "center", gap: 30 },
+  container: {
+    flex: 1,
+    paddingTop: 25,
+    alignItems: "center",
+    gap: 30,
+    zIndex: 1,
+  },
   header: {
     width: "100%",
     flexDirection: "row",
@@ -402,6 +455,29 @@ const styles = StyleSheet.create({
   },
   content: { flex: 1, gap: 5, width: "100%", alignItems: "center" },
   note: { color: "#72757e", fontSize: 16, marginTop: 10, marginBottom: 20 },
+  imageUploadContainer: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    borderWidth: 1,
+    marginTop: 25,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  imageUpload: {
+    width: "80%",
+    height: 70,
+    borderRadius: 10,
+    elevation: 10,
+    flexDirection: "row",
+    gap: 10,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  closeIcon: { position: "absolute", top: 30, right: 10 },
 });
 
 export default PersonalInfo;
