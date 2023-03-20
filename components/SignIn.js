@@ -56,8 +56,8 @@ const SignIn = ({ setShowStartup }) => {
       .signInWithEmailAndPassword(email, password)
       .then(async () => {
         await AsyncStorage.setItem(
-          "signedInUser",
-          JSON.stringify({ isSignedIn: true })
+          "userData",
+          JSON.stringify({ email: email, password: password })
         );
         console.log("User Signed In Succesfully!");
       })

@@ -13,6 +13,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as DocumentPicker from "expo-document-picker";
 import * as Yup from "yup";
 import Button from "./Button";
+import InputField from "./PersonalInfoField";
 
 const PersonalInfo = ({ theme, showModal }) => {
   const [scaleValue, setScaleValue] = useState(0);
@@ -46,6 +47,15 @@ const PersonalInfo = ({ theme, showModal }) => {
     .min(4, "Name must be at least 4 characters")
     .required("Name is required");
 
+  const usernameSchema = Yup.string()
+    .required("Username is required")
+    .min(4, "Username must be at least 4 characters")
+    .max(15, "Username cannot be more than 15 characters")
+    .matches(
+      /^[a-zA-Z0-9_.]+$/,
+      "Username can only contain letters, numbers, dots, and underscores"
+    );
+
   const handleChange = (name) => {
     if (name === "fname") {
       setPlaceholder("Enter First Name");
@@ -53,6 +63,8 @@ const PersonalInfo = ({ theme, showModal }) => {
       setPlaceholder("Enter Last Name");
     } else if (name === "email") {
       setPlaceholder("Enter Email");
+    } else if (name === "username") {
+      setPlaceholder("Enter Username");
     }
     setScaleValue(1);
   };
@@ -75,6 +87,13 @@ const PersonalInfo = ({ theme, showModal }) => {
                 onPress: () => console.log("OK Pressed"),
               },
             ]);
+          } else if (error.message === "Name is required") {
+            Alert.alert("Error", "Name cannot be empty", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
           }
         });
     } else if (placeholder === "Enter Last Name") {
@@ -89,6 +108,13 @@ const PersonalInfo = ({ theme, showModal }) => {
           console.log(error);
           if (error.message === "Name must be at least 4 characters") {
             Alert.alert("Error", "Name must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (error.message === "Name is required") {
+            Alert.alert("Error", "Name cannot be empty", [
               {
                 text: "OK",
                 onPress: () => console.log("OK Pressed"),
@@ -125,6 +151,48 @@ const PersonalInfo = ({ theme, showModal }) => {
       //       ]);
       //     }
       //   });
+    } else if (placeholder === "Enter Username") {
+      usernameSchema
+        .validate(value)
+        .then(() => {
+          let newUserInfo = { ...userinfo, username: value };
+          setUserinfo(newUserInfo);
+          setScaleValue(0);
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.message === "Username must be at least 4 characters") {
+            Alert.alert("Error", "Username must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (
+            error.message === "Username cannot be more than 15 characters"
+          ) {
+            Alert.alert("Error", "Username cannot be more than 15 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (
+            error.message ===
+            "Username can only contain letters, numbers, dots, and underscores"
+          ) {
+            Alert.alert(
+              "Error",
+              "Username can only contain letters, numbers, dots, and underscores",
+              [
+                {
+                  text: "OK",
+                  onPress: () => console.log("OK Pressed"),
+                },
+              ]
+            );
+          }
+        });
     }
 
     setVal("");
@@ -213,48 +281,32 @@ const PersonalInfo = ({ theme, showModal }) => {
       </View>
       <View style={styles.content}>
         <Text style={styles.note}>Long Press to change the desired field.</Text>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("fname")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              First Name
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.fname}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("lname")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              Last Name
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.lname}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("email")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              Email
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.email}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
+        <InputField
+          theme={theme}
+          val={userinfo.fname}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="lname"
+          label="Last Name"
+          val={userinfo.lname}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="email"
+          label="Email"
+          val={userinfo.email}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="username"
+          label="Username"
+          val={userinfo.username}
+          handleChange={handleChange}
+        />
       </View>
       <View
         style={[
@@ -350,18 +402,6 @@ const styles = StyleSheet.create({
   },
   content: { flex: 1, gap: 5, width: "100%", alignItems: "center" },
   note: { color: "#72757e", fontSize: 16, marginTop: 10, marginBottom: 20 },
-  divider: { width: "100%", height: 2, backgroundColor: "#3333" },
-  field: {
-    flexDirection: "row",
-  },
-  fieldName: { padding: 10, fontSize: 20, fontWeight: "bold", width: "30%" },
-  fieldVal: {
-    paddingVertical: 10,
-    fontSize: 20,
-    fontWeight: 600,
-    width: "70%",
-    color: "#72757e",
-  },
 });
 
 export default PersonalInfo;

@@ -8,9 +8,7 @@ import {
   Keyboard,
   Animated,
   Modal,
-  Alert,
 } from "react-native";
-import sgMail from "@sendgrid/mail";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { firebase } from "../firebase.config";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
@@ -65,50 +63,18 @@ const Profile = ({ theme, handleLogout }) => {
     outputRange: [300, 0],
   });
 
-  const handleDelete = () => {
-    const collectionRef = firebase.firestore().collection("acc-del-reqs");
+  const handleDelete = async () => {
+    const currentUser = firebase.auth().currentUser;
+    console.log("This is the current User : ", currentUser);
 
-    handleLogout(false);
-    console.log("Starting...");
+    currentUser
+      .delete()
+      .then(() => console.log("User deleted successfully"))
+      .catch((err) => console.log("Error deleting user : ", err));
 
-    collectionRef
-      .add({
-        email: "hriam47426@gmail.com",
-        uid: 1111,
-        fname: "dfjasdfasdfa",
-      })
-      .then(async (docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-        await sgMail.setApiKey(
-          "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"
-        );
-        const msg = {
-          to: "hriam47426@gmail.com",
-          from: "intizaralirana2@gmail.com",
-          subject: "New document added to Firestore",
-          text: `A new document was added to Firestore: ${JSON.stringify(
-            docRef
-          )}`,
-        };
-        await sgMail.send(msg);
-      })
-      .then(() => console.log("Mail sent successfully"))
-      .catch((err) => console.log("The Error is : ", err))
-      .then(() =>
-        AsyncStorage.clear().then(() => console.log("Data cleared!"))
-      );
-
-    Alert.alert(
-      "Request Submited",
-      "We acknowledge that you have requested for the deletion of your account. We are currently processing your request and will notify you once the deletion is completed.",
-      [
-        {
-          text: "Ok",
-        },
-      ]
+    AsyncStorage.clear().then(() =>
+      console.log("Storage cleared successfully")
     );
-
-    console.log("Ending...");
   };
 
   return (
@@ -144,8 +110,8 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {/* {user.fullName} */}
-              Rana Intizar
+              {user.fullName}
+              {/* Rana Intizar */}
             </Text>
             <Text
               style={[
@@ -153,8 +119,8 @@ const Profile = ({ theme, handleLogout }) => {
                 theme === "light" ? { color: "#16161a" } : { color: "#fff" },
               ]}
             >
-              {/* {user.username} */}
-              @rana
+              {user.username}
+              {/* @rana */}
             </Text>
           </View>
         </View>
@@ -297,13 +263,16 @@ const Profile = ({ theme, handleLogout }) => {
                 firebase
                   .auth()
                   .signOut()
+                  .then(async () => {
+                    await AsyncStorage.removeItem("userData");
+                  })
                   .then(() => {
                     handleLogout(true);
                     console.log("Succesfully logged out");
                   });
               } else if (onConfirm === "delete") {
                 handleDelete();
-                handleLogout(true);
+                // handleLogout(true);
               }
             }}
           />
@@ -384,8 +353,8 @@ const styles = StyleSheet.create({
     borderRadius: 110,
     backgroundColor: "#fff",
     overflow: "hidden",
-    width: 220,
-    height: 220,
+    width: 200,
+    height: 200,
     alignItems: "center",
     justifyContent: "center",
   },

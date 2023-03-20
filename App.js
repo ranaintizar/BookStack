@@ -30,9 +30,20 @@ export default function App() {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => setUser(user));
-    AsyncStorage.getItem("signedInUser").then((item) => {
-      if (item) {
-        setShowStartup(false);
+    AsyncStorage.getItem("userData").then((item) => {
+      const user = JSON.parse(item);
+      if (user) {
+        firebase
+          .auth()
+          .signInWithCredential(
+            firebase.auth.EmailAuthProvider.credential(
+              user.email,
+              user.password
+            )
+          )
+          .catch((error) => {
+            console.log(error);
+          });
       }
     });
   }, []);
