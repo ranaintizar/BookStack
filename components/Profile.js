@@ -8,7 +8,6 @@ import {
   Keyboard,
   Animated,
   Modal,
-  Alert,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { firebase } from "../firebase.config";
@@ -64,36 +63,17 @@ const Profile = ({ theme, handleLogout }) => {
     outputRange: [300, 0],
   });
 
-  const handleDelete = () => {
-    firebase
-      .auth()
-      .currentUser?.delete()
-      .then(() => console.log("User Deleted"));
-    const collectionRef = firebase.firestore().collection("acc-del-reqs");
+  const handleDelete = async () => {
+    const currentUser = firebase.auth().currentUser;
+    console.log("This is the current User : ", currentUser);
 
-    handleLogout(false);
+    currentUser
+      .delete()
+      .then(() => console.log("User deleted successfully"))
+      .catch((err) => console.log("Error deleting user : ", err));
 
-    collectionRef
-      .add({
-        email: user.email,
-        uid: user.uid,
-        fname: user.fname,
-      })
-      .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .then(() =>
-        AsyncStorage.clear().then(() => console.log("Data cleared!"))
-      );
-
-    Alert.alert(
-      "Request Submited",
-      "We acknowledge that you have requested for the deletion of your account. We are currently processing your request and will notify you once the deletion is completed.",
-      [
-        {
-          text: "Ok",
-        },
-      ]
+    AsyncStorage.clear().then(() =>
+      console.log("Storage cleared successfully")
     );
   };
 
@@ -116,10 +96,11 @@ const Profile = ({ theme, handleLogout }) => {
           <View style={styles.image}>
             <Image
               resizeMode="contain"
-              source={
-                (imageUri && { uri: imageUri }) ||
-                require("../assets/Profile-Pic.jpg")
-              }
+              source={{
+                uri:
+                  (imageUri && imageUri) ||
+                  "https://i.postimg.cc/Gm0zSwW8/default-Pic.jpg",
+              }}
               style={styles.img}
             />
           </View>
@@ -131,6 +112,7 @@ const Profile = ({ theme, handleLogout }) => {
               ]}
             >
               {user.fullName}
+              {/* Rana Intizar */}
             </Text>
             <Text
               style={[
@@ -139,6 +121,7 @@ const Profile = ({ theme, handleLogout }) => {
               ]}
             >
               {user.username}
+              {/* @rana */}
             </Text>
           </View>
         </View>
@@ -281,6 +264,9 @@ const Profile = ({ theme, handleLogout }) => {
                 firebase
                   .auth()
                   .signOut()
+                  .then(async () => {
+                    await AsyncStorage.removeItem("userData");
+                  })
                   .then(() => {
                     handleLogout(true);
                     console.log("Succesfully logged out");
@@ -331,7 +317,7 @@ const Profile = ({ theme, handleLogout }) => {
               fontSize={20}
               width={"50%"}
               onPress={() => {
-                AsyncStorage.clear.then(() => {
+                AsyncStorage.clear().then(() => {
                   console.log("Data cleared!");
                   setScaleValue(0);
                 });
@@ -368,8 +354,8 @@ const styles = StyleSheet.create({
     borderRadius: 110,
     backgroundColor: "#fff",
     overflow: "hidden",
-    width: 220,
-    height: 220,
+    width: 200,
+    height: 200,
     alignItems: "center",
     justifyContent: "center",
   },

@@ -1,18 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  TextInput,
-  TouchableWithoutFeedback,
-  Alert,
-} from "react-native";
+import { StyleSheet, View, Text, Image, TextInput, Alert } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import * as DocumentPicker from "expo-document-picker";
 import * as Yup from "yup";
 import Button from "./Button";
+import InputField from "./PersonalInfoField";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const PersonalInfo = ({ theme, showModal }) => {
   const [scaleValue, setScaleValue] = useState(0);
@@ -25,6 +18,8 @@ const PersonalInfo = ({ theme, showModal }) => {
     email: "",
   });
   const [imageUri, setImageUri] = useState(null);
+  const [scale, setScale] = useState(0);
+  const [zIndex, setzIndex] = useState(-10);
 
   useEffect(() => {
     AsyncStorage.getItem("userinfo").then((value) => {
@@ -46,6 +41,15 @@ const PersonalInfo = ({ theme, showModal }) => {
     .min(4, "Name must be at least 4 characters")
     .required("Name is required");
 
+  const usernameSchema = Yup.string()
+    .required("Username is required")
+    .min(4, "Username must be at least 4 characters")
+    .max(15, "Username cannot be more than 15 characters")
+    .matches(
+      /^[a-zA-Z0-9_.]+$/,
+      "Username can only contain letters, numbers, dots, and underscores"
+    );
+
   const handleChange = (name) => {
     if (name === "fname") {
       setPlaceholder("Enter First Name");
@@ -53,6 +57,8 @@ const PersonalInfo = ({ theme, showModal }) => {
       setPlaceholder("Enter Last Name");
     } else if (name === "email") {
       setPlaceholder("Enter Email");
+    } else if (name === "username") {
+      setPlaceholder("Enter Username");
     }
     setScaleValue(1);
   };
@@ -75,6 +81,13 @@ const PersonalInfo = ({ theme, showModal }) => {
                 onPress: () => console.log("OK Pressed"),
               },
             ]);
+          } else if (error.message === "Name is required") {
+            Alert.alert("Error", "Name cannot be empty", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
           }
         });
     } else if (placeholder === "Enter Last Name") {
@@ -89,6 +102,13 @@ const PersonalInfo = ({ theme, showModal }) => {
           console.log(error);
           if (error.message === "Name must be at least 4 characters") {
             Alert.alert("Error", "Name must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (error.message === "Name is required") {
+            Alert.alert("Error", "Name cannot be empty", [
               {
                 text: "OK",
                 onPress: () => console.log("OK Pressed"),
@@ -125,6 +145,48 @@ const PersonalInfo = ({ theme, showModal }) => {
       //       ]);
       //     }
       //   });
+    } else if (placeholder === "Enter Username") {
+      usernameSchema
+        .validate(value)
+        .then(() => {
+          let newUserInfo = { ...userinfo, username: value };
+          setUserinfo(newUserInfo);
+          setScaleValue(0);
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.message === "Username must be at least 4 characters") {
+            Alert.alert("Error", "Username must be at least 4 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (
+            error.message === "Username cannot be more than 15 characters"
+          ) {
+            Alert.alert("Error", "Username cannot be more than 15 characters", [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+              },
+            ]);
+          } else if (
+            error.message ===
+            "Username can only contain letters, numbers, dots, and underscores"
+          ) {
+            Alert.alert(
+              "Error",
+              "Username can only contain letters, numbers, dots, and underscores",
+              [
+                {
+                  text: "OK",
+                  onPress: () => console.log("OK Pressed"),
+                },
+              ]
+            );
+          }
+        });
     }
 
     setVal("");
@@ -145,6 +207,7 @@ const PersonalInfo = ({ theme, showModal }) => {
     if (!result.canceled) {
       setImageUri(result.assets[0].uri);
       AsyncStorage.setItem("imageUri", result.assets[0].uri);
+      closeModal();
     }
   };
 
@@ -158,8 +221,19 @@ const PersonalInfo = ({ theme, showModal }) => {
 
     if (!result.cancelled) {
       setImage(result.assets[0].uri);
+      AsyncStorage.setItem("imageUri", result.assets[0].uri);
+      closeModal();
     }
-    AsyncStorage.setItem("imageUri", result.assets[0].uri);
+  };
+
+  const closeModal = () => {
+    setScale(0);
+    setzIndex(-10);
+  };
+
+  const openModal = () => {
+    setScale(1);
+    setzIndex(10);
   };
 
   return (
@@ -197,10 +271,11 @@ const PersonalInfo = ({ theme, showModal }) => {
         <View style={styles.image}>
           <Image
             resizeMode="contain"
-            source={
-              (imageUri && { uri: imageUri }) ||
-              require("../assets/Profile-Pic.jpg")
-            }
+            source={{
+              uri:
+                (imageUri && imageUri) ||
+                "https://i.postimg.cc/Gm0zSwW8/default-Pic.jpg",
+            }}
             style={styles.img}
           />
         </View>
@@ -208,53 +283,37 @@ const PersonalInfo = ({ theme, showModal }) => {
           btnText="Upload Image"
           color="#1e90ff"
           fontSize={18}
-          onPress={handleChoosePhoto}
+          onPress={openModal}
         />
       </View>
       <View style={styles.content}>
         <Text style={styles.note}>Long Press to change the desired field.</Text>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("fname")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              First Name
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.fname}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("lname")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              Last Name
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.lname}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
-        <TouchableWithoutFeedback onLongPress={() => handleChange("email")}>
-          <View style={styles.field}>
-            <Text
-              style={[
-                styles.fieldName,
-                theme === "light" ? { color: "#16161a" } : { color: "#f1f2f3" },
-              ]}
-            >
-              Email
-            </Text>
-            <Text style={styles.fieldVal}>{userinfo.email}</Text>
-          </View>
-        </TouchableWithoutFeedback>
-        <View style={styles.divider}></View>
+        <InputField
+          theme={theme}
+          val={userinfo.fname}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="lname"
+          label="Last Name"
+          val={userinfo.lname}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="email"
+          label="Email"
+          val={userinfo.email}
+          handleChange={handleChange}
+        />
+        <InputField
+          theme={theme}
+          name="username"
+          label="Username"
+          val={userinfo.username}
+          handleChange={handleChange}
+        />
       </View>
       <View
         style={[
@@ -291,12 +350,58 @@ const PersonalInfo = ({ theme, showModal }) => {
           />
         </View>
       </View>
+      <View
+        style={[
+          styles.imageUploadContainer,
+          { transform: [{ scaleY: scale }] },
+          { zIndex: zIndex },
+        ]}
+      >
+        <MaterialIcons
+          name="close"
+          size={24}
+          color="#fff"
+          style={styles.closeIcon}
+          onPress={closeModal}
+        />
+        <View
+          style={[
+            styles.imageUpload,
+            theme === "light"
+              ? { backgroundColor: "#fff", shadowColor: "#000" }
+              : { backgroundColor: "#f1f2f3", shadowColor: "#fff" },
+          ]}
+        >
+          <Button
+            background="#1e90ff"
+            btnText="Choose Photo"
+            fontSize={18}
+            height={40}
+            onPress={handleChoosePhoto}
+          />
+          <Button
+            btnText="Capture Photo"
+            color="#1e90ff"
+            borderColor="#1e90ff"
+            fontSize={18}
+            borderWidth={1}
+            height={40}
+            onPress={handleTakePhoto}
+          />
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingTop: 25, alignItems: "center", gap: 30 },
+  container: {
+    flex: 1,
+    paddingTop: 25,
+    alignItems: "center",
+    gap: 30,
+    zIndex: 1,
+  },
   header: {
     width: "100%",
     flexDirection: "row",
@@ -350,18 +455,29 @@ const styles = StyleSheet.create({
   },
   content: { flex: 1, gap: 5, width: "100%", alignItems: "center" },
   note: { color: "#72757e", fontSize: 16, marginTop: 10, marginBottom: 20 },
-  divider: { width: "100%", height: 2, backgroundColor: "#3333" },
-  field: {
+  imageUploadContainer: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    borderWidth: 1,
+    marginTop: 25,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  imageUpload: {
+    width: "80%",
+    height: 70,
+    borderRadius: 10,
+    elevation: 10,
     flexDirection: "row",
+    gap: 10,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  fieldName: { padding: 10, fontSize: 20, fontWeight: "bold", width: "30%" },
-  fieldVal: {
-    paddingVertical: 10,
-    fontSize: 20,
-    fontWeight: 600,
-    width: "70%",
-    color: "#72757e",
-  },
+  closeIcon: { position: "absolute", top: 30, right: 10 },
 });
 
 export default PersonalInfo;

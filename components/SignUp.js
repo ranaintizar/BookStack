@@ -116,8 +116,8 @@ const SignUp = ({ setShowStartup }) => {
       })
       .then(async () => {
         await AsyncStorage.setItem(
-          "signedInUser",
-          JSON.stringify({ isSignedIn: true })
+          "userData",
+          JSON.stringify({ email: email, password: password })
         );
       })
       .then(async () => {
