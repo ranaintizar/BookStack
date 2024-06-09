@@ -6,7 +6,6 @@
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
-    "prohibitedScreenShot": false,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,14 +14,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ranaintizar.bookstack"
+      "bundleIdentifier": "com.ranathedev.bookstack"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ranaintizar.bookstack"
+      "package": "com.ranathedev.bookstack"
     },
     "web": {
       "favicon": "./assets/logo.png"
@@ -32,6 +31,6 @@
         "projectId": "228a25a2-b655-4e23-b1b4-36424099b7b3"
       }
     },
-    "owner": "ranaintizar"
+    "owner": "ranathedev"
   }
 }
